@@ -32,7 +32,7 @@ public class CartService {
 	
 
 	@Transactional
-	public void addCart(String userId, int itemId, int price) { 
+	public void addCart(String userId, int itemId) { 
 		
 		
 	}

@@ -31,14 +31,13 @@ public class CartController {
 		if(cartService.containsItemId(itemId, userId))
 			cartService.incrementQuantityByItemId(itemId, userId); 
 		else
-			cartService.addCart(userId, itemId, price);
+			cartService.addCart(userId, itemId);
 			
 		
 		//model.addAttribute("cart", cart);
 		return "spetitem/sListDetail"; 
 		
 	}
-	//실험
 
 	@RequestMapping("/cart") 
 	public String createCart(HttpSession sesseion) {
@@ -62,7 +61,7 @@ public class CartController {
 	
 	@RequestMapping("/market/addcart") 
 	public String addCart(@RequestParam("marketId") String marketId, @RequestParam("itemId") int itemId, @RequestParam("userId") String userId) {
-		cartService.addCart(userId, itemId, price);
+		cartService.addCart(userId, itemId);
 		return "market/mListDetail"; 
 	}
 }

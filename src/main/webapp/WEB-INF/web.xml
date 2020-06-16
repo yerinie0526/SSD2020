@@ -3,10 +3,13 @@
    xmlns="http://java.sun.com/xml/ns/javaee"
    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
    id="WebApp_ID" version="3.1">
-   <display-name>SpringMvcExamples</display-name>
+   <display-name>Spring sPetStore</display-name>
    <context-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/application-config.xml</param-value>
+      <param-value>
+      	classpath:applicationContext.xml
+      	classpath:dataAccessContext-mybatis.xml 
+      </param-value>
    </context-param>
    <!-- <listener>
       <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
