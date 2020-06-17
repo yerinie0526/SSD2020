@@ -20,15 +20,15 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<mvc:interceptors>
+	<!-- <mvc:interceptors>
 		<mvc:interceptor>
     	    <mvc:mapping path="/performers/detail/*"/>
     	    <mvc:mapping path="/performers/delete/*"/>
         	<bean class="org.springframework.samples.controller.SignOnInterceptor" />
     	</mvc:interceptor>
-	</mvc:interceptors>
+	</mvc:interceptors>-->
 
-	<bean id="messageSource"
+	<!-- <bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basenames">
 			<list>
@@ -36,5 +36,5 @@
 			</list>
 		</property>
 		<property name="defaultEncoding" value="UTF-8" />
-	</bean>
+	</bean>-->
 </beans>

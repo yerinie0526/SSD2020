@@ -17,7 +17,7 @@ import summerpetstore.service.CartService;
 @Controller
 @SessionAttributes("sessionCart")
 public class CartController {
-	@Autowired
+	//@Autowired
 	private CartService cartService;
 	
 	public void setCartService(CartService cartService) {
@@ -33,7 +33,6 @@ public class CartController {
 		else
 			cartService.addCart(userId, itemId);
 			
-		
 		//model.addAttribute("cart", cart);
 		return "spetitem/sListDetail"; 
 		
