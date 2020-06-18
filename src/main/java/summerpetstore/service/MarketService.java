@@ -27,25 +27,25 @@ public class MarketService {
 		return mdao.showInfo(im.getItemId());
 	}
 	
-	//���͹�ǰ ����
+	
 	@Transactional
-	public void deleteItem(int itemId) { // �Ű����� ��� �ʿ�
+	public void deleteItem(int itemId) { 
 		mdao.deleteItem(itemId);
 	}
 	
-	//���͹�ǰ ����
+
 	@Transactional
-	public void updateItem(ItemModel im) { // �Ű����� ��� �ʿ�
+	public void updateItem(ItemModel im) { 
 		mdao.updateItem(im);
 	}
 	
 	
-	//���ͻ��� ���� ex) �ŷ��� -> �ŷ� �Ϸ�
+	
 	public void updateItemStatus(int itemId) {
 		mdao.updateItemStatus(itemId);
 	}
 		
-	//���� �˻�
+
 	public List<ItemModel> searchItem(String itemname, String itemKind) {
 		List<ItemModel> imList;
 		imList = mdao.searchItem(itemname, itemKind);
