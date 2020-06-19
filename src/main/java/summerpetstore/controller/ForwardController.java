@@ -37,4 +37,9 @@
 //	public String moveAuctionSearch(@RequestParam("userId") String userId) {
 //			return"auction/aSearch"; 
 //	}
+
+	@RequestMapping("/gp") 
+//	public String moveGPSearch() {
+//			return""; 
+//	}//공동구매 검색창으로이동
 //}

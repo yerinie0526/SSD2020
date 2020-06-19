@@ -4,9 +4,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import summerpetstore.model.ItemModel;
 import summerpetstore.service.CartService;
 import summerpetstore.service.MarketService;
 
@@ -21,9 +24,8 @@ public class MarketController {
 	}
 	
 	@RequestMapping("/market/register") 
-	public String registerMarket(@RequestParam("userId") String userId, @RequestParam("marketId") int marketId) {
-		
-		marketService.registerItem(userId, marketId);
+	public String registerMarket(@ModelAttribute("itemmodel")ItemModel itemmodel) {
+		marketService.registerItem(itemmodel);
 		return "market/mSearach"; 
 		
 	}//수현아 여기 모델 전체가 들어와야할것같아 사용자가 모든 정보를 입력해야해서
