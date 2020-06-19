@@ -29,7 +29,7 @@ public class GpController {
 		
 		return "spetitem/categoryView"; //������������������������ output view������ ����������������源���
 		
-	}//�����������������������쇱��������
+	}//공동구매삭제
 	
 	@RequestMapping("/market") 
 	public String deleteMgp(@RequestParam("itemId") int itemId, Model model) {
@@ -40,8 +40,21 @@ public class GpController {
 		
 		return "market/mListDetail"; 
 		
-	}//���������띔낀�������������������쇱��������--���깃낀�� �����쎌�����깅��� ������������ �����������������������쇱�������������� ������移������� 泥����������뀀��������� �����������������댁�� ���밸���� ���뀀��������� ���リ낀��移������� ���깅��������� ���깅��������� ��������������������占�
-		//�ν�곌났��援щℓ����
+	}//장터공동구매삭제
+	
+	@RequestMapping("/gp/search") 
+	public String select(@RequestParam("name") String name, @RequestParam("itemKind") String itemKind) {
+		gpService.filterGP();
+		gpService.searchName(name);
+		gpService.filterCategory();
+		gpService.filterDate();
+		gpService.filterPopular();
+		gpService.filterProgress();
+		gpService.filterCategory();
+		gpService.filterProduct();	//filter역할은 무엇인가요??
+		return "gp/gpSearch"; 
+		
+	}//공동구매검색
 	
 	
 }

@@ -40,6 +40,14 @@ public class ShowDetailController {
 		item = sproductService.showInfo(auctionId);
 		model.addAttribute("item", item);
 		return "auction/aListDetail"; 
-	}//寃쎈ℓ���명��蹂닿린
+	}//경매자세히보기
+	
+
+	@RequestMapping("/gp/detail")	
+	public String showMarketItem(@RequestParam("itemId") int itemId) {
+		if(market물품)
+			return "market/mListDetail";
+		return "spetitem/gListDetail";
+	}//공동구매자세히보기
 
 }
