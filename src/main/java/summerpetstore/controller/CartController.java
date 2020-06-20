@@ -17,10 +17,10 @@ import summerpetstore.service.CartService;
 @Controller
 @SessionAttributes("sessionCart")
 public class CartController {
-	
+	//@Autowired
 	private CartService cartService;
 	
-	//@Autowired
+	
 	public void setCartService(CartService cartService) {
 		this.cartService = cartService;
 	}

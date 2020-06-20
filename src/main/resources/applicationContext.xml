@@ -19,7 +19,7 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<context:component-scan base-package="summerpetstore.service" /> 
+	<context:component-scan base-package="dongduk.cs.ssd.summerpetstore.service" /> 
 
 	<!-- Generic validator for Account objects, to be used for example by the Spring web tier -->
 <!-- <bean id="accountValidator" class="com.example.jpetstore.service.AccountFormValidator"/> -->

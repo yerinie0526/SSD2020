@@ -24,7 +24,7 @@
 	     http://mybatis.org/schema/mybatis-spring 
 	     http://mybatis.org/schema/mybatis-spring.xsd">
 
-	<context:component-scan base-package="summerpetstore.dao" />
+	<context:component-scan base-package="dongduk.cs.ssd.summerpetstore.dao" />
 		
 	<!-- Configurer that replaces ${...} placeholders with values from properties files -->
 	<!-- (in this case, mail and JDBC related properties) -->
@@ -66,11 +66,11 @@
     <!-- define the SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="typeAliasesPackage" value="summerpetstore.model" />
+        <property name="typeAliasesPackage" value="dongduk.cs.ssd.summerpetstore.model" />
     </bean>
 
     <!-- scan for mappers and let them be autowired -->
-    <mybatis:scan base-package="summerpetstore.repository.mapper" />
+    <mybatis:scan base-package="dongduk.cs.ssd.summerpetstore.repository.mapper" />
     <!-- 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.jpetstore.dao.mybatis.mapper" />
