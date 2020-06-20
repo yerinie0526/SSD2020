@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import summerpetstore.model.ItemModel;
 import summerpetstore.service.SProductService;
+import summerpetstore.service.SpetItemService;
 
 @Controller
 public class ShowCategoryViewController {

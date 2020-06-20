@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import summerpetstore.model.CartModel;
+import summerpetstore.service.AuctionService;
 import summerpetstore.service.CartService;
 
 @Controller

@@ -27,8 +27,7 @@ public class MarketController {
 	public String registerMarket(@ModelAttribute("itemmodel")ItemModel itemmodel) {
 		marketService.registerItem(itemmodel);
 		return "market/mSearach"; 
-		
-	}//수현아 여기 모델 전체가 들어와야할것같아 사용자가 모든 정보를 입력해야해서
+	}
 	
 	@RequestMapping("/market/delete") 
 	public String deleteMarket(@RequestParam("marketId") int marketId) {
