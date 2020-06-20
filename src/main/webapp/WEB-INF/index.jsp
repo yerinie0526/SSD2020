@@ -55,7 +55,7 @@
     </td>
   </tr>
 </table>
-
+<!-- 주석추가 -->
 <%-- <%@ include file="IncludeBanner.jsp" %> --%>
 
 <%@ include file="IncludeBottom.jsp" %>
