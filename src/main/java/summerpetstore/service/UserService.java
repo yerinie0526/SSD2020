@@ -3,6 +3,6 @@ package summerpetstore.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuctionService {
+public class UserService {
 
 }

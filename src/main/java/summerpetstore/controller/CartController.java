@@ -17,7 +17,7 @@ import summerpetstore.service.CartService;
 @Controller
 @SessionAttributes("sessionCart")
 public class CartController {
-	//@Autowired
+	@Autowired
 	private CartService cartService;
 	
 	

@@ -12,31 +12,31 @@ import summerpetstore.service.GpService;
 @Controller
 public class GpController {
 	
-	//@Autowired
-	private GpService gpService;	//���������ㅻ��� ���깅��� ��������������������占�! gp������������ ������������
+	@Autowired
+	private GpService gpService;
 	GpModel gp;
 
 	public void setGpService(GpService gpService) {
 		this.gpService = gpService;
 	}
 	
-	@RequestMapping("/spetitem/gpdelete") //gpdelete�멨������ 
+	@RequestMapping("/spetitem/gpdelete")
 	public String deleteGp(@RequestParam("itemId") int itemId, Model model) {
 		if(gpService.is_GPJP_exist(gp))
-			model.addAttribute("deleteok", 0);	//����������������怨ㅼ��
+			model.addAttribute("deleteok", 0);	
 		else
-			model.addAttribute("deleteok", 1);	//������������������������
+			model.addAttribute("deleteok", 1);	
 		
-		return "spetitem/categoryView"; //������������������������ output view������ ����������������源���
+		return "spetitem/categoryView"; 
 		
 	}//공동구매삭제
 	
 	@RequestMapping("/market") 
 	public String deleteMgp(@RequestParam("itemId") int itemId, Model model) {
 		if(gpService.is_GPJP_exist(gp))
-			model.addAttribute("deleteok", 0);	//����������������怨ㅼ��
+			model.addAttribute("deleteok", 0);	
 		else
-			model.addAttribute("deleteok", 1);	//������������������������
+			model.addAttribute("deleteok", 1);	
 		
 		return "market/mListDetail"; 
 		

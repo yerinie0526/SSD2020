@@ -12,7 +12,7 @@ import summerpetstore.service.SProductService;
 @Controller
 public class ShowDetailController {
 	
-	//@Autowired
+	@Autowired
 	private SProductService sproductService;	//���������ㅻ��� ���깅��� ��������������������占�! ���밸��쇱���� ������������ ������������
 	ItemModel item;
 	
