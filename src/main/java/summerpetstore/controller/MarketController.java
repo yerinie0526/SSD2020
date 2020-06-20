@@ -16,7 +16,7 @@ import summerpetstore.service.MarketService;
 @Controller
 public class MarketController {
 	
-	//@Autowired
+	@Autowired
 	private MarketService marketService;	
 	
 	public void setMarketService(MarketService marketService) {

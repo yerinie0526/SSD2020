@@ -15,7 +15,7 @@
        	http://www.springframework.org/schema/mvc 				
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd"> 
 
-	<context:component-scan base-package="summerpetstore.controller" />
+	<context:component-scan base-package="dongduk.cs.ssd.summerpetstore.controller" />
 
 	<mvc:annotation-driven/>		<!-- create RequestMappingHandlerMapping -->
 	
