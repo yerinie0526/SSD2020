@@ -15,7 +15,7 @@
        	http://www.springframework.org/schema/mvc 				
 		http://www.springframework.org/schema/mvc/spring-mvc.xsd"> 
 
-	<context:component-scan base-package="summerpetstore.controller" />
+	<context:component-scan base-package="dongduk.cs.ssd.summerpetstore.controller" />
 
 	<mvc:annotation-driven/>		<!-- create RequestMappingHandlerMapping -->
 	
@@ -30,7 +30,7 @@
 	<!-- <mvc:view-controller path="/shop/signonForm.do" view-name="SignonForm"/>  -->
 
 	
-	<mvc:interceptors>
+	<!-- <mvc:interceptors>
 		<mvc:interceptor>
     	    <mvc:mapping path="/shop/editAccount.do"/>
         	<mvc:mapping path="/shop/listOrders.do"/>
@@ -38,5 +38,5 @@
         	<mvc:mapping path="/shop/newOrder.do"/>
         	<bean class="com.example.jpetstore.controller.SignonInterceptor" />
     	</mvc:interceptor>
-	</mvc:interceptors>
+	</mvc:interceptors>-->
 </beans>
