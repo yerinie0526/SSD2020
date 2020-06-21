@@ -20,8 +20,8 @@ public class BidController {
 	}
 	
 	@RequestMapping("/auction/priceregister") 
-	public String bid(@RequestParam("myPrice") int myPrice,@RequestParam("userId") String userId) {	
-		auctionservice.printPriceRank();
+	public String bid(@RequestParam("myPrice") int myPrice,@RequestParam("userId") String userId,@RequestParam("auctionId") int auctionId) {	
+		auctionservice.showJPList(auctionId);
 		auctionservice.isNewPrice(myPrice);
 		auctionservice.getBid();	
 		auctionservice.setBid();	

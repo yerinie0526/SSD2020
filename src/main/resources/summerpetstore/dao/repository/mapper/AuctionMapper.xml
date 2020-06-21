@@ -5,29 +5,29 @@
   <cache />
   
 	<!-- searchAuciton : 경매 검색-->
-	<select id="searchAuction" parameterType="String" resultType="summerstore.model.Auction">
-		SELECT #{auctionId}, #{dday}, #{astatus}, #{minprice}
+	<select id="searchAuction" parameterType="summerstore.model.AuctionModel" resultType="summerstore.model.AuctionModel">
+		SELECT auctionId, dday, astatus, minprice
 		FROM auction
-		WHERE astatus = #{astatus}
+		WHERE astatus=#{astatus} and productId=#{productId}
 	</select>
 	<!-- 완료와 취소됨도 있어야할 것 같긴함 -->
 	
 	<!-- showInfo : 경매 자세히 보기-->
-	<select id="showInfo" parameterType="int" resultType="summerstore.model.Auction">
-		SELECT #{auctionId}, #{dday}, #{astatus}, #{minprice}, #{curMaxPrice}, #{firstId}
+	<select id="showInfo" parameterType="int" resultType="summerstore.model.AuctionModel">
+		SELECT auctionId, dday, astatus, minprice, curMaxPrice, firstId
 		FROM auction
 		WHERE auctionId = #{auctionId}
 	</select>
 	
 	<!--showJPList : 입찰자 목록(랭킹) 보여주기 (join person)-->
-	<select id="showJPList" parameterType="int" resultType="summerstore.model.AuctionJP">
-		SELECT #{auctionId}, #{offerPrice}, #{userId}
+	<select id="showJPList" parameterType="int" resultType="summerstore.model.AuctionJPModel">
+		SELECT auctionId, offerPrice, userId
 		FROM AuctionJP
 		WHERE auctionId = #{auctionId}
 	</select>
 	
 	<!--registerAuction : 경매 등록하기-->
-	<insert id="registerAuction" parameterType="summerstore.model.AuctionJP">
+	<insert id="registerAuction" parameterType="summerstore.model.AuctionJPModel">
 		INSERT INTO Auction
 		VALUES (#{name}, #{deadline}, #{pMethod}, #{description}, #{minPrice}, #{astatus}, #{productId}, #{sellerInfoId}, #{currentCon})
 	</insert>
@@ -94,5 +94,13 @@
 		INSERT INTO cart
 		VALUES (#{itemId}, #{itemname}, #{price}, #{userId})
 	</insert>
+	
+	
+	<!--sucBid : 낙찰 경매 종료일이 되면 제일 높은 가격을 제시한 입찰자의 장바구니에 자동으로 담김-->
+	<select id="getFirstPrice"parameterType=int>
+		SELECT curMaxPrice
+		FROM Auction
+		WHERE auctionId=#{auctionId}
+	</select>
 
 </mapper>

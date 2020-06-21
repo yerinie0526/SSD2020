@@ -37,7 +37,7 @@ public class AuctionController {
 	@RequestMapping("/auction/aupdate") 
 	public String updateAuction(@RequestParam("auctionId") int auctionId, @RequestParam("userId") String userId) {	
 		if(auctionservice.is_sBid_exist())
-			auctionservice.searchAuction();	//경매수정이니까 이름 바꾸는게 좋지않을까요?
+			auctionservice.updateAuction();	//경매수정이니까 이름 바꾸는게 좋지않을까요?
 		
 		return "auction/aRegister"; 	
 	}//경매수정
