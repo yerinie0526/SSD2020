@@ -29,10 +29,10 @@ public class AuctionDAO {
 	
 	
 
-	public List<AuctionModel> searchAuction(String name, String astatus) {
+	public List<AuctionModel> searchAuction(AuctionModel am) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
-			List<AuctionModel> result = sqlSession.selectList(namespace + ".searchAuction", name);//매개변수 수정해야함
+			List<AuctionModel> result = sqlSession.selectList(namespace + ".searchAuction", am);//매개변수 수정해야함
 			return result;
 		}finally { sqlSession.close(); }
 	}
@@ -125,7 +125,9 @@ public class AuctionDAO {
 		//return GpMapper.searchGp(name, itemKind);
 	}
 	
-	
+	public int getFirstPrice(int auctionId) {
+		
+	}
 	
 
 }

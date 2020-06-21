@@ -3,13 +3,14 @@ package summerpetstore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import summerpetstore.service.GpService;
 
 @Controller
 public class ForwardController {
-	@Autowired
+/*	@Autowired
 	ForwardService forwardService;
 	
 	public void setForwardService(ForwardService forwardService) {
@@ -23,7 +24,7 @@ public class ForwardController {
 		else
 			return"user/myPage"; 
 	}//마이페이지로 이동
-	
+*/	
 	@RequestMapping("/market") 
 	public String moveMarketSearch() {
 		return"market/mSearch"; 
@@ -34,8 +35,9 @@ public class ForwardController {
 			return"market/iRegister"; 
 	}//장터물품등록창으로 이동
 	
-	@RequestMapping("/auction") 
+	@RequestMapping(value = "/auction",  method = RequestMethod.GET) 
 	public String moveAuctionSearch(@RequestParam("userId") String userId) {
+		System.out.println("경매창에 들어왔다!!!");
 			return"auction/aSearch"; 
 	}//경매검색창으로 이동
 
