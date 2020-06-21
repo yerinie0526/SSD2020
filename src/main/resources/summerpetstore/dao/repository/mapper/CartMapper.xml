@@ -36,13 +36,18 @@
 	</select>
 
 	<!--아이템 수량 + 1-->
-	<update id="incrementquantity">
+	<update id="incrementQuantity">
 		UPDATE cart
 		SET quantity = quantity + 1
 		WHERE itemId = #{itemId} and userId = #{userId}
 	</update>
 	
-	<!--아아템 수량 수정하는 것도 만들어야할것같음 -->
+	<!--아아템 수량 수정-->
+	<update id="updateQuantity">
+		UPDATE cart
+		SET quantity=#{quantity}
+		WHERE itemId = #{itemId} and userId = #{userId}
+	</update>
 	
 
 </mapper>
