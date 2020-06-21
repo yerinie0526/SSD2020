@@ -32,26 +32,30 @@ public class MarketController {
 		model.addAttribute("mList", mList);
 		return "market/mSearch"; 
 	}
-	/*
-	 * @RequestMapping("/market/register") public String
-	 * registerMarket(@ModelAttribute("itemmodel")ItemModel itemmodel) {
-	 * marketService.registerItem(itemmodel); return "market/mSearach"; }
-	 * 
-	 * @RequestMapping("/market/delete") public String
-	 * deleteMarket(@RequestParam("marketId") int marketId) {
-	 * marketService.deleteItem(marketId); return "market/mSearach";
-	 * 
-	 * }//�뜝�룞�삕�뜝�떢�??꾩삕��?��?���룞�삕�뜝�룞�삕
-	 * 
-	 * @RequestMapping("/market/mitemView") public String
-	 * updateMarket(@RequestParam("userId") String userId) {
-	 * marketService.updateItem(userId); return "market/mListDetail";
-	 * 
-	 * }//�뜝�룞�삕�뜝�떢�??꾩삕��?��?���룞�삕�뜝�룞�삕
-	 * 
-	 * @RequestMapping("/market/search") public String select(@RequestParam("name")
-	 * String name, @RequestParam("itemKind")String itemKind) {
-	 * marketService.searchItem(name, itemKind); return "market/mListDetail";
-	 * 
-	 * }//?��?���???��
-	 */}
+	
+	  @RequestMapping("/market/register") 
+	  public String registerMarket(@ModelAttribute("itemmodel")ItemModel itemmodel) 
+	  {
+		  marketService.registerItem(itemmodel); return "market/mSearach"; 
+	  }//장터물품등록
+	  
+	  @RequestMapping("/market/delete") 
+	  public String deleteMarket(@RequestParam("marketId") int marketId)
+	  {
+		  marketService.deleteItem(marketId); 
+		  return "market/mSearach";
+	  }//장터물품삭제
+	  
+	  @RequestMapping("/market/mitemView") 
+	  public String updateMarket(@RequestParam("userId") String userId) {
+		  marketService.updateItem(userId); 
+	  	  return "market/mListDetail";
+	  }//장터물품수정
+	  
+	  @RequestMapping("/market/search") 
+	  public String select(@RequestParam("name")String name, @RequestParam("itemKind")String itemKind) {
+		  marketService.searchItem(name, itemKind); 
+		  return "market/mListDetail";
+	  
+	  }//징터검색
+	 }

@@ -9,10 +9,10 @@ import summerpetstore.service.AuctionService;
 
 @Controller
 public class MoveToSucController {
-	
+	@Autowired
 	private AuctionService auctionservice;
 	
-	@Autowired
+	
 	public void setAuctionService(AuctionService auctionservice) {
 		this.auctionservice = auctionservice;
 	}

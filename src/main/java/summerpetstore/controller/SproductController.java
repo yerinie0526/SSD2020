@@ -12,31 +12,31 @@ import summerpetstore.service.SProductService;
 @Controller
 public class SproductController {
 	@Autowired
-	private SProductService sproductService;	//���������ㅻ���?? ���깅���?? ��������������������?���??! ���밸��?������ ������������ ������������
+	private SProductService sproductService;	
 	private ItemModel sp;
 	
 	public void setCartService(SProductService sproductService) {
 		this.sproductService = sproductService;
 	}
 
-	@RequestMapping("/spetitem/register") //register�멨������ 
+	@RequestMapping("/spetitem/register") 
 	public String registeritem(@RequestParam("itemId") int itemId, Model model) {
 		sp = sproductService.registerSP(itemId);
 		model.addAttribute("sp", sp);
-		return "spetitem/categoryView"; //����������������?���?? output view������ ����������������源���
-	}
+		return "spetitem/categoryView"; 
+	}//물품등록
 	
-	@RequestMapping("/spetitem/delete") //delete�멨������ 
+	@RequestMapping("/spetitem/delete") 
 	public String deleteitem(@RequestParam("itemId") int itemId, Model model) {
 		sp = sproductService.deleteSP(itemId);
 		model.addAttribute("sp", sp);
-		return "spetitem/categoryView"; //�������������������� output view������ ����������������源���
-	}
+		return "spetitem/categoryView"; 
+	}//물품삭제
 	
-	@RequestMapping("/spetitem/update") //update�멨������ 
+	@RequestMapping("/spetitem/update") 
 	public String updateitem(@RequestParam("itemId") int itemId, Model model) {
 		sp = sproductService.updateSP(itemId);
 		model.addAttribute("sp", sp);
-		return "spetitem/sListDetail"; //�������������������� output view������ ����������������源���
-	}
+		return "spetitem/sListDetail";
+	}//물품수정
 }

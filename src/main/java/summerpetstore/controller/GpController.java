@@ -23,13 +23,13 @@ public class GpController {
 	@RequestMapping("/spetitem/gpdelete")
 	public String deleteGp(@RequestParam("itemId") int itemId, Model model) {
 		if(gpService.is_GPJP_exist(gp))
-			model.addAttribute("deleteok", 0);	
+			model.addAttribute("gpdeleteok", 0);	
 		else
-			model.addAttribute("deleteok", 1);	
+			model.addAttribute("gpdeleteok", 1);	
 		
 		return "spetitem/categoryView"; 
 		
-	}//공동구매?��?��
+	}//공동구매삭제
 	
 	@RequestMapping("/market") 
 	public String deleteMgp(@RequestParam("itemId") int itemId, Model model) {
@@ -40,7 +40,7 @@ public class GpController {
 		
 		return "market/mListDetail"; 
 		
-	}//?��?��공동구매?��?��
+	}//장터공동구매삭제
 	
 	@RequestMapping("/gp/search") 
 	public String select(@RequestParam("name") String name, @RequestParam("itemKind") String itemKind) {
@@ -51,10 +51,10 @@ public class GpController {
 		gpService.filterPopular();
 		gpService.filterProgress();
 		gpService.filterCategory();
-		gpService.filterProduct();	//filter?��?��?? 무엇?���???��??
+		gpService.filterProduct();	//filter는 무슨 역할인가요?
 		return "gp/gpSearch"; 
 		
-	}//공동구매�???��
+	}//공동구매 검색
 	
 	
 }

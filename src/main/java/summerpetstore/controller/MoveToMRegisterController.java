@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MoveToMRegisterController {
 	@RequestMapping("/market/update") 
 	public String moveToMarketUpdate(@RequestParam("itemId") int itemId, @RequestParam("userId") String userId) {	
-		
+
 		return "market/iRegister"; 	
 	}//장터물품수정으로이동
 }
