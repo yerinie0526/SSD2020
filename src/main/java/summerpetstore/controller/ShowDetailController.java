@@ -13,7 +13,7 @@ import summerpetstore.service.SProductService;
 public class ShowDetailController {
 	
 	@Autowired
-	private SProductService sproductService;	//���������ㅻ��� ���깅��� ��������������������占�! ���밸��쇱���� ������������ ������������
+	private SProductService sproductService;	//���������ㅻ���?? ���깅���?? ��������������������?���??! ���밸��?������ ������������ ������������
 	ItemModel item;
 	
 	public void setCartService(SProductService sproductService) {
@@ -24,15 +24,15 @@ public class ShowDetailController {
 	public String showSpetitem(@RequestParam("itemId") int itemId, Model model) {
 		item = sproductService.showInfo(itemId);
 		model.addAttribute("item", item);
-		return "spetitem/sListDetail"; //���밸�源�������諭����������쎌�������������������� output view������ ����������������源���
-	}//�쇰�援щℓ臾쇳�����명��蹂닿린
+		return "spetitem/sListDetail"; //���밸�源�������諭����������?���������������������� output view������ ����������������源���
+	}//�쇰�援?�ℓ?��?�������명��蹂닿�??
 
 	@RequestMapping("/market/detail")	
 	public String showMarketItem(@RequestParam("itemId") int itemId, Model model) {
 		item = sproductService.showInfo(itemId);
 		model.addAttribute("item", item);
 		return "market/mListDetail"; 
-	}//�ν�곕Ъ�����명��蹂닿린
+	}//�ν�곕Ъ�����명��蹂?���??
 	
 	
 	@RequestMapping("/auction/detail")	
@@ -40,7 +40,7 @@ public class ShowDetailController {
 		item = sproductService.showInfo(auctionId);
 		model.addAttribute("item", item);
 		return "auction/aListDetail"; 
-	}//경매자세히보기
+	}//경매?��?��?��보기
 	
 
 	@RequestMapping("/gp/detail")	
@@ -48,6 +48,6 @@ public class ShowDetailController {
 		if(market물품)
 			return "market/mListDetail";
 		return "spetitem/gListDetail";
-	}//공동구매자세히보기
+	}//공동구매?��?��?��보기
 
 }

@@ -43,17 +43,17 @@ public class UserController {
 	
 	@RequestMapping("/register") //register
 	public String registerUser(@RequestParam("userId") String userId, Model model) {
-		String name = userService.registerUser(userId); 	//����������������占� �����쎌�� return ������������ username������������! 
+		String name = userService.registerUser(userId); 	//����������������?���?? �����쎌�� return ������������ username������������! 
 		model.addAttribute("username", name);
 		return "sucRegist";
-	}//����������������占�
+	}//����������������?���??
 	
 	@RequestMapping("/main") 
 	public String deleteUser(@RequestParam("userId") String userId, Model model) {
 		if(auctionService.is_auction_exist()){
-			auctionService.cancelSBId(userId);		//����������占� ������������������ ��������占� �����������밸���� ������������獰���占� ����������怨ㅼ�� ��������占� ������������
+			auctionService.cancelSBId(userId);		//����������?���?? ������������������ ��������?���?? �����������밸���� ������������?�����占�?? ����������?�ㅼ�� ��������?���?? ������������
 		}else if(marketService.is_market_exist()) {
-			marketService.deleteMarket(userId);		//��������������占� ���밸�源�������怨ㅼ�� �������� ��������占� ��������
+			marketService.deleteMarket(userId);		//��������������?���?? ���밸�源��������?�ㅼ�� �������� ��������?���?? ��������
 		}else if(gpService.is_gp_exist()){
 			gpService.deleteGP(userId);
 		}
@@ -66,7 +66,7 @@ public class UserController {
 	public String login(@RequestParam("username") String username, @RequestParam("password") String password) {
 		
 		return "main";
-	}//���멸���������
+	}//���멸���������??
 	
 	@RequestMapping("/mypage/update") //register�멨������ 
 	public String updateUser(@RequestParam("userId") String userId) {

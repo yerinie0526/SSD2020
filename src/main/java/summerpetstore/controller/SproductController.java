@@ -12,7 +12,7 @@ import summerpetstore.service.SProductService;
 @Controller
 public class SproductController {
 	@Autowired
-	private SProductService sproductService;	//���������ㅻ��� ���깅��� ��������������������占�! ���밸��쇱���� ������������ ������������
+	private SProductService sproductService;	//���������ㅻ���?? ���깅���?? ��������������������?���??! ���밸��?������ ������������ ������������
 	private ItemModel sp;
 	
 	public void setCartService(SProductService sproductService) {
@@ -23,7 +23,7 @@ public class SproductController {
 	public String registeritem(@RequestParam("itemId") int itemId, Model model) {
 		sp = sproductService.registerSP(itemId);
 		model.addAttribute("sp", sp);
-		return "spetitem/categoryView"; //����������������占� output view������ ����������������源���
+		return "spetitem/categoryView"; //����������������?���?? output view������ ����������������源���
 	}
 	
 	@RequestMapping("/spetitem/delete") //delete�멨������ 

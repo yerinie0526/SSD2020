@@ -1,3 +1,4 @@
+package summerpetstore.controller;
 //package summerpetstore.controller;
 //
 //import org.springframework.stereotype.Controller;

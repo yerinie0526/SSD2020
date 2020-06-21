@@ -8,49 +8,42 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import summerpetstore.dao.MarketDAO;
-import summerpetstore.model.ItemModel;
+import summerpetstore.model.Market;
 
 @Service
 public class MarketService {
 	
 	@Autowired
 	private MarketDAO mdao;
-	
 
-	@Transactional
-	public void registerItem(ItemModel im) { 
-		mdao.registerItem(im);
-	}
-	
-
-	@Transactional
-	public ItemModel showInfo(ItemModel im) { 
-		return mdao.showInfo(im.getItemId());
-	}
-	
-	
-	@Transactional
-	public void deleteItem(int itemId) { 
-		mdao.deleteItem(itemId);
+	public List<Market> getMarketList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 
-	@Transactional
-	public void updateItem(ItemModel im) { 
-		mdao.updateItem(im);
-	}
-	
-	
-	
-	public void updateItemStatus(int itemId) {
-		mdao.updateItemStatus(itemId);
-	}
-		
-
-	public List<ItemModel> searchItem(String itemname, String itemKind) {
-		List<ItemModel> imList;
-		imList = mdao.searchItem(itemname, itemKind);
-		return imList;
-	}
+	/*
+	 * @Transactional public void registerItem(Market im) { mdao.registerItem(im); }
+	 * 
+	 * 
+	 * @Transactional public Market showInfo(Market im) { return
+	 * mdao.showInfo(im.getItemId()); }
+	 * 
+	 * 
+	 * @Transactional public void deleteItem(int itemId) { mdao.deleteItem(itemId);
+	 * }
+	 * 
+	 * 
+	 * @Transactional public void updateItem(Market im) { mdao.updateItem(im); }
+	 * 
+	 * 
+	 * 
+	 * public void updateItemStatus(int itemId) { mdao.updateItemStatus(itemId); }
+	 * 
+	 * 
+	 * public List<Market> searchItem(String itemname, String itemKind) {
+	 * List<Market> imList; imList = mdao.searchItem(itemname, itemKind); return
+	 * imList; }
+	 */
 
 }
