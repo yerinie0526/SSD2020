@@ -97,7 +97,7 @@
 	
 	
 	<!--sucBid : 낙찰 경매 종료일이 되면 제일 높은 가격을 제시한 입찰자의 장바구니에 자동으로 담김-->
-	<select id="getFirstPrice"parameterType=int>
+	<select id="getFirstPrice" parameterType="int">
 		SELECT curMaxPrice
 		FROM Auction
 		WHERE auctionId=#{auctionId}

@@ -125,7 +125,9 @@ public class AuctionDAO {
 		//return GpMapper.searchGp(name, itemKind);
 	}
 	
-	
+	public int getFirstPrice(int auctionId) {
+		
+	}
 	
 
 }
