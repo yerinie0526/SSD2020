@@ -54,8 +54,8 @@ public class AuctionService {
 	}
 	
 	
-	public void updateBid(int auctionId, int price) {
-		adao.updateBid(auctionId, price);
+	public void updateBid(AuctionJPModel jpm) {
+		adao.updateBid(jpm);
 	}
 	
 	public void sucBid(AuctionModel am) {
@@ -63,7 +63,8 @@ public class AuctionService {
 	}
 	
 	public boolean isNewPrice(int price, int auctionId) {
-		
+		if(adao.getFirstPrice(auctionId) < price) return true;
+		else return false;
 	}
 
 }

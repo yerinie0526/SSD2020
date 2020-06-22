@@ -8,11 +8,16 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import summerpetstore.dao.repository.mapper.AuctionMapper;
 import summerpetstore.model.AuctionJPModel;
 import summerpetstore.model.AuctionModel;
 
 public class AuctionDAO {
+	
+	@Autowired
+	private AuctionMapper amapper;
 	
 	private String namespace = "summerpetstore.repository.mapper.AuctionMapper";
 	private SqlSessionFactory sqlSessionFactory = createSqlSessionFactory();
@@ -98,12 +103,8 @@ public class AuctionDAO {
 		//return GpMapper.searchGp(name, itemKind);
 	}
 	
-	public int updateBid(int auctionId, int price) {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		try {
-			int result = sqlSession.update(namespace + ".updateBid", actionId, price); 
-			return result;
-		}finally { sqlSession.close(); }
+	public void updateBid(AuctionJPModel jpm) {
+		amapper.updateBid(jpm);
 	}
 	
 //	public int deleteBid(int auctionId, int userId) {
@@ -126,7 +127,7 @@ public class AuctionDAO {
 	}
 	
 	public int getFirstPrice(int auctionId) {
-		
+		return amapper.getFirstPrice(auctionId);
 	}
 	
 
