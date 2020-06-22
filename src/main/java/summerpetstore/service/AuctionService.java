@@ -25,6 +25,14 @@ public class AuctionService {
 		return adao.searchAuction(am);
 	}
 	
+	public List<AuctionModel> searchAuctionByDday(AuctionModel am) { 
+		return adao.searchAuctionByDday(am);
+	}
+	
+	public List<AuctionModel> searchAuctionByCon(AuctionModel am) { 
+		return adao.searchAuctionByDday(am);
+	}
+	
 
 	public AuctionModel showInfo(int auctionId) { 
 		return adao.showInfo(auctionId);

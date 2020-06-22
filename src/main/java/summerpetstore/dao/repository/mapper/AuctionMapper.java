@@ -8,6 +8,8 @@ import summerpetstore.model.AuctionModel;
 public interface AuctionMapper {
 	
 	List<AuctionModel> searchAuction(AuctionModel am);
+	List<AuctionModel> searchAuctionByDday(AuctionModel am);
+	List<AuctionModel> searchAuctionByCon(AuctionModel am);
 	AuctionModel showInfo(int auctionId);
 	List<AuctionJPModel> showJPModel(int auctionId);
 	void registerAuction(AuctionModel am);

@@ -5,10 +5,69 @@
   <cache />
   
 	<!-- searchAuciton : 경매 검색-->
-	<select id="searchAuction" parameterType="summerstore.model.AuctionModel" resultType="summerstore.model.AuctionModel">
-		SELECT auctionId, dday, astatus, minprice
-		FROM auction
-		WHERE astatus=#{astatus} and productId=#{productId}
+	<select id="searchAuction" parameterType="summerstore.model.AuctionModel">
+		SELECT auctionId, dday, astatus, minprice, p.pname, c.cname
+		FROM auction a, product p, category c
+		<where>
+			a.productId = p.productId and p.categoryId = c.categoryId
+			<if test="name != null">
+				and name = #{name}
+			</if>
+			<if test="astatus != null">
+				AND astatus = #{astatus}
+			</if>
+			<if test="itemKind != null">
+				AND itemKind = #{itemKind}
+			</if>
+			<if test="cname != null">
+				AND c.cname = #{cname};
+			</if>
+		</where>
+	</select>
+	
+	
+	<!-- searchAuciton : 경매 검색 남은 날짜 촉박한순-->
+	<select id="searchAuctionByDday" parameterType="summerstore.model.AuctionModel">
+		SELECT auctionId, dday, astatus, minprice, p.pname, c.cname
+		FROM auction a, product p, category c
+		<where>
+			a.productId = p.productId and p.categoryId = c.categoryId
+			<if test="name != null">
+				and name = #{name}
+			</if>
+			<if test="astatus != null">
+				AND astatus = #{astatus}
+			</if>
+			<if test="itemKind != null">
+				AND itemKind = #{itemKind}
+			</if>
+			<if test="cname != null">
+				AND c.cname = #{cname};
+			</if>
+		</where>
+		ORDER BY dday
+	</select>
+	
+	<!-- searchAuciton : 경매 검색 인기순(참여자 명수)-->
+	<select id="searchAuctionByCon" parameterType="summerstore.model.AuctionModel">
+		SELECT auctionId, dday, astatus, minprice, p.pname, c.cname
+		FROM auction a, product p, category c
+		<where>
+			a.productId = p.productId and p.categoryId = c.categoryId
+			<if test="name != null">
+				and name = #{name}
+			</if>
+			<if test="astatus != null">
+				AND astatus = #{astatus}
+			</if>
+			<if test="itemKind != null">
+				AND itemKind = #{itemKind}
+			</if>
+			<if test="cname != null">
+				AND c.cname = #{cname};
+			</if>
+		</where>
+		ORDER BY currentCon DESC
 	</select>
 	<!-- 완료와 취소됨도 있어야할 것 같긴함 -->
 	
