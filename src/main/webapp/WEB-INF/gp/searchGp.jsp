@@ -1,4 +1,7 @@
+<%@page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../IncludeTop.jsp" %>
+
 
 <table style="border:none;border-collapse:collapse;width:100%">
 	<tr>
@@ -6,7 +9,7 @@
 	</tr>
 	<tr>
 		<td>
-			<form action="<c:url value="/spetstore/acution/SearchGp.do"/>" method="post">
+			<form action="<c:url value="/spetstore/auction/SearchGp.do"/>" method="post">
 		      	<select name="categoryId"> 
 		      		<option value="">--Select pet kind--</option>
 		      		<option value="1">dog</option>
@@ -37,7 +40,7 @@
 	</tr>
 </table>
 <table style="border:none;border-collapse:collapse;width:100%">
-<c:foreach var="gp" items="${gpList}">
+<c:forEach var="gp" items="${gpList}">
 	<tr>
 		<td>${gp.name}</td>
 	</tr>
@@ -57,6 +60,6 @@
 			${gp.deadline}
 		</td>
 	</tr>
-</c:foreach>
+</c:forEach>
 </table>
 <%@ include file="../IncludeBottom.jsp" %>

@@ -1,8 +1,9 @@
 eclipse.preferences.version=1
-encoding//src/main/java/summerpetstore/controller/CartController.java=UTF-8
-encoding//src/main/java/summerpetstore/controller/GpController.java=UTF-8
-encoding//src/main/java/summerpetstore/controller/MarketController.java=UTF-8
-encoding//src/main/java/summerpetstore/controller/ShowDetailController.java=UTF-8
-encoding//src/main/java/summerpetstore/controller/SproductController.java=UTF-8
-encoding//src/main/java/summerpetstore/controller/UserController.java=UTF-8
+encoding//src/main/java/dongduk/cs/ssd/summerpetstore/controller/CartController.java=UTF-8
+encoding//src/main/java/dongduk/cs/ssd/summerpetstore/controller/GpController.java=UTF-8
+encoding//src/main/java/dongduk/cs/ssd/summerpetstore/controller/MarketController.java=UTF-8
+encoding//src/main/java/dongduk/cs/ssd/summerpetstore/controller/ShowDetailController.java=UTF-8
+encoding//src/main/java/dongduk/cs/ssd/summerpetstore/controller/SproductController.java=UTF-8
+encoding//src/main/java/dongduk/cs/ssd/summerpetstore/controller/UserController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/market/mSearch.jsp=UTF-8

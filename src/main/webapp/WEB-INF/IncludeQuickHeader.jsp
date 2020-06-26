@@ -1,6 +1,6 @@
 <!-- 경매/공동구매/장터 -->
 <center>
-  <a href="<c:url value='/auction'/>">
+  <a href="<c:url value="/spetstore/auction/aSearch.do"/>">
     Auction </a>
     *
   <a href="<c:url value="/spetstore/gp/gpSearch.do"/>">

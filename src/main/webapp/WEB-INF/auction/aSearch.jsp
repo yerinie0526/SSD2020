@@ -1,4 +1,5 @@
 <%@ include file="../IncludeTop.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <table style="border:none;border-collapse:collapse;width:100%">
 	<tr>
@@ -40,7 +41,7 @@
 	</tr>
 </table>
 <table style="border:none;border-collapse:collapse;width:100%">
-<c:foreach var="ai" items="${aList}">
+<c:forEach var="ai" items="${aList}">
 	<tr>
 		<td><a href="<c:url value='/spetstore/auction/detail?auctionId=${ai.auctionId}'/>">${ai.name}</a></td>
 	</tr>
@@ -60,6 +61,6 @@
 			${ai.deadline}
 		</td>
 	</tr>
-</c:foreach>
+</c:forEach>
 </table>
 <%@ include file="../IncludeBottom.jsp" %>

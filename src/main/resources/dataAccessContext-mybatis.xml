@@ -70,7 +70,7 @@
     </bean>
 
     <!-- scan for mappers and let them be autowired -->
-    <mybatis:scan base-package="dongduk.cs.ssd.summerpetstore.repository.mapper" />
+    <mybatis:scan base-package="dongduk.cs.ssd.summerpetstore.dao.repository.mapper" />
     <!-- 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.jpetstore.dao.mybatis.mapper" />
