@@ -10,13 +10,13 @@
 			<form action="<c:url value="/spetstore/market/mSearch/mSearch.do"/>">
 		      	<select name="cname"> 
 		      		<option value="">--Select pet kind--</option>
-		      		<option value="1">dog</option>
+		      		<option value="강아지">dog</option>
 		      		<option value="2">cat</option>
 		      		<option value="3">fish</option>
 		      	</select>
 		      	<select name="itemKind"> <!-- itemKind ë³´ê¸° ìê°í´ë³´ê¸° -->
 		      		<option value="">--Select itemkind--</option>
-		      		<option value="1">bath product</option>
+		      		<option value="bath">bath product</option>
 		      		<option value="2">feeding Item</option>
 		      		<option value="3">care Item</option>
 		      	</select>
@@ -36,7 +36,7 @@
 		   </select>
 		</td>
 		<td>
-			<a href="/spetstore/market/mSearch/mRegister.do">등록하기</a>
+			<a href="<c:url value="/spetstore/market/mSearch/mRegister.do"/>">등록하기</a>
 		</td>
 	</tr>
 </table>

@@ -1,6 +1,8 @@
 <%@ include file="../IncludeTop.jsp" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<form:form modelAttribute="actionModel" action="aRegister">
+<form:form modelAttribute="itemModel" action="/spetstore/market/register">
 <p>
 	<form:label path="name">상품명 : </form:label>
 	<form:input path="name" />

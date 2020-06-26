@@ -13,12 +13,10 @@ public class MoveToMRegisterController {
 	}//장터물품수정으로이동
 	
 	
-	
-	
 	@RequestMapping("/spetstore/market/mSearch/mRegister.do") 
 	public String moveToMarketRegister() {	
 //@RequestParam("userId") String userId
 		System.out.println("################movetoMarketRegister");
 		return "/market/mRegister"; 	
-	}//장터물품수정으로이동
+	}
 }

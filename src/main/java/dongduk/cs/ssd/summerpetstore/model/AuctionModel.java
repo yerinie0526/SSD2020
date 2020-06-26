@@ -12,6 +12,7 @@ public class AuctionModel {
 	int minprice;
 	String astatus;
 	int productId;
+	
 	int sellerInfoId;
 	String firstId;
 	int currentCon;

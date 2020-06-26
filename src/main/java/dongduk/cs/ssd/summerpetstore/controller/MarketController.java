@@ -36,11 +36,11 @@ public class MarketController {
 //		return "market/mSearch"; 
 //	}
 //	
-//	  @RequestMapping("/market/register") 
-//	  public String registerMarket(@ModelAttribute("itemmodel")ItemModel itemmodel) 
-//	  {
-//		  marketService.registerItem(itemmodel); return "market/mSearach"; 
-//	  }//장터물품등록
+	  @RequestMapping("/spetstore/market/register") 
+	  public String registerMarket(@ModelAttribute("itemModel")ItemModel itemmodel) 
+	  {
+		  marketService.registerItem(itemmodel); return "market/mSearach"; 
+	  }//장터물품등록
 //	  
 //	  @RequestMapping("/market/delete") 
 //	  public String deleteMarket(@RequestParam("marketId") int marketId)
@@ -71,7 +71,7 @@ public class MarketController {
 			  @RequestParam("keyword") String keyword) throws Exception{
 		  System.out.println("#####################Controller");
 		  List<ItemModel> imList = marketService.searchItem(name, itemKind, keyword); 
-		  return new ModelAndView("mSearch", "mList", imList);
+		  return new ModelAndView("/market/mSearch", "mList", imList);
 	  
 	  }//징터검색
 	  
