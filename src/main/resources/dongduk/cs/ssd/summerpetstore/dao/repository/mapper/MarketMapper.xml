@@ -5,8 +5,10 @@
   <cache />
   
 	<!--장터에 물품 등록하기-->
-	<insert id="registerItem" parameterType="dongduk.cs.ssd.summerpetstore.model.ItemModel" 
-		useGeneratedKeys="true" keyProperty="id">
+	<insert id="registerItem" parameterType="dongduk.cs.ssd.summerpetstore.model.ItemModel" >
+		<selectKey keyProperty="itemId" resultType="int" order="BEFORE">
+			SELECT item_seq.nexval AS itemid FROM DUAL
+		</selectKey>
 		INSERT INTO item
 		VALUES (#{itemId}, "in progress", #{itemKind}, #{iname}, #{price}, #{description}, #{isGp}, #{productId}, #{sellerInfo})
 	</insert>
@@ -51,7 +53,7 @@
 		</if>
 		<if test="param3 != null">
 			AND lower(i.iname) like #{param3}
-			</if>
+		</if>
 	</select>
 
 	
