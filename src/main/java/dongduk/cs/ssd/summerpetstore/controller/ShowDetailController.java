@@ -20,7 +20,7 @@ public class ShowDetailController {
 		this.sproductService = sproductService;
 	}
 	
-	@RequestMapping("/spetitem/detail")	
+	@RequestMapping("/spetstore/spetitem/detail")	
 	public String showSpetitem(@RequestParam("itemId") int itemId, Model model) {
 		item = sproductService.showInfo(itemId);
 		model.addAttribute("item", item);
