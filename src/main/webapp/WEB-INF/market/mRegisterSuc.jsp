@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<p>장터에 성공적으로 물품이 등록되었습니다!</p>
-<p>접수 내용:</p>
+<p>Congratulation!! You success to register new item in the Summerpetstore Market!</p>
+<p>view market item detail:</p>
 <ul>
 	<li>Product Name : ${marketForm.name} </li>
 	<li>Pet Kind : ${marketForm.cname}</li>

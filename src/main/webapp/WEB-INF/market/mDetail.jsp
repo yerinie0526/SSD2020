@@ -3,13 +3,15 @@
 
 <h2>${ItemModel.name}</h2>
 <ul>
-	<li> 물품 번호 : ${ItemModel.itemId}</li>
-	<li> 동물 종 : ${ItemModel.categoryId}</li>
-	<li> 상품 종류 : ${ItemModel.ItemKind}</li>
-	<li> 상세 설명 : ${ItemModel.description}</li>
-	<li> 가격 : ${ItemModel.price}</li>
+	<li>Product Name : ${ItemModel.name} </li>
+	<li>Pet Kind : ${ItemModel.cname}</li>
+	<li>Item Kind: ${ItemModel.itemKind}</li>
+	<li>Price : ${ItemModel.price}</li>
+	<li>Contributing Way: ${ItemModel.pMethod}</li>
+	<li>Description : ${ItemModel.description}</li> 
+	<li>Item Status : ${ItemModel.istatus}</li>
 </ul>
 
-<p><a href="<c:url value='/spetstore/market/addCart?itemId=${ItemModel.itemId}' />">장바구니</a></p>
+<p><a href="<c:url value='/spetstore/market/addCart?itemId=${ItemModel.itemId}' />">Add Cart</a></p>
 
 <%@ include file="../IncludeBottom.jsp" %>

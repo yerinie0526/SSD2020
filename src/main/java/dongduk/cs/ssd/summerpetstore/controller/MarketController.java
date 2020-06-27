@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,98 +25,106 @@ import dongduk.cs.ssd.summerpetstore.service.MarketService;
 @Controller
 @SessionAttributes("marketForm")
 public class MarketController {
-	
-	@Autowired
-	private MarketService marketService;	
-	
-	
-	public void setMarketService(MarketService marketService) {
-		this.marketService = marketService;
-	}
-	
-	@ModelAttribute("categoryIds") 		// select ï¿½ê¹­æ´¹ëª„ì”¤ pKind ï¿½ì ™è¹‚ï¿½ ï¿½ï¿½ï¿½ì˜£
-	public List<String> cData() throws Exception{
-		List<String> cKinds = new ArrayList<String>();
-		cKinds.add("dog");
-		cKinds.add("cat");
-		cKinds.add("rabbit");
-		cKinds.add("fish");
-		return cKinds;
-	}
-	
-	@ModelAttribute("itemKinds")		// select ï¿½ê¹­æ´¹ëª„ì”¤ pGenre ï¿½ì ™è¹‚ï¿½ ï¿½ï¿½ï¿½ì˜£
-	public List<String> pGenreData() throws Exception{
-		List<String> iKinds = new ArrayList<String>();
-		iKinds.add("bath");
-		iKinds.add("feed");
-		iKinds.add("care");
-		return iKinds;
-	}
-	
-	@ModelAttribute("pMethods")		// select ï¿½ê¹­æ´¹ëª„ì”¤ pGenre ï¿½ì ™è¹‚ï¿½ ï¿½ï¿½ï¿½ì˜£
-	public List<String> mMethodData() throws Exception{
-		List<String> iKinds = new ArrayList<String>();
-		iKinds.add("parcel");
-		iKinds.add("in person");
-		return iKinds;
-	}
-	
-	@ModelAttribute("marketForm")
-	public MarketForm marketFormData() {
-		return new MarketForm();
-	}	
-	
-//	@RequestMapping("/market/main") 
-//	public String showMarketList(Model model) {
-//		List<Market> mList = marketService.getMarketList();
-//		model.addAttribute("mList", mList);
-//		return "market/mSearch"; 
-//	}
-//	
-	  @RequestMapping("/spetstore/market/mSearch/mRegisterSuc.do") 
-	  public String registerMarket(@ModelAttribute("marketForm") MarketForm marketForm, 
-			  SessionStatus sessionStatus, Model model){
-		  marketService.registerItem(marketForm); 
-		  sessionStatus.setComplete();
-		  System.out.println("################mregistersucc controller");
-		  return "market/mRegisterSuc"; 
-	  }//ï¿½ì˜£ï¿½ê½£è‡¾ì‡³ë­¹ï¿½ë²‘æ¿¡ï¿½
-//	  
-//	  @RequestMapping("/market/delete") 
-//	  public String deleteMarket(@RequestParam("marketId") int marketId)
-//	  {
-//		  marketService.deleteItem(marketId); 
-//		  return "market/mSearach";
-//	  }//ï¿½ì˜£ï¿½ê½£è‡¾ì‡³ë­¹ï¿½ê¶˜ï¿½ì £
-//	  
-//	  @RequestMapping("/market/mitemView") 
-//	  public String updateMarket(@RequestParam("userId") String userId) {
-//		  marketService.updateItem(userId); 
-//	  	  return "market/mListDetail";
-//	  }//ï¿½ì˜£ï¿½ê½£è‡¾ì‡³ë­¹ï¿½ë‹”ï¿½ì ™
-	  
-//	  @RequestMapping("/market/search") 
-//	  public String select(@RequestParam("name")String name, @RequestParam("itemKind")String itemKind, @RequestParam("keyword")String keyword) {
-//		  System.out.println("/market/search");
-//		  marketService.searchItem(name, itemKind, keyword); 
-//		  return "market/mListDetail";
-//	  
-//	  }//ï§ëº¥ê½£å¯ƒï¿½ï¿½ê¹‹
-	  
+   
+   @Autowired
+   private MarketService marketService;   
+   
+   
+   public void setMarketService(MarketService marketService) {
+      this.marketService = marketService;
+   }
+   
+   @ModelAttribute("categoryIds")       // select  ƒœê·¸ì¸ pKind   •ë³     ¥
+   public List<String> cData() throws Exception{
+      List<String> cKinds = new ArrayList<String>();
+      cKinds.add("dog");
+      cKinds.add("cat");
+      cKinds.add("rabbit");
+      cKinds.add("fish");
+      return cKinds;
+   }
+   
+   @ModelAttribute("itemKinds")      // select  ƒœê·¸ì¸ pGenre   •ë³     ¥
+   public List<String> pGenreData() throws Exception{
+      List<String> iKinds = new ArrayList<String>();
+      iKinds.add("bath");
+      iKinds.add("feed");
+      iKinds.add("care");
+      return iKinds;
+   }
+   
+   @ModelAttribute("pMethods")      // select  ƒœê·¸ì¸ pGenre   •ë³     ¥
+   public List<String> mMethodData() throws Exception{
+      List<String> iKinds = new ArrayList<String>();
+      iKinds.add("parcel");
+      iKinds.add("in person");
+      return iKinds;
+   }
+   
+   @ModelAttribute("marketForm")
+   public MarketForm marketFormData() {
+      return new MarketForm();
+   }   
+   
+//   @RequestMapping("/market/main") 
+//   public String showMarketList(Model model) {
+//      List<Market> mList = marketService.getMarketList();
+//      model.addAttribute("mList", mList);
+//      return "market/mSearch"; 
+//   }
+//   
+     @RequestMapping("/spetstore/market/mSearch/mRegisterSuc.do") 
+     public String registerMarket(@ModelAttribute("marketForm") MarketForm marketForm, 
+           SessionStatus sessionStatus, Model model){
+        marketService.registerItem(marketForm); 
+        sessionStatus.setComplete();
+        System.out.println("################mregistersucc controller");
+        return "market/mRegisterSuc"; 
+     }
+//     
+//     @RequestMapping("/spetstore/market/detail")
+//     public String showMarketDetail(
+//           @RequestParam("itemId") String itemId, ModelMap model){
+//        ItemModel itemmodel = marketService.showMarketDetail(itemId);
+//        model.put("itemmodel", itemmodel);
+//        System.out.println("################mregistersucc controller");
+//        return "market/mRegisterSuc"; 
+//     }
+     
+     // ¥ „°ë¬¼í’ˆ “±ë¡ 
+//     
+//     @RequestMapping("/market/delete") 
+//     public String deleteMarket(@RequestParam("marketId") int marketId)
+//     {
+//        marketService.deleteItem(marketId); 
+//        return "market/mSearach";
+//     }// ¥ „°ë¬¼í’ˆ ‚­  œ
+//     
+//     @RequestMapping("/market/mitemView") 
+//     public String updateMarket(@RequestParam("userId") String userId) {
+//        marketService.updateItem(userId); 
+//          return "market/mListDetail";
+//     }// ¥ „°ë¬¼í’ˆ ˆ˜  •
+     
+//     @RequestMapping("/market/search") 
+//     public String select(@RequestParam("name")String name, @RequestParam("itemKind")String itemKind, @RequestParam("keyword")String keyword) {
+//        System.out.println("/market/search");
+//        marketService.searchItem(name, itemKind, keyword); 
+//        return "market/mListDetail";
+//     
+//     }//×Ù•í„°ê²  ƒ‰
+     
 
-	  @RequestMapping(value="/spetstore/market/mSearch/mSearch.do") 
-	  public ModelAndView submit(HttpServletRequest request, 
-			  @RequestParam("cname") String name, 
-			  @RequestParam("itemKind") String itemKind, 
-			  @RequestParam("keyword") String keyword) throws Exception{
-		  System.out.println("#####################Controller");
-		  List<ItemModel> imList = marketService.searchItem(name, itemKind, keyword); 
-		  //System.out.println(imList.get(0).getName());
-		  return new ModelAndView("/market/mSearch", "mList", imList);
-	  
-	  }//ï§ëº¥ê½£å¯ƒï¿½ï¿½ê¹‹
-	  
-	  
-	  
-	
-	 }
+     @RequestMapping(value="/spetstore/market/mSearch/mSearch.do") 
+     public ModelAndView submit(HttpServletRequest request, 
+           @RequestParam("cname") String name, 
+           @RequestParam("itemKind") String itemKind, 
+           @RequestParam("keyword") String keyword) throws Exception{
+        System.out.println("#####################Controller");
+        List<ItemModel> imList = marketService.searchItem(name, itemKind, keyword); 
+        //System.out.println(imList.get(0).getName());
+        return new ModelAndView("/market/mSearch", "mList", imList);
+     
+     }//×Ù•í„°ê²  ƒ‰
+     
+    }
