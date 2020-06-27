@@ -16,34 +16,29 @@
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/shop/viewCategory.do?categoryId=FISH"/>">
-                     <img border="0" src="../images/fish_icon.gif" /></a>
+                  <a href="<c:url value="/spetstore/category/fish"/>">
+                     FISH</a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/shop/viewCategory.do?categoryId=DOGS"/>">
-                    <img border="0" src="../images/dogs_icon.gif" /></a>
+                  <a href="<c:url value="/spetstore/category/dog"/>">
+                    DOG</a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/shop/viewCategory.do?categoryId=CATS"/>">
-                    <img border="0" src="../images/cats_icon.gif" /></a>
+                  <a href="<c:url value="/spetstore/category.do/rabbit"/>">
+                   RABBIT</a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/shop/viewCategory.do?categoryId=REPTILES"/>">
-                    <img border="0" src="../images/reptiles_icon.gif" /></a>
+                  <a href="<c:url value="/spetstore/category/fish"/>">
+                    FISH</a>
                 </td>
               </tr>
-              <tr>
-                <td>
-                  <a href="<c:url value="/shop/viewCategory.do?categoryId=BIRDS"/>">
-                    <img border="0" src="../images/birds_icon.gif" /></a>
-                </td>
-              </tr>
+              
             </table>
           </td>
           <td style="text-align:center;background-color:white;height:300;width:100%">

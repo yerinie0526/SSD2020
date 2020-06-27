@@ -25,7 +25,7 @@ public class CartController {
 		this.cartService = cartService;
 	}
 	
-	@RequestMapping("/spetitem/addCart") 
+	@RequestMapping("/spetstore/spetitem/addCart.do") 
 	public String addCart(@RequestParam("itemId") int itemId,@RequestParam("userId") String userId, @RequestParam("price") int price, 
 			@RequestParam("name") String name, @RequestParam("inStock") boolean inStock, @RequestParam("quantity") int quantity) {
 		CartModel cart;	

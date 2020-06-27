@@ -1,5 +1,7 @@
 package dongduk.cs.ssd.summerpetstore.dao.repository.mapper;
 
+import java.util.List;
+
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 
 public interface SproductMapper {
@@ -9,6 +11,7 @@ public interface SproductMapper {
 	void registerSP(ItemModel im);
 	void deleteSP(int itemId);
 	void updateSP(ItemModel im);
+	List<ItemModel> getProductListByCategory(int itemId);
 
 
 }
