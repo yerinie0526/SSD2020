@@ -2,6 +2,7 @@ package dongduk.cs.ssd.summerpetstore.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -29,7 +30,7 @@ public class ShowMyDetailController {
 		this.sproductservice = sproductservice;
 	}
 	
-	@RequestMapping("/spetitem/update") 
+	@RequestMapping("/gspetitem/detail") 
 	public String showMyGp(@RequestParam("itemId") int itemId, @RequestParam("userId") String userId) {
 		sproductservice.showInfo(itemId);
 		return "gspetitem/gListDetail"; 
@@ -41,9 +42,10 @@ public class ShowMyDetailController {
 //		return "auction/aListDetail"; 
 //	}//참여한 경매 보기
 	
-//	@RequestMapping("/market/detail") 
-//	public String showMyMarket(@RequestParam("itemId") int itemId, @RequestParam("userId") String userId) {
-//		marketservice.showInfo(itemId, userId);
-//		return "market/gListDetail"; 
-//	}//내놓은 물건 보기(장터)
+	@RequestMapping("/market/detail/{itemId}") 
+		public String showMyMarket(@PathVariable("itemId") int itemId, @RequestParam("userId") String userId) {
+		marketservice.showInfo(itemId, userId);
+		return "market/gListDetail"; 
+	}//내놓은 물건 보기(장터)
+	
 }

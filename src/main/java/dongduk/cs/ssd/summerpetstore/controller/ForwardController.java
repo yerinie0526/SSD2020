@@ -16,15 +16,21 @@ public class ForwardController {
 	public void setForwardService(ForwardService forwardService) {
 		this.forwardService = forwardService;
 	}
-	
-	@RequestMapping("/mypage")
-	public String showMyPage(@RequestParam("userId") String userId) {
-		if(forwardService.is_admin())
-			return "user/summerPage"; 
-		else
+	*/
+	@RequestMapping("/spetstore/user/myPage.do")
+	public String showMyPage() {
+		//if(forwardService.is_admin())
+			//return "user/summerPage"; 
+		//else
 			return"user/myPage"; 
 	}//마이페이지로 이동
-*/	
+	
+	@RequestMapping("/spetstore/user/signonForm.do")
+	public String showLogin() {
+		
+			return"user/login"; 
+	}//로그인 이동
+/*
 	@RequestMapping("/market") 
 	public String moveMarketSearch() {
 		return"market/mSearch"; 
@@ -45,4 +51,5 @@ public class ForwardController {
 	public String moveGPSearch() {
 			return""; 
 	}//공동구매 검색창으로이동
+	*/	
 }

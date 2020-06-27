@@ -26,22 +26,23 @@ public class CartController {
 	}
 	
 	@RequestMapping("/spetitem/addCart") 
-	public String addCart(@RequestParam("itemId") int itemId,@RequestParam("userId") String userId, @RequestParam("price") int price, Model model) {
+	public String addCart(@RequestParam("itemId") int itemId,@RequestParam("userId") String userId, @RequestParam("price") int price, 
+			@RequestParam("name") String name, @RequestParam("inStock") boolean inStock, @RequestParam("quantity") int quantity) {
 		CartModel cart;	
 		
 		if(cartService.containsItemId(itemId, userId))
-			cartService.incrementQuantityByItemId(itemId, userId); 	//장바구니에 존재하는 물품이면 수량만 증가시켜줌
+			cartService.incrementQuantityByItemId(userId, itemId); 	//장바구니에 존재하는 물품이면 수량만 증가시켜줌
 		else
-			cartService.addCart(userId, itemId);
+			cartService.addCart(itemId, name, price, inStock, quantity, userId);
 			
 		//model.addAttribute("cart", cart);
 		return "spetitem/sListDetail"; 	
 	}//장바구니 담기
 
-	@RequestMapping("/cart") 
-	public String createCart(HttpSession sesseion) {
-		if(cartService.is_item_exist())
-			return "user/myPage/cart"; 
+	@RequestMapping("/spetstore/user/myPage/cart.do") 
+	public String createCart() {
+		//if(cartService.is_item_exist())
+			return "user/Cart"; 
 		
 	}//장바구니로 이동
 	

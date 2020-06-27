@@ -14,12 +14,12 @@ public class SProductService {
 	
 	@Transactional
 	public ItemModel showInfo(int itemId) {
-		return spRepository.showInfo(itemId);
+		return spRepository.showInfoSP(itemId);
 	}
 
-	public ItemModel registerSP(int itemId) {
+	public void registerSP(ItemModel im) {
 		// TODO Auto-generated method stub
-		return null;
+		spRepository.registerSP(im);
 	}
 
 	public ItemModel deleteSP(int itemId) {
