@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../IncludeTop.jsp" %>
+
 <div align="center">
   <form action='<c:url value="/spetstore/signon.do"/>' method="POST">
     <c:if test="${!empty signonForwardAction}">
@@ -13,11 +13,11 @@
       </tr>
       <tr>
         <td>Username:</td>
-        <td><input type="text" name="username" size="20" value="j2ee" /></td>
+        <td><input type="text" name="userId" size="20" value="" /></td>
       </tr>
       <tr>
         <td>Password:</td>
-        <td><input type="password" name="password" size="20" value="j2ee" /></td>
+        <td><input type="password" name="password" size="20" value="" /></td>
       </tr>
       <tr>
         <td>&nbsp;</td>

@@ -85,6 +85,7 @@ public class UserController {
 	public ModelAndView handleRequest(HttpServletRequest request,
 			@RequestParam("userId") String userId,
 			@RequestParam("password") String password,
+			@RequestParam(value="forwardAction", required=false) String forwardAction,
 			Model model) {
 		UserModel usermodel = userService.getUser(userId, password);
 		if (usermodel == null) {

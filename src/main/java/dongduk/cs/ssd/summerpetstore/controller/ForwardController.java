@@ -28,7 +28,7 @@ public class ForwardController {
 	@RequestMapping("/spetstore/user/signonForm.do")
 	public String showLogin() {
 		
-			return"user/login"; 
+			return"user/SignonForm"; 
 	}//로그인 이동
 /*
 	@RequestMapping("/market") 
