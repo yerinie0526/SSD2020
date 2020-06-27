@@ -11,13 +11,13 @@ public class ItemModel implements Serializable{
 	private int price;
 	private String description;
 	private int isGP;
-	private int categoryId;
-	private int productId;
+	private String cname;
 	public ItemModel() {
 		
 	}
+	
 	public ItemModel(int itemId, String istatus, String itemKind, String name, int price, String description, int isGP,
-			int categoryId, int productId) {
+			String cname) {
 		super();
 		this.itemId = itemId;
 		this.istatus = istatus;
@@ -26,9 +26,9 @@ public class ItemModel implements Serializable{
 		this.price = price;
 		this.description = description;
 		this.isGP = isGP;
-		this.categoryId = categoryId;
-		this.productId = productId;
+		this.cname = cname;
 	}
+
 	public int getItemId() {
 		return itemId;
 	}
@@ -71,16 +71,11 @@ public class ItemModel implements Serializable{
 	public void setIsGP(int isGP) {
 		this.isGP = isGP;
 	}
-	public int getcategoryId() {
-		return categoryId;
+	public String getCname() {
+		return cname;
 	}
-	public void setcategoryId(int categoryId) {
-		this.categoryId = categoryId;
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
-	public int getProductId() {
-		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
+	
 }
