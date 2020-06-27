@@ -10,14 +10,14 @@
 			SELECT item_seq.nexval AS itemid FROM DUAL
 		</selectKey>
 		INSERT INTO item
-		VALUES (#{itemId}, "in progress", #{itemKind}, #{iname}, #{price}, #{description}, #{isGp}, #{productId}, #{sellerInfo})
+		VALUES (#{itemId}, "in progress", #{itemKind}, #{iname}, #{price}, #{description}, #{isGp}, #{productId}, #{sellerInfo}, #{cname})
 	</insert>
 	
 	<!--장터 물품 자세히 보기-->
 	<select id="showInfo" >
-		SELECT itemId, iname, price, description, productId, itemKind
+		SELECT itemId, iname, price, description, itemKind
 		FROM item
-		WHERE itemId = #{itemId}
+		WHERE itemId=#{itemId}
 	</select>
 	
 	<!--장터 물품 삭제-->
