@@ -3,9 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<form:form modelAttribute="marketForm" action="/spetstore/market/mSearch//mRegisterSuc.do" >
+<c:set var="targetUrl"><c:url value="/spetstore/market/mSearch/mRegisterSuc.do" /></c:set>
+<div align="center">
+<form:form modelAttribute="marketForm" action="${targetUrl}" >
 <p>
-	<form:label path="name">Prouduct Name : </form:label>
+	<form:label path="name">Product Name : </form:label>
 	<form:input path="name" />
 	<form:errors path="name" />
 </p>
@@ -45,5 +47,5 @@
          value="cancel"
          onclick="location.href='<c:url value='/spetstore/market/mSearch.do' />'" />
 </form:form>
-
+</div>
 <%@ include file="../IncludeBottom.jsp" %>
