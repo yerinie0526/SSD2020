@@ -81,15 +81,16 @@ public class MarketController {
         System.out.println("################mregistersucc controller");
         return "market/mRegisterSuc"; 
      }
-//     
-//     @RequestMapping("/spetstore/market/detail")
-//     public String showMarketDetail(
-//           @RequestParam("itemId") String itemId, ModelMap model){
-//        ItemModel itemmodel = marketService.showMarketDetail(itemId);
-//        model.put("itemmodel", itemmodel);
-//        System.out.println("################mregistersucc controller");
-//        return "market/mRegisterSuc"; 
-//     }
+     
+     @RequestMapping("/spetstore/market/detail")
+     public String showMarketDetail(
+           @RequestParam("itemId") int itemId, ModelMap model){
+        ItemModel itemmodel = marketService.showInfo(itemId);
+        System.out.println("##########detail controller");
+        model.addAttribute("itemmodel", itemmodel);
+        System.out.println(itemmodel.getItemId());
+        return "market/mRegisterSuc"; 
+     }
      
      // ž¥ „°ë¬¼í’ˆ “±ë¡ 
 //     

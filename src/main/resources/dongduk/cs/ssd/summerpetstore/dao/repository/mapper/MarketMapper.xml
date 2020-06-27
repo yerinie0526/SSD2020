@@ -14,16 +14,16 @@
 	</insert>
 	
 	<!--장터 물품 자세히 보기-->
-	<select id="showInfo" >
-		SELECT itemId, iname, price, description, itemKind
+	<select id="showInfo" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
+		SELECT *
 		FROM item
-		WHERE itemId=#{itemId}
+		WHERE itemid = #{value}
 	</select>
 	
 	<!--장터 물품 삭제-->
 	<delete id="deleteItem">
 		DELETE FROM item
-		WHERE = itemId = #{itemId}
+		WHERE itemId = #{itemId}
 	</delete>
 	
 	<!--장터물품 수정 -->

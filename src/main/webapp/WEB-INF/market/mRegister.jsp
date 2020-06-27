@@ -27,11 +27,6 @@
 	</form:select>
 	<form:errors path="itemKind" />
 </p>
-<p> <!-- 직거래/택배 -->
-	<form:label path="pMethod">Contributing Way : </form:label>
-	<form:radiobuttons items="${pMethods}" path="pMethod"/>
-	<form:errors path="pMethod" />
-</p>
 <p>
 	<form:label path="price">Price : </form:label>
 	<form:input path="price" />
