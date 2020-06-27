@@ -2,6 +2,7 @@ package dongduk.cs.ssd.summerpetstore.model;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class ItemModel implements Serializable{
 	private int itemId;
 	private String istatus;
@@ -10,13 +11,13 @@ public class ItemModel implements Serializable{
 	private int price;
 	private String description;
 	private int isGP;
-	private int cateogryId;
+	private int categoryId;
 	private int productId;
 	public ItemModel() {
 		
 	}
 	public ItemModel(int itemId, String istatus, String itemKind, String name, int price, String description, int isGP,
-			int cateogryId, int productId) {
+			int categoryId, int productId) {
 		super();
 		this.itemId = itemId;
 		this.istatus = istatus;
@@ -25,7 +26,7 @@ public class ItemModel implements Serializable{
 		this.price = price;
 		this.description = description;
 		this.isGP = isGP;
-		this.cateogryId = cateogryId;
+		this.categoryId = categoryId;
 		this.productId = productId;
 	}
 	public int getItemId() {
@@ -70,11 +71,11 @@ public class ItemModel implements Serializable{
 	public void setIsGP(int isGP) {
 		this.isGP = isGP;
 	}
-	public int getCateogryId() {
-		return cateogryId;
+	public int getcategoryId() {
+		return categoryId;
 	}
-	public void setCateogryId(int cateogryId) {
-		this.cateogryId = cateogryId;
+	public void setcategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 	public int getProductId() {
 		return productId;

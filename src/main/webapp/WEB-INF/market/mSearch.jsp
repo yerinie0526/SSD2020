@@ -12,6 +12,7 @@
 		      		<option value="">--Select pet kind--</option>
 		      		<option value="dog">dog</option>
 		      		<option value="cat">cat</option>
+		      		<option value="rabbit">rabbit</option>
 		      		<option value="fish">fish</option>
 		      	</select>
 		      	<select name="itemKind"> <!-- itemKind ë³´ê¸° ìê°í´ë³´ê¸° -->
@@ -37,7 +38,7 @@
 		   </select>
 		</td>
 		<td>
-			<a href="<c:url value="/spetstore/market/mSearch/mRegister.do"/>">등록하기</a>
+			<a href="<c:url value="/spetstore/market/mSearch/mRegister.do"/>">market register</a>
 		</td>
 	</tr>
 </table>
