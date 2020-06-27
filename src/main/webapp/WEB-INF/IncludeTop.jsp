@@ -5,7 +5,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-  <title>JPetStore</title>
+  <title>SummerPetStore</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Cache-Control" content="max-age=0">
   <meta http-equiv="Cache-Control" content="no-cache">
