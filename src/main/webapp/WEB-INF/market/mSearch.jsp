@@ -10,15 +10,16 @@
 			<form action="<c:url value="/spetstore/market/mSearch/mSearch.do"/>">
 		      	<select name="cname"> 
 		      		<option value="">--Select pet kind--</option>
-		      		<option value="강아지">dog</option>
-		      		<option value="2">cat</option>
-		      		<option value="3">fish</option>
+		      		<option value="dog">dog</option>
+		      		<option value="cat">cat</option>
+		      		<option value="fish">fish</option>
 		      	</select>
 		      	<select name="itemKind"> <!-- itemKind ë³´ê¸° ìê°í´ë³´ê¸° -->
 		      		<option value="">--Select itemkind--</option>
 		      		<option value="bath">bath product</option>
 		      		<option value="2">feeding Item</option>
-		      		<option value="3">care Item</option>
+		      		<option value="3">care Item</option>\
+		      		\
 		      	</select>
 		        <input type="text" name="keyword" size="14" />
 		        <input src="../../images/search.gif" type="image"/>
@@ -43,7 +44,7 @@
 <table style="border:none;border-collapse:collapse;width:100%">
 <c:forEach var="mi" items="${mList}">
 	<tr>
-		<td><a href="<c:url value='/spetstore/market/detail?itemId=${mi.itemId}'/>">${ai.name}</a></td>
+		<td><a href="<c:url value='/spetstore/market/detail?itemId=${mi.itemId}'/>">${mi.name}</a></td>
 	</tr>
 	<tr>
 		<td>

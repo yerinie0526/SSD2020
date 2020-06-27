@@ -39,9 +39,9 @@
 	
 	<!--장터검색-->
 	<select id="searchItem" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
-		SELECT i.key as itemId, i.iname as name, i.price as price
+		SELECT i.itemid as itemId, i.iname as name, i.price as price
 		FROM Item i, category c, product p
-		WHERE p.categoryId = c.categoryId and p.productId = i.productId and c.cname=#{param1} and i.itemKind=#{param2} 
+		WHERE p.categoryId = c.categoryId and p.productId = i.productId 
 	</select>
 
 	
