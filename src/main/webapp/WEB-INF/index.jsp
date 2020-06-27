@@ -16,25 +16,25 @@
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/spetstore/category.do?categoryId=fish"/>">
+                  <a href="<c:url value="/spetstore/category/fish"/>">
                      FISH</a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/spetstore/category.do?categoryId=dog"/>">
+                  <a href="<c:url value="/spetstore/category/dog"/>">
                     DOG</a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/spetstore/category.do?categoryId=rabbit"/>">
+                  <a href="<c:url value="/spetstore/category.do/rabbit"/>">
                    RABBIT</a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/spetstore/category.do?categoryId=fish"/>">
+                  <a href="<c:url value="/spetstore/category/fish"/>">
                     FISH</a>
                 </td>
               </tr>
