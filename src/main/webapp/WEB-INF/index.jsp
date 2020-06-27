@@ -16,8 +16,8 @@
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/shop/viewCategory.do?categoryId=FISH"/>">
-                     <img border="0" src="../images/fish_icon.gif" /></a>
+                  <a href="<c:url value="/spetstore/category.do?categoryId=FISH"/>">
+                     FISH</a>
                 </td>
               </tr>
               <tr>
