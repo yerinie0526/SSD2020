@@ -16,3 +16,4 @@
 <p><a href="<c:url value='/spetstore/gp/gpsuc?itemId=${GpModel.itemId}' />">참가</a></p>
 
 <%@ include file="../IncludeBottom.jsp" %>
+<!-- 주석 -->
