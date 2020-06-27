@@ -12,7 +12,7 @@ import dongduk.cs.ssd.summerpetstore.service.AuctionService;
 @Controller
 public class AuctionController {
 	private AuctionService auctionservice;
-	
+	//주석 달고 푸시 
 	@Autowired
 	public void setAuctionService(AuctionService auctionservice) {
 		this.auctionservice = auctionservice;
