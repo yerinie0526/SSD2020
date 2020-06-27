@@ -72,7 +72,7 @@ public class MarketController {
 //		return "market/mSearch"; 
 //	}
 //	
-	  @RequestMapping("/spetstore/market/mSearch//mRegisterSuc.do") 
+	  @RequestMapping("/spetstore/market/mSearch/mRegisterSuc.do") 
 	  public String registerMarket(@ModelAttribute("marketForm") MarketForm marketForm, 
 			  SessionStatus sessionStatus, Model model){
 		  marketService.registerItem(marketForm); 
