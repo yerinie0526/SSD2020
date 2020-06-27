@@ -19,7 +19,7 @@
 <table class="top">
 	<tr>
 		<td>
-	    	<a href="<c:url value="/shop/index.do"/>">
+	    	<a href="<c:url value="/index"/>">
 	        (go to home)</a>
 	    </td>
 	    
@@ -27,11 +27,11 @@
 	      <a href="<c:url value="/spetstore/user/myPage/cart.do"/>">
 	        (cart)</a>
 	      <c:if test="${empty userSession.account}" >
-	        <a href="<c:url value="/shop/signonForm.do"/>">
+	        <a href="<c:url value="/spetstore/user/signonForm.do"/>">
 	          (login)</a>
 	      </c:if>
 	      <c:if test="${!empty userSession.account}" >
-	        <a href="<c:url value="/shop/signoff.do"/>">	<!-- controller에서 로그아웃 처리하기 -->
+	        <a href="<c:url value="/spetstore/user/signoff.do"/>">	<!-- controller에서 로그아웃 처리하기 -->
 	          (logout)</a>
 	        <a href="<c:url value="/spetstore/user/myPage.do"/>">
 	         (myPage)</a>
