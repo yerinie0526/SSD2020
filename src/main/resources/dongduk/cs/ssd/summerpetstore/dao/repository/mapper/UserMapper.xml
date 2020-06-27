@@ -4,16 +4,16 @@
 <mapper namespace="dongduk.cs.ssd.summerpetstore.dao.repository.mapper.UserMapper">
   <cache />
 
-  <select id="getUserByUsername" resultType="User">
+  <select id="getUserByUsername" resultType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     SELECT *
     FROM suser u, signon s
     WHERE u.userid = #{userId} and s.userid = u.userid
     
   </select>
 
-  <select id="getUserByUsernameAndPassword" resultType="User">
+  <select id="getUserByUsernameAndPassword" resultType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     SELECT *
-    FROM user
+    FROM suser
     WHERE userid=#{param1} and password=#{param2} and 
  
   </select>
@@ -22,8 +22,8 @@
     SELECT USERNAME AS VALUE FROM SIGNON
   </select>
 
-  <update id="updateAccount" parameterType="User">
-    UPDATE user SET
+  <update id="updateAccount" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
+    UPDATE suser SET
       EMAIL = #{email},
       name = #{name},
       address = #{address},
@@ -31,8 +31,8 @@
     WHERE USERID = #{userid}
   </update>
 
-  <insert id="insertAccount" parameterType="User">
-    INSERT INTO ACCOUNT
+  <insert id="insertAccount" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
+    INSERT INTO suser
     VALUES (#{userid}, #{username}, #{password}, #{email}, #{address}, #{phone})
   </insert>
 
@@ -68,12 +68,12 @@
     VALUES (#{languagePreference}, #{favouriteCategoryId}, #{username})
   </insert>-->
 
-  <update id="updateSignon" parameterType="Account">
+  <update id="updateSignon" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     UPDATE SIGNON SET PASSWORD = #{password}
     WHERE USERNAME = #{userid}
   </update>
 
-  <insert id="insertSignon" parameterType="Account">
+  <insert id="insertSignon" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     INSERT INTO SIGNON (PASSWORD,USERNAME)
     VALUES (#{password}, #{userid})
   </insert>

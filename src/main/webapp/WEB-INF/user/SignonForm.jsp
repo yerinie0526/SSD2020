@@ -13,20 +13,10 @@
       </tr>
       <tr>
         <td>Username:</td>
-<<<<<<< HEAD
         <td><input type="text" name="userId" size="20" value="" /></td>
-=======
-        <td><input type="text" name="username" size="20"  /></td>
->>>>>>> branch 'develop' of https://github.com/yerinie0526/SSD2020.git
-      </tr>
       <tr>
         <td>Password:</td>
-<<<<<<< HEAD
         <td><input type="password" name="password" size="20" value="" /></td>
-=======
-        <td><input type="password" name="password" size="20" /></td>
->>>>>>> branch 'develop' of https://github.com/yerinie0526/SSD2020.git
-      </tr>
       <tr>
         <td>&nbsp;</td>
         <td><input type="submit" value="login"></td>
