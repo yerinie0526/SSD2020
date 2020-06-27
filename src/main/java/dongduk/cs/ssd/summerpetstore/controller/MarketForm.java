@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class MarketForm implements Serializable{
-	private String categoryId;
+	private String cname;
 	private String itemKind;
 	private String pMethod;
 	private String description;
@@ -14,21 +14,23 @@ public class MarketForm implements Serializable{
 		
 	}
 
-	public MarketForm(String categoryId, String itemKind, String pMethod, String description, String name) {
+	
+	public MarketForm(String cname, String itemKind, String pMethod, String description, String name) {
 		super();
-		this.categoryId = categoryId;
+		this.cname = cname;
 		this.itemKind = itemKind;
 		this.pMethod = pMethod;
 		this.description = description;
 		this.name = name;
 	}
 
-	public String getCategoryId() {
-		return categoryId;
+
+	public String getCname() {
+		return cname;
 	}
 
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
+	public void setCname(String cname) {
+		this.cname = cname;
 	}
 
 	public String getItemKind() {
@@ -62,7 +64,6 @@ public class MarketForm implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 
-		
+			
 }
