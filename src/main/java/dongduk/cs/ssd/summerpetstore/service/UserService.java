@@ -15,12 +15,12 @@ public class UserService {
 	@Autowired
 	private UserDAO udao;
 	
-	public UserModel getAccount(String username) {
-		return udao.getAccount(username);
+	public UserModel getUser(String username) {
+		return udao.getUser(username);
 	}
 
-	public UserModel getAccount(String username, String password) {
-		return udao.getAccount(username, password);
+	public UserModel getUser(String username, String password) {
+		return udao.getUser(username, password);
 	}
 
 	public void insertUser(UserModel account) {
@@ -38,10 +38,6 @@ public class UserService {
 //	UserModel getUserModel(String userId) {
 //		
 //	}
-
-	public UserModel getUser(String userId, String password) {
-		return null;
-	}
 
 //	void insertUserModel(UserModel UserModel) {
 //		

@@ -15,24 +15,23 @@ public class UserDAO {
 	@Autowired
 	private UserMapper umapper;
 	
-	public UserModel getAccount(String username) throws DataAccessException {
+	public UserModel getUser(String username) throws DataAccessException {
 		return umapper.getUserByUsername(username);
 	}
 
-	public UserModel getAccount(String username, String password) 
-			throws DataAccessException {
+	public UserModel getUser(String username, String password) throws DataAccessException {
 		return umapper.getUserByUsernameAndPassword(username, password);
 	}
 
 	public void insertUser(UserModel account) throws DataAccessException {
 		umapper.insertUser(account);
-		umapper.insertProfile(account);
+		//umapper.insertProfile(account);
 		umapper.insertSignon(account);
 	}
 
 	public void updateUser(UserModel account) throws DataAccessException {
 		umapper.updateUser(account);
-		umapper.updateProfile(account);
+		//umapper.updateProfile(account);
 		if (account.getPassword() != null && account.getPassword().length() > 0) 
 		{
 			umapper.updateSignon(account);

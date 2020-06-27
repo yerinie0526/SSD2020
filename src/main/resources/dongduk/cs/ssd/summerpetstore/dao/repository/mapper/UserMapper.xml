@@ -13,8 +13,8 @@
 
   <select id="getUserByUsernameAndPassword" resultType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     SELECT *
-    FROM suser
-    WHERE userid=#{param1} and password=#{param2} and 
+    FROM suser u, signon s
+    WHERE userid=#{param1} and password=#{param2} and s.userid = u.userid
  
   </select>
 
@@ -22,7 +22,7 @@
     SELECT USERNAME AS VALUE FROM SIGNON
   </select>
 
-  <update id="updateAccount" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
+  <update id="updateUser" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     UPDATE suser SET
       EMAIL = #{email},
       name = #{name},
@@ -31,7 +31,7 @@
     WHERE USERID = #{userid}
   </update>
 
-  <insert id="insertAccount" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
+  <insert id="insertUser" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     INSERT INTO suser
     VALUES (#{userid}, #{username}, #{password}, #{email}, #{address}, #{phone})
   </insert>
