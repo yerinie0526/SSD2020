@@ -1,6 +1,8 @@
 package dongduk.cs.ssd.summerpetstore.model;
 
-public class ItemModel {
+import java.io.Serializable;
+
+public class ItemModel implements Serializable{
 	private int itemId;
 	private String istatus;
 	private String itemKind;

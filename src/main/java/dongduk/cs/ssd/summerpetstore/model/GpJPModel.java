@@ -1,6 +1,8 @@
 package dongduk.cs.ssd.summerpetstore.model;
 
-public class GpJPModel {
+import java.io.Serializable;
+
+public class GpJPModel implements Serializable{
 	private String itemId;
 	private String userName;
 	private int isEnd;

@@ -1,8 +1,9 @@
 package dongduk.cs.ssd.summerpetstore.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class GpModel {
+public class GpModel implements Serializable{
 	
 	private String gpStatus;
 	private Date deadline;

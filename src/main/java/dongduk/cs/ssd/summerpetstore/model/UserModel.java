@@ -1,6 +1,8 @@
 package dongduk.cs.ssd.summerpetstore.model;
 
-public class UserModel {
+import java.io.Serializable;
+
+public class UserModel implements Serializable{
 	
 	private String userId; //ex) yerinie0526
 	private String username; //ex) �̿���

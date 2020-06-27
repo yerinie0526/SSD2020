@@ -1,6 +1,8 @@
 package dongduk.cs.ssd.summerpetstore.model;
 
-public class AuctionJPModel {
+import java.io.Serializable;
+
+public class AuctionJPModel implements Serializable{
 	
 	int auctionId; //물품번호
 	String userId; //예시: yerinie0526'
