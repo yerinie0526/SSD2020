@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import dongduk.cs.ssd.summerpetstore.controller.MarketForm;
 import dongduk.cs.ssd.summerpetstore.dao.MarketDAO;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 
@@ -22,7 +23,11 @@ public class MarketService {
 //	}
 	
 	
-	@Transactional public void registerItem(ItemModel im) { mdao.registerItem(im); }
+	@Transactional 
+	public void registerItem(MarketForm im) { 
+		mdao.registerItem(im); 
+	}
+	
 	 /* 
 	 * 
 	 * @Transactional public Market showInfo(Market im) { return

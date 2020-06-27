@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 
 @Controller
 @SessionAttributes("marketForm")
@@ -60,4 +59,6 @@ public class MoveToMRegisterController {
 		System.out.println("################movetoMarketRegister");
 		return "/market/mRegister"; 	
 	}
+		
+	
 }

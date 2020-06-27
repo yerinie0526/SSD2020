@@ -3,9 +3,10 @@ package dongduk.cs.ssd.summerpetstore.dao.repository.mapper;
 import java.util.List;
 
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
+import dongduk.cs.ssd.summerpetstore.controller.MarketForm;
 
 public interface MarketMapper {
-	ItemModel registerItem(ItemModel im);
+	void registerItem(MarketForm im);
 	
 	ItemModel showInfo(int itemId);
 	

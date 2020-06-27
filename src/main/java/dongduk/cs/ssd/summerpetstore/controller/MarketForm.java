@@ -9,21 +9,30 @@ public class MarketForm implements Serializable{
 	private String pMethod;
 	private String description;
 	private String name;
+	private int price;
 	
 	public MarketForm() {
 		
 	}
 
-	
-	public MarketForm(String cname, String itemKind, String pMethod, String description, String name) {
+	public MarketForm(String cname, String itemKind, String pMethod, String description, String name, int price) {
 		super();
 		this.cname = cname;
 		this.itemKind = itemKind;
 		this.pMethod = pMethod;
 		this.description = description;
 		this.name = name;
+		this.price = price;
 	}
 
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
 
 	public String getCname() {
 		return cname;

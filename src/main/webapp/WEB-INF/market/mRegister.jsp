@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<form:form modelAttribute="marketForm" action="/spetstore/market/register">
+<form:form modelAttribute="marketForm" action="/spetstore/market/mSearch//mRegisterSuc.do" >
 <p>
 	<form:label path="name">Prouduct Name : </form:label>
 	<form:input path="name" />
@@ -31,12 +31,19 @@
 	<form:errors path="pMethod" />
 </p>
 <p>
+	<form:label path="price">Price : </form:label>
+	<form:input path="price" />
+	<form:errors path="price" />
+</p>
+<p>
 	<form:label path="">Description : </form:label>
 	<form:textarea path="description" cols="20" row="3"/>
 	<form:errors path="description" />
 </p>
 <input type="submit" value="register" />
-<input type="button" value="취소"/>
+<input type="button"
+         value="cancel"
+         onclick="location.href='<c:url value='/spetstore/market/mSearch.do' />'" />
 </form:form>
 
 <%@ include file="../IncludeBottom.jsp" %>

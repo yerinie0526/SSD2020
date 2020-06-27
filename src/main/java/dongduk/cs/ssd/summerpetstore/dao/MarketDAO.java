@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import dongduk.cs.ssd.summerpetstore.controller.MarketForm;
 import dongduk.cs.ssd.summerpetstore.dao.repository.mapper.MarketMapper;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 
@@ -19,7 +20,7 @@ public class MarketDAO {
 	private MarketMapper mmapper;
 		
 	
-	public void registerItem(ItemModel im) throws DataAccessException{
+	public void registerItem(MarketForm im) throws DataAccessException{
 		mmapper.registerItem(im);
 	}
 	
