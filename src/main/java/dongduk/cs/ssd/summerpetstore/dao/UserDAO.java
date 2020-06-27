@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Repository;
 
 import dongduk.cs.ssd.summerpetstore.dao.repository.mapper.UserMapper;
 import dongduk.cs.ssd.summerpetstore.model.UserModel;
 
+@Repository
 public class UserDAO {
 	
 	@Autowired

@@ -41,11 +41,11 @@ public class AccountFormController {
 		this.us = us;
 	}
 
-	@Autowired
-	private AccountFormValidator validator;
-	public void setValidator(AccountFormValidator validator) {
-		this.validator = validator;
-	}
+//	@Autowired
+//	private AccountFormValidator validator;
+//	public void setValidator(AccountFormValidator validator) {
+//		this.validator = validator;
+//	}
 		
 	@ModelAttribute("accountForm")
 	public AccountForm formBackingObject(HttpServletRequest request) 
