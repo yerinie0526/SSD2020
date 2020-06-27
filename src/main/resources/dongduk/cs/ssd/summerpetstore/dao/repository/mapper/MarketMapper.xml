@@ -5,9 +5,10 @@
   <cache />
   
 	<!--장터에 물품 등록하기-->
-	<insert id="registerItem" >
+	<insert id="registerItem" parameterType="dongduk.cs.ssd.summerpetstore.model.ItemModel" 
+		useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO item
-		VALUES (#{itemId}, "거래중", #{itemKind}, #{iname}, #{price}, #{description}, #{isGp}, #{productId}, #{sellerInfo})
+		VALUES (#{itemId}, "in progress", #{itemKind}, #{iname}, #{price}, #{description}, #{isGp}, #{productId}, #{sellerInfo})
 	</insert>
 	
 	<!--장터 물품 자세히 보기-->
@@ -41,7 +42,16 @@
 	<select id="searchItem" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
 		SELECT i.itemid as itemId, i.iname as name, i.price as price
 		FROM Item i, category c, product p
-		WHERE p.categoryId = c.categoryId and p.productId = i.productId 
+		WHERE p.categoryId = c.categoryId and p.productId = i.productId
+		<if test='param1 != null'>
+			AND c.cname=#{param1}
+		</if>
+		<if test="param2 != null">
+			AND i.itemkind=#{param2}
+		</if>
+		<if test="param3 != null">
+			AND lower(i.iname) like #{param3}
+			</if>
 	</select>
 
 	
