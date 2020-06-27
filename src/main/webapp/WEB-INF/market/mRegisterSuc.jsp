@@ -10,7 +10,6 @@
 	<li>Pet Kind : ${marketForm.cname}</li>
 	<li>Item Kind: ${marketForm.itemKind}</li>
 	<li>Price : ${marketForm.price}</li>
-	<li>Contributing Way: ${marketForm.pMethod}</li>
 	<li>Description : ${marketForm.description}</li>
 </ul>
 <p><a href="<c:url value='/spetstore/market/mSearch.do' />">Go to Market List</a></p>

@@ -2,10 +2,12 @@ package dongduk.cs.ssd.summerpetstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import dongduk.cs.ssd.summerpetstore.model.UserModel;
 import dongduk.cs.ssd.summerpetstore.service.GpService;
 
 @Controller
@@ -30,6 +32,13 @@ public class ForwardController {
 		
 			return"user/SignonForm"; 
 	}//로그인 이동
+	
+	@RequestMapping("/spetstore/user/newAccount.do")
+	public String showRegister(Model model) {
+		  model.addAttribute("user", new UserModel());
+
+			return"user/register"; 
+	}//회원가입 이동
 /*
 	@RequestMapping("/market") 
 	public String moveMarketSearch() {

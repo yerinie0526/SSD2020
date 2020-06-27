@@ -45,13 +45,14 @@ public class UserController {
 	}
 	
 	
-	/*
-	 * @RequestMapping("/register") //register public String
-	 * registerUser(@RequestParam("userId") String userId, Model model) { String
-	 * name = userService.registerUser(userId); model.addAttribute("username",
-	 * name); return "sucRegist"; }//회원가입
-	 * 
-	 * @RequestMapping("/main") public String deleteUser(@RequestParam("userId")
+	
+	  @RequestMapping("/spetstore/register.do") //register 
+	  public String registerUser(@RequestParam("userId") String userId, Model model) { 
+	  String name = userService.registerUser(userId); 
+	  model.addAttribute("username",name); 
+	  return "user/sucRegist"; }//회원가입
+	  
+	 /* @RequestMapping("/main") public String deleteUser(@RequestParam("userId")
 	 * String userId, Model model) { if(auctionService.is_auction_exist()){
 	 * auctionService.cancelSBId(userId); }else if(marketService.is_market_exist())
 	 * { marketService.deleteMarket(userId); }else if(gpService.is_gp_exist()){
@@ -64,7 +65,7 @@ public class UserController {
 	 * @RequestMapping("/spetstore/signon.do") public String login() { return
 	 * "user/login"; }//로그인페이지로 이동
 	 */
-	@RequestMapping("/logincheck") 
+	@RequestMapping("/spetstore/logincheck") 
 	public ModelAndView logincheck(@ModelAttribute UserModel um, HttpSession session) {
 		boolean result = userService.logincheck(um, session);
 		ModelAndView mav = new ModelAndView();
