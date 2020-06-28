@@ -69,7 +69,7 @@
 	</tr>
 </c:forEach>
 <tr>
- <td><b><a href='<c:url value="/shop/listOrders.do"/>'>My Orders</a></b></td>
+ <td><b><a href='<c:url value="/spetstore/listOrders.do"/>'>My Orders</a></b></td>
  </tr>
 </table>
 

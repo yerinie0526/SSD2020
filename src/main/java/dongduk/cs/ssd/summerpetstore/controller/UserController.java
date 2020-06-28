@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.model.UserModel;
@@ -129,18 +130,29 @@ public class UserController {
 		  sessionStatus.setComplete();
 		  System.out.println("########logout");
 		  return "redirect: /summerpetstore/index"; 
-	  }//濡쒓렇�븘�썐
+	  }//로그아웃
 	  
 	  
 	  
 	  @RequestMapping("/spetstore/user/myPage.do") 
-	  public ModelAndView myPage(@RequestParam("userId") String userId,) {
-		  
-		  List<ItemModel> imList = marketService.searchItem(name, itemKind, keyword); 
-	        //System.out.println(imList.get(0).getName());
-	        return new ModelAndView("/market/mSearch", "mList", imList);
-			 return "user/myPage"; 
-			 }//장바구니로 이동
+	  public ModelAndView myPage(HttpServletRequest request) {
+		  UserSession userSession = 
+					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		  	List<ItemModel> imList = marketService.searchMarketByUser(userSession.getUserId()); 
+	        return new ModelAndView("/user/myPage", "mList", imList);
+	   }//마이페이지로 이동
+	  
+	  @RequestMapping("/spetstore/listOrders.do") 
+	  public ModelAndView myOrders(HttpServletRequest request) {
+		  UserSession userSession = 
+					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		  	List<ItemModel> imList = marketService.searchMarketByUser(userSession.getUserId()); 
+	        return new ModelAndView("/user/myPage", "mList", imList);
+	   }//주문내역으로 이동
+	  
+	  
+	  
+	  
 	  
 	  
 	
