@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
+import dongduk.cs.ssd.summerpetstore.model.CartModel;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.model.UserModel;
 import dongduk.cs.ssd.summerpetstore.service.*;
@@ -32,8 +33,15 @@ public class UserController {
 	private MarketService marketService;
 	@Autowired
 	private GpService gpService;	
-		
 	
+	@Autowired
+	private CartService cartService;
+	
+	
+	public void setCartService(CartService cartService) {
+		this.cartService = cartService;
+	}
+		
 	UserModel user;
 
 	public void setUserService(UserService userService) {
@@ -151,7 +159,15 @@ public class UserController {
 	   }//주문내역으로 이동
 	  
 	  
-	  
+		@RequestMapping("/spetstore/user/myPage/cart.do") 
+		public ModelAndView showCart(HttpServletRequest request) {
+			System.out.println("#####################Cart Controller");
+			UserSession userSession = 
+					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+	        List<CartModel> cartList = cartService.showCartList(userSession.getUserId()); 
+	        return new ModelAndView("/user/myPage/Cart", "cartList", cartList);
+			
+		}//장바구니로 이동
 	  
 	  
 	  
