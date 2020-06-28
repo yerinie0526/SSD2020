@@ -28,14 +28,14 @@
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/spetstore/category.do/rabbit"/>">
+                  <a href="<c:url value="/spetstore/category/rabbit"/>">
                    RABBIT</a>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <a href="<c:url value="/spetstore/category/fish"/>">
-                    FISH</a>
+                  <a href="<c:url value="/spetstore/category/cat"/>">
+                    CAT</a>
                 </td>
               </tr>
               

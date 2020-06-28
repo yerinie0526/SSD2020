@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.service.SProductService;
+import dongduk.cs.ssd.summerpetstore.service.SproductService;
 
 @Controller
 public class SproductController {
 	@Autowired
-	private SProductService sproductService;	
+	private SproductService sproductService;	
 	private ItemModel sp;
 	
-	public void setCartService(SProductService sproductService) {
+	public void setSproductService(SproductService sproductService) {
 		this.sproductService = sproductService;
 	}
 
