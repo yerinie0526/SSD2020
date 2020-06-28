@@ -49,7 +49,7 @@
 	</tr>
 </c:foreach> --%>
 <tr>
-	<td>팝니다(내가 장터에 올린 물품)</td>
+	<td>My Market</td>
 </tr>
 <c:forEach var="mi" items="${mList}">
 	<tr>
