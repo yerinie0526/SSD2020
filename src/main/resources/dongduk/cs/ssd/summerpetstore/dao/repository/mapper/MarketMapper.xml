@@ -44,10 +44,11 @@
 	<select id="searchItem" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
 		SELECT itemid as itemId, iname as name, price
 		FROM Item
+		WHERE 1=1
 			<!-- <if test='param1 != null'>
 				cname=#{param1}
 			</if>
-			<if test='param1 != null && param2 != null'>
+			<if test='param2 != null'>
 				cname=#{param1} AND itemkind=#{param2}
 			</if>
 			<if test="param1 == null && param2 != null">
@@ -65,8 +66,7 @@
 			<if test="param1 != null && param2 == null && param3 != null">
 				cname=#{param1} AND lower(name) like #{param3}
 			</if>-->
-		
-		
+
 	</select>
 	
 	
