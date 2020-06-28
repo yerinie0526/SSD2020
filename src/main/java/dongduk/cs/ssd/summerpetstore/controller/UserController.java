@@ -175,11 +175,6 @@ public class UserController {
 		}//장바구니로 이동
 	  
 	  
-	  
-	
-	  
-	  
-	  
 	/*
 	 * @RequestMapping("/mypage/update") public String
 	 * updateUser(@RequestParam("userId") String userId) {

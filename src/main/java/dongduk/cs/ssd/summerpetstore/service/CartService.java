@@ -38,11 +38,10 @@ public class CartService {
 //	}
 //	
 //
-//	@Transactional
-//	public void addCart(String userId, int itemId) { 
-//		
-//		
-//	}
+	@Transactional
+	public void addCart(String userId, int itemId) { 
+		cartdao.addCart(userId, itemId);
+	}
 //	
 //
 //	@Transactional
