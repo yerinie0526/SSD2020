@@ -15,7 +15,7 @@
 	
 	<!--장터 물품 자세히 보기-->
 	<select id="showInfo" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
-		SELECT itemid, iname AS name, itemkind, price, idescription AS description, istatus
+		SELECT itemid, iname AS name, itemkind AS itemKind, price, idescription AS description, istatus, cname
 		FROM item
 		WHERE itemid = #{value}
 	</select>

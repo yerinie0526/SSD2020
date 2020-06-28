@@ -125,7 +125,7 @@ public class MarketController {
            @RequestParam("itemId") int itemId) throws Exception{
         ItemModel iData = marketService.showInfo(itemId);
         System.out.println("##########detail controller");
-        System.out.println(iData.getItemKind());
+        System.out.println(iData.getCname());
         return new ModelAndView("market/mDetail", "iData", iData);
      }
      

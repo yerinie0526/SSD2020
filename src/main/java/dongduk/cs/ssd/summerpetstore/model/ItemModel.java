@@ -28,7 +28,7 @@ public class ItemModel implements Serializable{
 		this.isGP = isGP;
 		this.cname = cname;
 	}
-
+	
 	public int getItemId() {
 		return itemId;
 	}
