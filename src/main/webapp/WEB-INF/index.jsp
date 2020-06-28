@@ -9,8 +9,8 @@
             <table id="index">
               <tr>
                 <td>
-                <c:if test="${!empty userSession.account}">
-			       <b><i><font size="4" color="RED">Welcome ${userSession.account.firstName}!</font></i></b>
+                <c:if test="${!empty userSession.userId}">
+			       <b><i><font size="4" color="RED">Welcome!</font></i></b>
                 </c:if>&nbsp;
                 </td>
               </tr>

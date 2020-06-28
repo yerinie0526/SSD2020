@@ -10,6 +10,8 @@ public interface UserMapper {
 
 	UserModel getUserByUsernameAndPassword(String username, String password);
 	
+	UserModel getUserById(String userId);
+	
 	List<String> getUsernameList();
 	  
 	void insertUser(UserModel account);

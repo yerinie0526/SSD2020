@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import dongduk.cs.ssd.summerpetstore.model.UserModel;
 import dongduk.cs.ssd.summerpetstore.service.*;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 @Controller
 @SessionAttributes("userSession")
@@ -46,12 +47,12 @@ public class UserController {
 	
 	
 	
-	  @RequestMapping("/spetstore/register.do") //register 
-	  public String registerUser(@RequestParam("userId") String userId, Model model) { 
-	  String name = userService.registerUser(userId); 
-	  model.addAttribute("username",name); 
-	  return "user/sucRegist"; }//회원가입
-	  
+	/*
+	 * @RequestMapping("/spetstore/register.do") //register public String
+	 * registerUser(@RequestParam("userId") String userId, Model model) { String
+	 * name = userService.registerUser(userId); model.addAttribute("username",name);
+	 * return "user/sucRegist"; }//회원가입
+	 */	  
 	 /* @RequestMapping("/main") public String deleteUser(@RequestParam("userId")
 	 * String userId, Model model) { if(auctionService.is_auction_exist()){
 	 * auctionService.cancelSBId(userId); }else if(marketService.is_market_exist())
@@ -61,59 +62,76 @@ public class UserController {
 	 * return "main"; }//회원탈퇴
 	 */	
 	
+	 
 	/*
-	 * @RequestMapping("/spetstore/signon.do") public String login() { return
-	 * "user/login"; }//로그인페이지로 이동
-	 */
-	@RequestMapping("/spetstore/logincheck") 
-	public ModelAndView logincheck(@ModelAttribute UserModel um, HttpSession session) {
-		boolean result = userService.logincheck(um, session);
-		ModelAndView mav = new ModelAndView();
-		if(result == true) {
-			mav.setViewName("main");
-			mav.addObject("msg", "success");
-		}//로그인성공
-		else {
-			mav.setViewName("user/login");
-			mav.addObject("msg", "fail");
-		}//로그인실패
-		return mav;
-	}//로그인처리
-	
+	 * @RequestMapping("/spetstore/logincheck") public ModelAndView
+	 * logincheck(@ModelAttribute UserModel um, HttpSession session) { boolean
+	 * result = userService.logincheck(um, session); ModelAndView mav = new
+	 * ModelAndView(); if(result == true) { mav.setViewName("main");
+	 * mav.addObject("msg", "success"); }//로그인성공 else {
+	 * mav.setViewName("user/login"); mav.addObject("msg", "fail"); }//로그인실패 return
+	 * mav; }//로그인처리
+	 */	
 	
 	//login
+//	@RequestMapping("/spetstore/signon.do")
+//	public ModelAndView handleRequest(HttpServletRequest request,
+//			@RequestParam("userId") String userId,
+//			@RequestParam("password") String password,
+//			@RequestParam(value="forwardAction", required=false) String forwardAction,
+//			Model model) {
+//		UserModel usermodel = userService.getUser(userId, password);
+//		if (usermodel == null) {
+//			return new ModelAndView("Error", "message", 
+//					"Invalid username or password.  Signon failed.");
+//		}
+//		else {
+//			UserSession userSession = new UserSession(usermodel);
+//			//PagedListHolder<Product> myList = new PagedListHolder<Product>(this.petStore.getProductListByCategory(account.getFavouriteCategoryId()));
+//			//myList.setPageSize(4);
+//			//userSession.setMyList(myList);
+//			model.addAttribute("userSession", userSession);
+//			if (forwardAction != null) 
+//				return new ModelAndView("redirect:" + forwardAction);
+//			else 
+//				return new ModelAndView("index");
+//		}
+//	}
+	
 	@RequestMapping("/spetstore/signon.do")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			@RequestParam("userId") String userId,
-			@RequestParam("password") String password,
-			@RequestParam(value="forwardAction", required=false) String forwardAction,
-			Model model) {
-		UserModel usermodel = userService.getUser(userId, password);
+			@RequestParam("password") String password, Model model) {
+		UserModel usermodel = userService.getUserById(userId);
 		if (usermodel == null) {
 			return new ModelAndView("Error", "message", 
 					"Invalid username or password.  Signon failed.");
 		}
 		else {
-			UserSession userSession = new UserSession(usermodel);
-			//PagedListHolder<Product> myList = new PagedListHolder<Product>(this.petStore.getProductListByCategory(account.getFavouriteCategoryId()));
-			//myList.setPageSize(4);
-			//userSession.setMyList(myList);
-			model.addAttribute("userSession", userSession);
-			if (forwardAction != null) 
-				return new ModelAndView("redirect:" + forwardAction);
-			else 
+			if (password.equals(usermodel.getPassword())) {
+				UserSession userSession = new UserSession(usermodel, password);
+				model.addAttribute("userSession", userSession);
 				return new ModelAndView("index");
+			}
+			else
+				return new ModelAndView("redirect:" + "/spetstore/signon.do");
+				
 		}
 	}
 	
-	
+	  @RequestMapping("/spetstore/user/signoff.do") 
+	  public String logout(HttpSession session, SessionStatus sessionStatus) {
+		  session.removeAttribute("userSession");
+		  session.invalidate();
+		  sessionStatus.setComplete();
+		  System.out.println("########logout");
+		  return "redirect: http://localhost:8081/summerpetstore/index"; 
+	  }//로그아웃
+	  
 	/*
-	 * @RequestMapping("/logout") public String logout(HttpSession sesseion) {
-	 * userService.logout(sesseion);
-	 * 
-	 * return "main"; }//로그아웃
-	 * 
 	 * @RequestMapping("/mypage/update") public String
 	 * updateUser(@RequestParam("userId") String userId) {
 	 * userService.updateMyPage(userId); return "user/myPage"; }//회원정보수정
-	 */}
+	 */	 
+	
+}

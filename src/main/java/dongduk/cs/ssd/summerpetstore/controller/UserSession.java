@@ -8,10 +8,27 @@ import dongduk.cs.ssd.summerpetstore.model.UserModel;
 public class UserSession implements Serializable {
 
 	private UserModel usermodel;
+	private String userId;
 
 //	private PagedListHolder<Product> myList;
+	
+	public UserSession() {
+	}
+	
+	public UserSession(UserModel usermodel, String userId) {
+		this.usermodel = usermodel;
+		this.userId = userId;
+	}
 
-	public UserSession(UserModel usermodel) {
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public void setUsermodel(UserModel usermodel) {
 		this.usermodel = usermodel;
 	}
 

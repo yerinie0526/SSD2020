@@ -15,7 +15,12 @@
     SELECT *
     FROM suser u, signon s
     WHERE userid=#{param1} and password=#{param2} and s.userid = u.userid
- 
+  </select>
+  
+  <select id="getUserById" resultType="dongduk.cs.ssd.summerpetstore.model.UserModel">
+    SELECT *
+    FROM suser u
+    WHERE userid=#{value}
   </select>
 
   <select id="getUsernameList" resultType="java.lang.String">

@@ -82,15 +82,7 @@ public class MarketController {
         return "market/mRegisterSuc"; 
      }
      
-     @RequestMapping("/spetstore/market/detail")
-     public String showMarketDetail(
-           @RequestParam("itemId") int itemId, ModelMap model){
-        ItemModel itemmodel = marketService.showInfo(itemId);
-        System.out.println("##########detail controller");
-        model.addAttribute("itemmodel", itemmodel);
-        System.out.println(itemmodel.getItemId());
-        return "market/mRegisterSuc"; 
-     }
+     
      
      // ž¥ „°ë¬¼í’ˆ “±ë¡ 
 //     
@@ -127,5 +119,14 @@ public class MarketController {
         return new ModelAndView("/market/mSearch", "mList", imList);
      
      }//×Ù•í„°ê²  ƒ‰
+     
+     @RequestMapping("/spetstore/market/detail")
+     public ModelAndView showMarketDetail(
+           @RequestParam("itemId") int itemId) throws Exception{
+        ItemModel iData = marketService.showInfo(itemId);
+        System.out.println("##########detail controller");
+        System.out.println(iData.getName() + iData.getDescription());
+        return new ModelAndView("market/mDetail", "iData", iData);
+     }
      
     }
