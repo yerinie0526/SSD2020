@@ -3,7 +3,7 @@
 
 <table style="border:none;border-collapse:collapse;width:100%">
 <tr>
-	<td> <a href="<c:url value="/spetstore/user/editAccount.do"/>">내 정보 수정</a></td>
+	<td> <a href="<c:url value="/spetstore/user/editAccount.do"/>">Edit My Info</a></td>
 </tr>
 <tr>
 	<td>My Auction</td>

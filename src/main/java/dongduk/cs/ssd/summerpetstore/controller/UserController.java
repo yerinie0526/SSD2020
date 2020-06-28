@@ -121,7 +121,7 @@ public class UserController {
 		}
 		else {
 			if (password.equals(usermodel.getPassword())) {
-				UserSession userSession = new UserSession(usermodel, password);
+				UserSession userSession = new UserSession(usermodel, userId);
 				model.addAttribute("userSession", userSession);
 				return new ModelAndView("index");
 			}
@@ -147,6 +147,7 @@ public class UserController {
 		  UserSession userSession = 
 					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		  	List<ItemModel> imList = marketService.searchMarketByUser(userSession.getUserId()); 
+		  	System.out.println("###################" + userSession.getUserId());
 	        return new ModelAndView("/user/myPage", "mList", imList);
 	   }//마이페이지로 이동
 	  
