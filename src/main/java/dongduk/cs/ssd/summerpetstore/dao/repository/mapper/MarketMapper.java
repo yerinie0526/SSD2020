@@ -17,4 +17,6 @@ public interface MarketMapper {
 	ItemModel updateItemStatus(int istatus, int itemId);
 	
 	List<ItemModel> searchItem(String cname, String itemKind, String keyword);
+	
+	List<ItemModel> searchMarketByUser(String userId);
 }

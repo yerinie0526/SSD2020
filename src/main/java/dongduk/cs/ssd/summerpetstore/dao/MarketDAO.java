@@ -39,5 +39,8 @@ public class MarketDAO {
 		return mmapper.searchItem(cname, itemKind, keyword);
 	}
 	
+	public List<ItemModel> searchMarketByUser(String userId){
+		return mmapper.searchMarketByUser(userId);
+	}
 
 }

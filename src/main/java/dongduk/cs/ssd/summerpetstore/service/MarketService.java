@@ -52,5 +52,11 @@ public class MarketService {
 		  imList = mdao.searchItem(cname, itemKind, keyword); 
 		  return imList; 
 	}
+	  
+	  public List<ItemModel> searchMarketByUser(String userId) {
+		  List<ItemModel> imList; 
+		  imList = mdao.searchMarketByUser(userId); 
+		  return imList; 
+	}
 
 }

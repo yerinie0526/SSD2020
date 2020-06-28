@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../IncludeTop.jsp" %>
 
@@ -7,7 +6,7 @@
 	<td> <a href="<c:url value="/spetstore/user/editAccount.do"/>">내 정보 수정</a></td>
 </tr>
 <tr>
-	<td>경매</td>
+	<td>My Auction</td>
 </tr>
 <%-- <c:foreach var="ai" items="${aList}">
 	<tr>
@@ -28,7 +27,7 @@
 	</tr>
 </c:foreach> --%>
 <tr>
-	<td>내가 참여한 공동구매</td>
+	<td>My Group Purchases</td>
 </tr>
 <%-- <c:foreach var="gp" items="${gpList}">
 	<tr>

@@ -19,13 +19,10 @@ public class ForwardController {
 		this.forwardService = forwardService;
 	}
 	*/
-	@RequestMapping("/spetstore/user/myPage.do")
-	public String showMyPage() {
-		//if(forwardService.is_admin())
-			//return "user/summerPage"; 
-		//else
-			return"user/myPage"; 
-	}//마이페이지로 이동
+	//@RequestMapping("/spetstore/user/myPage.do")
+	//public String showMyPage() {
+	//		return"user/myPage"; 
+	//}//마이페이지로 이동
 	
 	@RequestMapping("/spetstore/user/signonForm.do")
 	public String showLogin() {

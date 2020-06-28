@@ -68,6 +68,15 @@
 		
 		
 	</select>
+	
+	
+		<!--장터검색-->
+	<select id="searchMarketByUser" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
+		SELECT itemid as itemId, iname as name, price
+		FROM Item
+		where sellerinfoid=#{param1}
+	</select>
+	
 
 	
 
