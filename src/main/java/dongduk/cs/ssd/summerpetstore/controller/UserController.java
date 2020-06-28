@@ -165,8 +165,12 @@ public class UserController {
 			System.out.println("#####################Cart Controller");
 			UserSession userSession = 
 					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-	        List<CartModel> cartList = cartService.showCartList(userSession.getUserId()); 
-	        return new ModelAndView("/user/myPage/Cart", "cartList", cartList);
+			if (userSession != null) {
+		        List<CartModel> cartList = cartService.showCartList(userSession.getUserId()); 
+		        return new ModelAndView("/user/myPage/Cart", "cartList", cartList);
+			}
+			else 
+				return new ModelAndView("redirect: /summerpetstore/spetstore/user/signonForm.do"); 
 			
 		}//장바구니로 이동
 	  

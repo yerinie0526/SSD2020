@@ -1,5 +1,7 @@
 package dongduk.cs.ssd.summerpetstore.dao.repository.mapper;
 
+import java.util.List;
+
 import dongduk.cs.ssd.summerpetstore.model.CartModel;
 
 public interface CartMapper {
@@ -11,5 +13,5 @@ public interface CartMapper {
 	int countItem(String userId, int itemId);
 	void incrementQuantity(String userId, int itemId); //장바구니에 같은물건을 담았을 경우 사용
 	void updateQuantity(String userId, int itemId, int quantity); //장바구니에서 수량을 늘릴경우 (공식물품만 허용)
-	
+	List<CartModel> showCartList(String userId);
 }
