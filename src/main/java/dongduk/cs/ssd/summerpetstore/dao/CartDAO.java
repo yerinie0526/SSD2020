@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import dongduk.cs.ssd.summerpetstore.dao.repository.mapper.CartMapper;
 import dongduk.cs.ssd.summerpetstore.model.GpModel;
+import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.model.CartModel;
 @Repository
 public class CartDAO {
@@ -71,7 +72,17 @@ public class CartDAO {
 //	
 //
 	public void addCart(String userId, int itemId) {
-		cmapper.addCart(userId, itemId);
+		ItemModel im = cmapper.findItembyitemId(itemId);
+		int inStock;
+		int quantity;
+		quantity = cmapper.countItemId(userId, itemId);
+		if(im.getStock() >= quantity + 1) {
+			inStock = 1;
+		}else {
+			inStock = 0;
+		}
+		System.out.println("add cart at market!   item id: " + im.getItemId());
+		cmapper.addCart(itemId, im.getName(), im.getPrice(), inStock, quantity, userId);
 	}
 //	
 //	

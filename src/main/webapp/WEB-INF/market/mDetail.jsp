@@ -11,6 +11,6 @@
 	<li>Item Status : ${iData.istatus}</li>
 </ul>
 
-<p><a href="<c:url value='/spetstore/market/addCart?itemId=${iData.itemId}' />">Add Cart</a></p>
+<p><a href="<c:url value='/spetstore/market/addCart/${iData.itemId}' />">Add Cart</a></p>
 
 <%@ include file="../IncludeBottom.jsp" %>

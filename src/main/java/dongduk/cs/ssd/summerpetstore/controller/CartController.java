@@ -19,6 +19,7 @@ import org.springframework.web.util.WebUtils;
 import dongduk.cs.ssd.summerpetstore.model.CartModel;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.service.CartService;
+import dongduk.cs.ssd.summerpetstore.service.MarketService;
 
 
 @Controller
@@ -26,6 +27,9 @@ import dongduk.cs.ssd.summerpetstore.service.CartService;
 public class CartController {
 	@Autowired
 	private CartService cartService;
+	
+	@Autowired
+	private MarketService ms;
 	
 	
 	public void setCartService(CartService cartService) {
@@ -37,19 +41,40 @@ public class CartController {
 	      return new CartModel();
 	   }
 	
-//	@RequestMapping("/spetstore/spetitem/addCart.do") 
-//	public String addCart(@RequestParam("itemId") int itemId,@RequestParam("userId") String userId, @RequestParam("price") int price, 
-//			@RequestParam("name") String name, @RequestParam("inStock") boolean inStock, @RequestParam("quantity") int quantity) {
-//		CartModel cart;	
-//		
-//		if(cartService.containsItemId(itemId, userId))
-//			cartService.incrementQuantityByItemId(userId, itemId); 	//장바구니에 존재하는 물품이면 수량만 증가시켜줌
-//		else
-//			cartService.addCart(itemId, name, price, inStock, quantity, userId);
-//			
-//		//model.addAttribute("cart", cart);
-//		return "spetitem/sListDetail"; 	
-//	}//장바구니 담기
+	@RequestMapping("/spetstore/market/addCart/{itemId}") 
+	public ModelAndView addCartMarket(@PathVariable int itemId, HttpServletRequest request) {
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		cartService.addCart(userSession.getUserId(), itemId);
+		ItemModel iData = ms.showInfo(itemId);
+		return new ModelAndView("market/mDetail", "iData", iData);
+	}//장바구니 담기
+	
+	@RequestMapping("/spetstore/spetitem/addCart/{itemId}") 
+	public ModelAndView addCartSpetitem(@PathVariable int itemId, HttpServletRequest request) {
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		cartService.addCart(userSession.getUserId(), itemId);
+		ItemModel iData = ms.showInfo(itemId);
+		System.out.println("addcart 성공은함");
+		return new ModelAndView("market/mDetail", "iData", iData);
+
+	}//장바구니 담기
+	
+	//이과정을 dao에서 하는 것으로 바꿈! 그게 나을것같아서 06.29 -예린-
+/*	@RequestMapping("/spetstore/spetitem/addCart.do") 
+	public String addCart(@RequestParam("itemId") int itemId,@RequestParam("userId") String userId, @RequestParam("price") int price, 
+			@RequestParam("name") String name, @RequestParam("inStock") boolean inStock, @RequestParam("quantity") int quantity) {
+		CartModel cart;	
+		
+		if(cartService.containsItemId(itemId, userId))
+			cartService.incrementQuantityByItemId(userId, itemId); 	//장바구니에 존재하는 물품이면 수량만 증가시켜줌
+		else
+			cartService.addCart(itemId, name, price, inStock, quantity, userId);
+			
+		//model.addAttribute("cart", cart);
+		return "spetitem/sListDetail"; 	
+	}//장바구니 담기*/ 
 	
 //	@RequestMapping("/mypage/cart/delete") 
 //	public String deleteItem(@RequestParam("userId") String userId, @RequestParam("itemId") int itemId) {
@@ -63,12 +88,6 @@ public class CartController {
 //		return "user/myPage/sucPay"; 
 //	}//장바구니 물품 결제
 //	
-	@RequestMapping("/spetstore/market/addCart/{itemId}") 
-	public String addCart(@PathVariable int itemId, HttpServletRequest request) {
-		UserSession userSession = 
-				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-		cartService.addCart(userSession.getUserId(), itemId);
-		return "market/mListDetail"; 
-	}//장바구니 담기
+
 }
 

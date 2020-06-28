@@ -16,10 +16,18 @@
 		WHERE userId = #{userId}
 	</delete>
 	
+	<!--addcart 하려고 item정보 찾기 -->
+	<select id="findItembyitemId" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel" >
+		SELECT itemid, iname as name, price, stock
+		FROM item
+		WHERE itemid=#{param1}
+	</select>
+	
+	
 	<!--addCart : 카트에 추가-->
-	<insert id="addcart">
+	<insert id="addCart">
 		INSERT INTO Cart
-		VALUES (#{itemId}, #{itemName}, #{price}, #{inStock}, #{quantity}, #{userId})
+		VALUES (#{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6})
 	</insert>
 	
 	<!--order : 주문-->
@@ -30,9 +38,9 @@
 	
 	<!--해당 아이디에 해당 아이템이 몇개인지-->
 	<select id="countItemId" resultType="int" >
-		SELECT COUNT(#{itemId}) 
+		SELECT COUNT(#{param2}) 
 		FROM Cart
-		WHERE userId = #{userId}
+		WHERE userId = #{param1}
 	</select>
 
 	<!--아이템 수량 + 1-->
