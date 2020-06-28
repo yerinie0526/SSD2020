@@ -13,7 +13,7 @@
 	</select>
 	
 	<select id="showdetailInfoSP"  resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
-		SELECT itemid, iname AS name, idescription AS description, price, itemKind, cname
+		SELECT itemid, iname AS name, idescription AS description, price, itemKind, cname,istatus
 		FROM Item
 		WHERE itemId = #{itemId}
 	</select>
