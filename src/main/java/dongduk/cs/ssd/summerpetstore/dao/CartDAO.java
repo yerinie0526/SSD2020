@@ -70,15 +70,9 @@ public class CartDAO {
 //	}
 //	
 //
-//	public int addCart(String userId, int itemId, int price) {
-//		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		try {
-//			int result = sqlSession.insert(namespace + ".addCart", userId); 
-//			if(result > 0) { sqlSession.commit(); }
-//			return result;
-//		}finally { sqlSession.close(); }
-//		//return GpMapper.searchGp(name, itemKind);
-//	}
+	public void addCart(String userId, int itemId) {
+		cmapper.addCart(userId, itemId);
+	}
 //	
 //	
 //

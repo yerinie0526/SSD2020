@@ -8,7 +8,7 @@ public interface CartMapper {
 	
 	void deleteCart(String userId, int itemId);
 	void deleteCartByUser(String userId);
-	void addCart(int itemId, String name, int price, boolean inStock, int quantity, String userId);
+	void addCart(String userId, int itemId);
 	void order(CartModel cm);
 	int countItem(String userId, int itemId);
 	void incrementQuantity(String userId, int itemId); //장바구니에 같은물건을 담았을 경우 사용
