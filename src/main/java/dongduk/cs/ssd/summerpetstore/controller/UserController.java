@@ -125,7 +125,7 @@ public class UserController {
 		  session.invalidate();
 		  sessionStatus.setComplete();
 		  System.out.println("########logout");
-		  return "redirect: http://localhost:8081/summerpetstore/index"; 
+		  return "redirect: /summerpetstore/index"; 
 	  }//로그아웃
 	  
 	/*
