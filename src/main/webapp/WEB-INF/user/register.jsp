@@ -14,39 +14,42 @@
           <tr>
             <td>User ID:</td>
             <td>
-            <c:if test="${accountForm.newAccount}">
-              <form:input path="username" />
-              <B><form:errors path="username" cssClass="error" /></B>
-            </c:if> 
-            <c:if test="${!accountForm.newAccount}">
-              <c:out value="${accountForm.account.username}" />
-            </c:if>
+           
+              <form:input path="account.userId" />
+              <B><form:errors path="account.userId" cssClass="error" /></B>
+            
+         
             </td>
           </tr>
           <tr>
-            <td>New password:</td>
+            <td>password:</td>
             <td>
-              <form:password path="password" /> 
-              <B><form:errors path="password" cssClass="error" /></B></td>
+              <form:password path="account.password" /> 
+              <B><form:errors path="account.password" cssClass="error" /></B></td>
           </tr>
-         
+          <tr>
+            <td>Name:</td>
+            <td>
+              <form:input path="account.username" /> 
+              <B><form:errors path="account.username" cssClass="error" /></B></td>
+          </tr>
           <tr>
             <td>Email:</td>
             <td>
-              <form:input path="email" /> 
-              <B><form:errors path="email" cssClass="error" /></B></td>
+              <form:input path="account.email" /> 
+              <B><form:errors path="account.email" cssClass="error" /></B></td>
           </tr>
           <tr>
             <td>Address:</td>
             <td>
-              <form:input path="address" /> 
-              <B><form:errors path="address" cssClass="error" /></B></td>
+              <form:input path="account.address" /> 
+              <B><form:errors path="account.address" cssClass="error" /></B></td>
           </tr>
           <tr>
             <td>Phone:</td>
             <td>
-              <form:input path="phone" /> 
-              <B><form:errors path="phone" cssClass="error" /></B></td>
+              <form:input path="account.phone" /> 
+              <B><form:errors path="account.phone" cssClass="error" /></B></td>
           </tr>
         </table> 
         
@@ -55,9 +58,8 @@
     </tr>
   </table>
   <br />
-    <input type="image" src="../images/button_submit.gif" name="submit"
-      value="Save Account Information" />
-</form:form>
+<input type="submit" name="submit"
+      value="Save Account Information" /></form:form>
 <p></p>
   
 </div>

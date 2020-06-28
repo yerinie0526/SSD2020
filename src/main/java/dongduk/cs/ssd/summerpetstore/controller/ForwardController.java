@@ -30,13 +30,12 @@ public class ForwardController {
 			return"user/SignonForm"; 
 	}//로그인 이동
 	
-	@RequestMapping("/spetstore/user/newAccount.do")
+	/*	@RequestMapping("/spetstore/user/newAccount.do")
 	public String showRegister(Model model) {
 		  model.addAttribute("user", new UserModel());
 
 			return"user/register"; 
 	}//회원가입 이동
-/*
 	@RequestMapping("/market") 
 	public String moveMarketSearch() {
 		return"market/mSearch"; 

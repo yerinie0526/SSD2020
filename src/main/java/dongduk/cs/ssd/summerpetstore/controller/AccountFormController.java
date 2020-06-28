@@ -12,12 +12,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.util.WebUtils;
-import com.example.jpetstore.domain.Category;
-import com.example.jpetstore.domain.Product;
-import com.example.jpetstore.service.AccountFormValidator;
-import com.example.jpetstore.service.PetStoreFacade;
 
+import dongduk.cs.ssd.summerpetstore.service.AccountFormValidator;
 import dongduk.cs.ssd.summerpetstore.service.UserService;
 
 /**
@@ -26,53 +24,45 @@ import dongduk.cs.ssd.summerpetstore.service.UserService;
  * @modified by Changsup Park
  */
 @Controller
-@RequestMapping({"/shop/newAccount.do","/shop/editAccount.do"})
+@RequestMapping("/spetstore/user/newAccount.do")
+//@SessionAttributes("user")
 public class AccountFormController { 
 
-	@Value("EditAccountForm")
+	@Value("user/register")
 	private String formViewName;
-	@Value("index")
+	@Value("user/sucRegister")
 	private String successViewName;
-	private static final String[] LANGUAGES = {"english", "japanese"};
 	
 	@Autowired
 	private UserService us;
-	public void setPetStore(UserService us) {
+	public void setUserService(UserService us) {
 		this.us = us;
 	}
 
-//	@Autowired
-//	private AccountFormValidator validator;
-//	public void setValidator(AccountFormValidator validator) {
-//		this.validator = validator;
-//	}
+	@Autowired
+	private AccountFormValidator validator;
+	public void setValidator(AccountFormValidator validator) {
+		this.validator = validator;
+	}
 		
-	@ModelAttribute("accountForm")
+	@ModelAttribute("user")
 	public AccountForm formBackingObject(HttpServletRequest request) 
 			throws Exception {
 		UserSession userSession = 
 			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		if (userSession != null) {	// edit an existing account
 			return new AccountForm(
-				us.getAccount(userSession.getUserModel().getUsername()));
+				us.getUser(userSession.getUserModel().getUsername()));
 		}
 		else {	// create a new account
 			return new AccountForm();
 		}
 	}
 
-	@ModelAttribute("languages")
-	public String[] getLanguages() {
-		return LANGUAGES;
-	}
-
-	@ModelAttribute("categories")
-	public List<Category> getCategoryList() {
-		return petStore.getCategoryList();
-	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm() {
+		System.out.println("get!!!!!!!!!!!!!!!!!");
 		return formViewName;
 	}
 	
@@ -82,22 +72,19 @@ public class AccountFormController {
 			@ModelAttribute("accountForm") AccountForm accountForm,
 			BindingResult result) throws Exception {
 
-		if (request.getParameter("account.listOption") == null) {
-			accountForm.getAccount().setListOption(false);
-		}
-		if (request.getParameter("account.bannerOption") == null) {
-			accountForm.getAccount().setBannerOption(false);
-		}
 		
 		validator.validate(accountForm, result);
 		
-		if (result.hasErrors()) return formViewName;
+		if (result.hasErrors()) { 
+			System.out.println("¿¡·¯:"+result.getAllErrors());
+			return formViewName;
+		}
 		try {
 			if (accountForm.isNewAccount()) {
-				petStore.insertAccount(accountForm.getAccount());
+				us.insertUser(accountForm.getAccount());
 			}
 			else {
-				petStore.updateAccount(accountForm.getAccount());
+				us.updateUser(accountForm.getAccount());
 			}
 		}
 		catch (DataIntegrityViolationException ex) {
@@ -107,11 +94,11 @@ public class AccountFormController {
 		}
 		
 		UserSession userSession = new UserSession(
-			petStore.getAccount(accountForm.getAccount().getUsername()));
-		PagedListHolder<Product> myList = new PagedListHolder<Product>(
+			us.getUser(accountForm.getAccount().getUsername()));
+	/*	PagedListHolder<Product> myList = new PagedListHolder<Product>(
 			petStore.getProductListByCategory(accountForm.getAccount().getFavouriteCategoryId()));
 		myList.setPageSize(4);
-		userSession.setMyList(myList);
+		userSession.setMyList(myList);*/
 		session.setAttribute("userSession", userSession);
 		return successViewName;  
 	}

@@ -33,12 +33,12 @@
       name = #{name},
       address = #{address},
       PHONE = #{phone}
-    WHERE USERID = #{userid}
+    WHERE USERID = #{userId}
   </update>
 
   <insert id="insertUser" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     INSERT INTO suser
-    VALUES (#{userid}, #{username}, #{password}, #{email}, #{address}, #{phone})
+    VALUES (#{userId}, #{username}, #{password}, #{email}, #{address}, #{phone})
   </insert>
 
   <!--  
@@ -80,6 +80,6 @@
 
   <insert id="insertSignon" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     INSERT INTO SIGNON (PASSWORD,USERNAME)
-    VALUES (#{password}, #{userid})
+    VALUES (#{password}, #{userId})
   </insert>
 </mapper>

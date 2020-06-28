@@ -30,7 +30,7 @@ public class UserDAO {
 	public void insertUser(UserModel account) throws DataAccessException {
 		umapper.insertUser(account);
 		//umapper.insertProfile(account);
-		umapper.insertSignon(account);
+		//umapper.insertSignon(account);
 	}
 
 	public void updateUser(UserModel account) throws DataAccessException {

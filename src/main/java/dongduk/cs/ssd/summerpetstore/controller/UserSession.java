@@ -12,7 +12,8 @@ public class UserSession implements Serializable {
 
 //	private PagedListHolder<Product> myList;
 	
-	public UserSession() {
+	public UserSession(UserModel usermodel) {
+		this.usermodel = usermodel;
 	}
 	
 	public UserSession(UserModel usermodel, String userId) {
