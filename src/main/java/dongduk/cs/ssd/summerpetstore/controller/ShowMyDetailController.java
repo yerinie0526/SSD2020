@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import dongduk.cs.ssd.summerpetstore.service.AuctionService;
 import dongduk.cs.ssd.summerpetstore.service.MarketService;
 import dongduk.cs.ssd.summerpetstore.service.SProductService;
+import dongduk.cs.ssd.summerpetstore.service.SproductService;
 
 @Controller
 public class ShowMyDetailController {
@@ -17,7 +18,7 @@ public class ShowMyDetailController {
 	@Autowired
 	private MarketService marketservice;
 	@Autowired
-	private SProductService sproductservice;
+	private SproductService sproductservice;
 	
 	
 	public void setAuctionService(AuctionService auctionservice) {
@@ -26,7 +27,7 @@ public class ShowMyDetailController {
 	public void setMarketService(MarketService marketservice) {
 		this.marketservice = marketservice;
 	}
-	public void setSProductService(SProductService sproductservice) {
+	public void setSproductService(SproductService sproductservice) {
 		this.sproductservice = sproductservice;
 	}
 	

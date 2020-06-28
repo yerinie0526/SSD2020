@@ -1,5 +1,7 @@
 package dongduk.cs.ssd.summerpetstore.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,22 +10,27 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.service.SProductService;
+import dongduk.cs.ssd.summerpetstore.service.SproductService;
 
 @Controller
 public class ShowDetailController {
 	
 	@Autowired
-	private SProductService sproductService;	
+	private SproductService sproductService;	
 	ItemModel item;
 	
-	public void setCartService(SProductService sproductService) {
+	public void setSproductService(SproductService sproductService) {
 		this.sproductService = sproductService;
 	}
 	
 	@RequestMapping("/spetstore/spetitem/detail")	
 	public String showSpetitem(@RequestParam("itemId") int itemId, Model model) {
-		item = sproductService.showInfo(itemId);
-		model.addAttribute("item", item);
+		
+		System.out.println("여기로너어옴");
+		item= sproductService.showdetailInfoSP(itemId);
+		model.addAttribute("di", item);
+		System.out.println("22222222222"+itemId+"%%%%%%%%%%%"+item.getItemId());
+
 		return "spetitem/sListDetail"; 
 	}//일반구매물품자세히보기
 

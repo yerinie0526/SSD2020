@@ -6,13 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dongduk.cs.ssd.summerpetstore.service.SProductService;
+import dongduk.cs.ssd.summerpetstore.service.SproductService;
 
 @Controller
 public class SearhAllProductController {
 	@Autowired
-	private SProductService sproductService;
+	private SproductService sproductService;
 	
-	public void setSProductService(SProductService sproductService) {
+	public void setSproductService(SproductService sproductService) {
 		this.sproductService = sproductService;
 	}
 	
