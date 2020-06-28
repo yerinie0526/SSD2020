@@ -49,5 +49,11 @@
 		WHERE itemId = #{itemId} and userId = #{userId}
 	</update>
 	
+	<select id="showCartList" resultType="dongduk.cs.ssd.summerpetstore.model.CartModel">
+		SELECT *
+		FROM Cart
+		WHERE userId = #{userId}
+	</select>
+	
 
 </mapper>

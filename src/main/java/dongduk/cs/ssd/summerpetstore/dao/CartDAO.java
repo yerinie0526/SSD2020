@@ -8,11 +8,21 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import dongduk.cs.ssd.summerpetstore.dao.repository.mapper.CartMapper;
 import dongduk.cs.ssd.summerpetstore.model.GpModel;
+import dongduk.cs.ssd.summerpetstore.model.CartModel;
 @Repository
 public class CartDAO {
+	
+	@Autowired
+	private CartMapper cmapper;
+	
+	public List<CartModel> showCartList(String userId){
+		return cmapper.showCartList(userId);
+	}
 	
 //	private String namespace = "summerpetstore.repository.mapper.CartMapper";
 //	private SqlSessionFactory sqlSessionFactory = createSqlSessionFactory();
@@ -87,5 +97,6 @@ public class CartDAO {
 //			sqlSession.update(namespace + ".incrementQuantityByItemId", userId); 
 //		}finally { sqlSession.close(); }
 //	}
+	
 	
 }

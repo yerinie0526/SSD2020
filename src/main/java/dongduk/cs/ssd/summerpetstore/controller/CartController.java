@@ -48,22 +48,22 @@ public class CartController {
 //		return "spetitem/sListDetail"; 	
 //	}//장바구니 담기
 	
-	@RequestMapping("/mypage/cart/delete") 
-	public String deleteItem(@RequestParam("userId") String userId, @RequestParam("itemId") int itemId) {
-		cartService.deleteCart(userId, itemId);
-		return "user/myPage/cart"; 
-	}//장바구니 물품 삭제
-	
-	@RequestMapping("/mypage/cart/pay") 
-	public String pay(@RequestParam("userId") String userId, @RequestParam("orderId") int orderId) {
-		cartService.order(userId, orderId);
-		return "user/myPage/sucPay"; 
-	}//장바구니 물품 결제
-	
-	@RequestMapping("/market/addcart") 
-	public String addCart(@RequestParam("marketId") String marketId, @RequestParam("itemId") int itemId, @RequestParam("userId") String userId) {
-		cartService.addCart(userId, itemId);
-		return "market/mListDetail"; 
-	}//장바구니 담기
+//	@RequestMapping("/mypage/cart/delete") 
+//	public String deleteItem(@RequestParam("userId") String userId, @RequestParam("itemId") int itemId) {
+//		cartService.deleteCart(userId, itemId);
+//		return "user/myPage/cart"; 
+//	}//장바구니 물품 삭제
+//	
+//	@RequestMapping("/mypage/cart/pay") 
+//	public String pay(@RequestParam("userId") String userId, @RequestParam("orderId") int orderId) {
+//		cartService.order(userId, orderId);
+//		return "user/myPage/sucPay"; 
+//	}//장바구니 물품 결제
+//	
+//	@RequestMapping("/market/addcart") 
+//	public String addCart(@RequestParam("marketId") String marketId, @RequestParam("itemId") int itemId, @RequestParam("userId") String userId) {
+//		cartService.addCart(userId, itemId);
+//		return "market/mListDetail"; 
+//	}//장바구니 담기
 }
 
