@@ -77,7 +77,7 @@ public class AuctionController {
 					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 	  	 auctionForm.setSellerInfoId(userSession.getUserId());
 		 auctionservice.registerAuction(auctionForm);
-	     System.out.println("################aregistersucc controller");
+	
 	     return "auction/aRegisterSuc"; 	
 	}//경매등록
 	

@@ -3,6 +3,7 @@
 <c:set var="targetUrl"><c:url value="/spetstore/auction/aSearch/aRegisterSuc.do" /></c:set>
 <div align="center">
 <form:form modelAttribute="auctionForm" action="${targetUrl}">
+ <form:errors cssClass="error" /> <br><br>
 <p>
 	<form:label path="name">Title : </form:label>
 	<form:input path="name" />
@@ -18,8 +19,8 @@
 </p>
 <p>
 	<form:label path="deadline">Deadline : </form:label>
-	<form:input path="deadline" type="date"/>
-	<form:errors path="deadline" />
+	<form:input path="deadline" type="date" hint="yyyymmdd ex) 20200630"/>
+	<form:errors path="deadline" cssClass="error"/>
 </p>
 <p>
 	<form:label path="description">Description : </form:label>
