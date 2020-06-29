@@ -1,49 +1,42 @@
 <%@ include file="../IncludeTop.jsp" %>
 
-<form:form modelAttribute="actionModel" action="aRegister">
+<form:form modelAttribute="auctionForm" action="aRegister">
 <p>
-	<form:label path="name">상품명 : </form:label>
+	<form:label path="name">Title : </form:label>
 	<form:input path="name" />
 	<form:errors path="name" />
 </p>
 <p>
-	<form:label path="">동물 종 : </form:label>
-	<form:select path="categoryIds">
+	<form:label path="cname">Pet Kind : </form:label>
+	<form:select path="cname">
 		<option value="">--pet kind--</option>
 		<form:options items="${categoryIds}"/>
 	</form:select>
-	<form:errors path="categoryId" />
+	<form:errors path="cname" />
 </p>
+
 <p>
-	<form:label path="">상품 종류 : </form:label>
-	<form:select path="itemKinds">
-		<option value="">--Item Kind--</option>
-		<form:options items="${itemKinds}"/>
-	</form:select>
-	<form:errors path="itemKind" />
-</p>
-<p>
-	<form:label path="">마감 : </form:label>
-	<form:input path="deadline" />
+	<form:label path="deadline">Deadline : </form:label>
+	<form:input path="deadline" type="date"/>
 	<form:errors path="dealine" />
 </p>
-<p>
+<!-- <p>
 	<form:label path="">거래 방식 : </form:label>
 	<form:radiobuttons items="${pMethods}" path="pMethod"/>
 	<form:errors path="pMethod" />
-</p>
+</p>-->
 <p>
-	<form:label path="">설명 : </form:label>
+	<form:label path="description">Description : </form:label>
 	<form:textarea path="description" cols="20" row="3"/>
 	<form:errors path="description" />
 </p>
 <p>
-	<form:label path="">최저가 : </form:label>
+	<form:label path="minPrice">Minimum Price� : </form:label>
 	<form:input path="minPrice" />
 	<form:errors path="minPrice" />
 </p>
-<input type="submit" value="등록하기" />
-<input type="button" value="취소"/>
+<input type="submit" value="Register" />
+<input type="button" value="Register"/>
 </form:form>
 
 <%@ include file="../IncludeBottom.jsp" %>

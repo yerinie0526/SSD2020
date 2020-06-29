@@ -36,7 +36,7 @@
 		   </select>
 		</td>
 		<td>
-			<a href="/spetstore/auction/aregister">Register Auction</a>
+			<a href="<c:url value='/spetstore/auction/aregister'/>"> Register Auction</a>
 		</td>
 	</tr>
 </table>

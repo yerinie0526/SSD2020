@@ -1,5 +1,6 @@
 package dongduk.cs.ssd.summerpetstore.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,11 +20,52 @@ import dongduk.cs.ssd.summerpetstore.service.AuctionService;
 @Controller
 public class AuctionController {
 	private AuctionService auctionservice;
-	//¡÷ºÆ ¥ﬁ∞Ì «™Ω√ 
+	
 	@Autowired
 	public void setAuctionService(AuctionService auctionservice) {
 		this.auctionservice = auctionservice;
 	}
+	
+	@ModelAttribute("categoryIds")       // select  ÉúÍ∑∏Ïù∏ pKind  †ïÎ≥     û•
+	   public List<String> cData() throws Exception{
+	      List<String> cKinds = new ArrayList<String>();
+	      cKinds.add("dog");
+	      cKinds.add("cat");
+	      cKinds.add("rabbit");
+	      cKinds.add("fish");
+	      return cKinds;
+	   }
+	   
+	@ModelAttribute("itemKinds")      // select  ÉúÍ∑∏Ïù∏ pGenre  †ïÎ≥     û•
+	   public List<String> pGenreData() throws Exception{
+	      List<String> iKinds = new ArrayList<String>();
+	      iKinds.add("bath");
+	      iKinds.add("home");
+	      iKinds.add("feed");
+	      iKinds.add("care");
+	      iKinds.add("else");
+	      return iKinds;
+	   }
+	   
+	   @ModelAttribute("pMethods")      // select  ÉúÍ∑∏Ïù∏ pGenre  †ïÎ≥     û•
+	   public List<String> mMethodData() throws Exception{
+	      List<String> iKinds = new ArrayList<String>();
+	      iKinds.add("parcel");
+	      iKinds.add("in person");
+	      return iKinds;
+	   }
+	   
+	   @ModelAttribute("auctionForm")
+	   public AuctionForm auctionFormData() {
+	      return new AuctionForm();
+	   }   
+	
+	
+	@RequestMapping("/spetstore/auction/aregister") 
+	public String moveToAuctionRegister(@ModelAttribute("auctionForm") AuctionForm auctionForm) {	
+		return "auction/aRegister"; 	
+	}//∞Ê∏≈µÓ∑œ√¢¿∏∑Œ ¿Ãµø
+	
 	
 	@RequestMapping("/auction/aregister") 
 	public String registerAuction(@RequestParam("userId") String userId, @ModelAttribute("Auction")AuctionModel am) {	
