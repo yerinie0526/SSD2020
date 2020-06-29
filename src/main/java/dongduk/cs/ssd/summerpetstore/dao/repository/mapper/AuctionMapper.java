@@ -7,7 +7,7 @@ import dongduk.cs.ssd.summerpetstore.model.AuctionModel;
 
 public interface AuctionMapper {
 	
-	List<AuctionModel> searchAuction(AuctionModel am);
+	List<AuctionModel> searchAuction(String cname, String itemKind, String keyword);
 	List<AuctionModel> searchAuctionByDday(AuctionModel am);
 	List<AuctionModel> searchAuctionByCon(AuctionModel am);
 	AuctionModel showInfo(int auctionId);

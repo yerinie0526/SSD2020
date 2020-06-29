@@ -44,31 +44,14 @@
 	<select id="searchItem" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
 		SELECT itemid as itemId, iname as name, price
 		FROM Item
-		WHERE 1=1
-			<!-- <if test='param1 != null'>
-				cname=#{param1}
+		WHERE lower(name) like #{param3}
+			<if test='param1 != null'>
+				and cname=#{param1}
 			</if>
 			<if test='param2 != null'>
-				cname=#{param1} AND itemkind=#{param2}
+				and itemkind=#{param2}
 			</if>
-			<if test="param1 == null && param2 != null">
-				itemkind=#{param2}
-			</if>
-			<if test='param1 != null && param2 != null && param3 != null'>
-				cname=#{param1} AND itemkind=#{param2} AND lower(name) like #{param3}
-			</if>
-			<if test="param1 == null && param2 == null && param3 != null">
-				lower(name) like #{param3}
-			</if>
-			<if test="param1 == null && param2 != null && param3 != null">
-				itemkind=#{param2} AND lower(name) like #{param3}
-			</if>
-			<if test="param1 != null && param2 == null && param3 != null">
-				cname=#{param1} AND lower(name) like #{param3}
-			</if>-->
-
-	</select>
-	
+	</select>	
 	
 		<!--장터검색-->
 	<select id="searchMarketByUser" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">

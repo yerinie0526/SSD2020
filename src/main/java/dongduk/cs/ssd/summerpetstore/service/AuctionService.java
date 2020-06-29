@@ -21,8 +21,8 @@ public class AuctionService {
 	
 
 	//카테코리, 종류 등으로도 검색이 가능해야하므로 모델 전체를 보내줘야할듯
-	public List<AuctionModel> searchAuction(AuctionModel am) { 
-		return adao.searchAuction(am);
+	public List<AuctionModel> searchAuction(String cname, String itemKind, String keyword) { 
+		return adao.searchAuction(cname, itemKind, keyword);
 	}
 	
 	public List<AuctionModel> searchAuctionByDday(AuctionModel am) { 

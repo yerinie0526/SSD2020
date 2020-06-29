@@ -7,15 +7,15 @@
 	</tr>
 	<tr>
 		<td>
-			<form action="<c:url value="/shop/acution/aSearch.do"/>" method="post">
-		      	<select name="categoryId"> 
+			<form action="<c:url value="/spetstore/auction/aSearch/aSearch.do"/>">
+		      	<select name="cname"> 
 		      		<option value="">--Select pet kind--</option>
-		      		<option value="1">dog</option>
-		      		<option value="2">cat</option>
-		      		<option value="3">fish</option>
+		      		<option value="dog">dog</option>
+		      		<option value="cat">cat</option>
+		      		<option value="fish">fish</option>
 		      	</select>
 		      	<select name="itemKind"> <!-- itemKind 보기 생각해보기 -->
-		      		<option value="">--Select itemkind--</option>
+		      		<option value="">--Select item kind--</option>
 		      		<option value="1">bath product</option>
 		      		<option value="2">feeding Item</option>
 		      		<option value="3">care Item</option>
@@ -36,7 +36,7 @@
 		   </select>
 		</td>
 		<td>
-			<a href="/spetstore/auction/aregister">경매 등록하기</a>
+			<a href="/spetstore/auction/aregister">Register Auction</a>
 		</td>
 	</tr>
 </table>

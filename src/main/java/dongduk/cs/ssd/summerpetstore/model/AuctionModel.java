@@ -10,19 +10,18 @@ public class AuctionModel {
 	int dday;
 	String description;
 	int minprice;
-	String astatus;
-	int productId;
-	
+	String astatus;	
 	int sellerInfoId;
 	String firstId;
 	int currentCon;
 	int curMaxPrice;
+	String cname;
 	
 	public AuctionModel() {
 		
 	}
 	public AuctionModel(int auctionId, String name, Date deadline, int dday, String description, int minprice,
-			String astatus, int productId, int sellerInfoId, String firstId, int currentCon, int curMaxPrice) {
+			String astatus, int sellerInfoId, String firstId, int currentCon, int curMaxPrice, String cname) {
 		super();
 		this.auctionId = auctionId;
 		this.name = name;
@@ -31,11 +30,11 @@ public class AuctionModel {
 		this.description = description;
 		this.minprice = minprice;
 		this.astatus = astatus;
-		this.productId = productId;
 		this.sellerInfoId = sellerInfoId;
 		this.firstId = firstId;
 		this.currentCon = currentCon;
 		this.curMaxPrice = curMaxPrice;
+		this.cname = cname;
 	}
 	public int getAuctionId() {
 		return auctionId;
@@ -79,12 +78,6 @@ public class AuctionModel {
 	public void setAstatus(String astatus) {
 		this.astatus = astatus;
 	}
-	public int getProductId() {
-		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
 	public int getSellerInfoId() {
 		return sellerInfoId;
 	}
@@ -109,9 +102,11 @@ public class AuctionModel {
 	public void setCurMaxPrice(int curMaxPrice) {
 		this.curMaxPrice = curMaxPrice;
 	}
-	
-	
-	
-	
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
 
 }

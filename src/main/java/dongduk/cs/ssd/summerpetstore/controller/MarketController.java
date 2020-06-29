@@ -117,7 +117,6 @@ public class MarketController {
         List<ItemModel> imList = marketService.searchItem(name, itemKind, keyword); 
         //System.out.println(imList.get(0).getName());
         return new ModelAndView("/market/mSearch", "mList", imList);
-     
      }//×Ù•í„°ê²  ƒ‰
      
      @RequestMapping("/spetstore/market/detail")

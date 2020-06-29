@@ -1,12 +1,19 @@
 package dongduk.cs.ssd.summerpetstore.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import dongduk.cs.ssd.summerpetstore.model.AuctionModel;
+import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.service.AuctionService;
 
 @Controller
@@ -23,6 +30,17 @@ public class AuctionController {
 		auctionservice.registerAuction(am);
 		return "auction/aRegister"; 	
 	}//경매등록
+	
+	
+    @RequestMapping(value="/spetstore/auction/aSearch/aSearch.do") 
+    public ModelAndView submit(HttpServletRequest request, 
+          @RequestParam("cname") String name, 
+          @RequestParam("itemKind") String itemKind, 
+          @RequestParam("keyword") String keyword) throws Exception{
+        System.out.println("#####################Controller");
+        List<AuctionModel> aList = auctionservice.searchAuction(name, itemKind, keyword); 
+        return new ModelAndView("/auction/aSearch", "aList", aList);
+    }//경매 검색
 	
 	@RequestMapping("/auction/search") 
 	public String select(@RequestParam("name") String name, @RequestParam("itemKind") String itemKind, @ModelAttribute("Auction")AuctionModel am) {	

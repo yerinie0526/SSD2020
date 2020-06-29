@@ -5,24 +5,13 @@
   <cache />
   
 	<!-- searchAuciton : 경매 검색-->
-	<select id="searchAuction" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
-		SELECT auctionId, dday, astatus, minprice, p.pname, c.cname
-		FROM auction a, product p, category c
-		<where>
-			a.productId = p.productId and p.categoryId = c.categoryId
-			<if test="name != null">
-				and name = #{name}
+	<select id="searchAuction" resultType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
+		SELECT auctionId, aname as name, dday, astatus, cname, curMaxPrice 
+		FROM auction
+		WHERE lower(aname) like #{param3}
+			<if test="param1 != null">
+				AND cname = #{param1}
 			</if>
-			<if test="astatus != null">
-				AND astatus = #{astatus}
-			</if>
-			<if test="itemKind != null">
-				AND itemKind = #{itemKind}
-			</if>
-			<if test="cname != null">
-				AND c.cname = #{cname};
-			</if>
-		</where>
 	</select>
 	
 	
