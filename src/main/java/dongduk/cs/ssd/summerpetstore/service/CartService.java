@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import dongduk.cs.ssd.summerpetstore.controller.OrderForm;
 import dongduk.cs.ssd.summerpetstore.dao.CartDAO;
 import dongduk.cs.ssd.summerpetstore.model.CartModel;
 
@@ -18,6 +19,10 @@ public class CartService {
 
 	public List<CartModel> showCartList(String userId){
 		return cartdao.showCartList(userId);
+	}
+	
+	public void createOrder(OrderForm orderForm) {
+		cartdao.createOrder(orderForm);
 	}
 	
 //	@Transactional

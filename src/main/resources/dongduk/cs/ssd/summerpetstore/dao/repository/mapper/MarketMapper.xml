@@ -58,7 +58,7 @@
 		<![CDATA[
 		SELECT itemid as itemId, iname as name, price
 		FROM Item
-		WHERE itemid >= 20000
+		WHERE sellerinfoid != 'summer'
 		]]>
 	</select>
 	
@@ -66,8 +66,14 @@
 		<![CDATA[
 		SELECT itemid as itemId, iname as name, price
 		FROM Item
-		WHERE itemid >= 20000
+		WHERE sellerinfoid != 'summer'
 		]]>
+	</select>
+	
+	<select id="showInfoMP" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
+		SELECT itemid as itemId, iname as name, price
+		FROM Item
+		WHERE sellerinfoid != 'summer' and cname = #{value}
 	</select>
 	
 		<!--장터검색-->

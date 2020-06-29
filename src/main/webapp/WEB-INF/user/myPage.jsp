@@ -48,7 +48,7 @@
 	</tr>
 </c:foreach> --%>
 <tr>
-	<td>My Market</td>
+	<td>My Market</td><hr>
 </tr>
 <c:forEach var="mi" items="${mList}">
 	<tr>
@@ -56,7 +56,7 @@
 	</tr>
 	<tr>
 		<td>
-			[item pic]
+			<input type="image" src="../../images/spet-logo2.gif" name="orderimg" />
 		</td>
 		<td>
 			<table>

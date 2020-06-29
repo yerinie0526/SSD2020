@@ -36,6 +36,12 @@
 		VALUES (#{itemName}, #{itemId}, #{quantity}, #{orderId})
 	</insert>
 	
+	
+	<insert id="createOrder" >
+		INSERT INTO Order
+		VALUES (1, #{name}, #{orderDate}, #{address}, #{zip}, #{userId}, #{totalPrice})
+	</insert>
+	
 	<!--해당 아이디에 해당 아이템이 몇개인지-->
 	<select id="countItemId" resultType="int" >
 		SELECT COUNT(#{param2}) 

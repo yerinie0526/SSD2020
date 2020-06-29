@@ -1,5 +1,7 @@
 package dongduk.cs.ssd.summerpetstore.controller;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,13 +25,15 @@ import dongduk.cs.ssd.summerpetstore.service.MarketService;
 
 
 @Controller
-@SessionAttributes("sessionCart")
+@SessionAttributes("userSession")
 public class CartController {
 	@Autowired
 	private CartService cartService;
 	
 	@Autowired
 	private MarketService ms;
+	
+	private Date nowTime;
 	
 	
 	public void setCartService(CartService cartService) {
@@ -40,6 +44,49 @@ public class CartController {
 	   public CartModel cartList() {
 	      return new CartModel();
 	   }
+	
+	@ModelAttribute("newOrder")
+	   public Order newOrder() {
+	      return new Order();
+	   }
+	
+	@ModelAttribute("orderForm")
+	   public OrderForm newOrderForm() {
+	      return new OrderForm();
+	   }
+	
+	@ModelAttribute("creditCardTypes") 
+	   public List<String> cardData() throws Exception{
+	      List<String> cKinds = new ArrayList<String>();
+	      cKinds.add("VISA");
+	      cKinds.add("MasterCard");
+	      cKinds.add("American Express");
+	      return cKinds;
+	   }
+	
+	@RequestMapping("/spetstore/user/order/PaidForm.do")
+	public String makeOrder(@ModelAttribute("sessionCart") CartModel cartmodel, 
+			@ModelAttribute("newOrder") Order order, 
+			@ModelAttribute("orderForm") OrderForm orderForm, HttpServletRequest request) {
+		nowTime = new Date();
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		orderForm.setName(userSession.getUserModel().getUsername());
+		orderForm.setAddress(userSession.getUserModel().getAddress());
+		orderForm.setPhone(userSession.getUserModel().getPhone());
+		orderForm.setOrderDate(nowTime);
+		order.setCartmodel(cartmodel);
+		return "user/PayForm";
+	}
+	
+	@RequestMapping("/spetstore/user/order/PaidSuc.do")
+	public String finishOrder(@ModelAttribute("newOrder") Order order,
+			@ModelAttribute("orderForm") OrderForm orderForm, Model model) {
+		order.setOrderForm(orderForm);
+		cartService.createOrder(orderForm);
+		model.addAttribute("oList", order);
+		return "user/PaidSuc";
+	}
 	
 	@RequestMapping("/spetstore/market/addCart/{itemId}") 
 	public ModelAndView addCartMarket(@PathVariable int itemId, HttpServletRequest request) {

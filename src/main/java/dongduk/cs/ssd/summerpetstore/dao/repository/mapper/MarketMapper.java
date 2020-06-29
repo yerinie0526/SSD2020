@@ -23,4 +23,6 @@ public interface MarketMapper {
 	List<ItemModel> searchMarketByUser(String userId);
 	
 	List<ItemModel> getMarketList();
+	
+	List<ItemModel> showInfoMP(String cname);
 }

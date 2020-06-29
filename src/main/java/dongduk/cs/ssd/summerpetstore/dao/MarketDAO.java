@@ -29,6 +29,9 @@ public class MarketDAO {
 		mmapper.registerItem(im);
 	}
 	
+	public List<ItemModel> showInfoMP(String cname){
+		return mmapper.showInfoMP(cname);
+	}
 	 
 	public ItemModel showInfo(int itemId) throws DataAccessException{
 		return mmapper.showInfo(itemId);	  

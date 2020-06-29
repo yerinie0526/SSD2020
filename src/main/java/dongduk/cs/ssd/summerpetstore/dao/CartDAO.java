@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import dongduk.cs.ssd.summerpetstore.controller.OrderForm;
 import dongduk.cs.ssd.summerpetstore.dao.repository.mapper.CartMapper;
 import dongduk.cs.ssd.summerpetstore.model.GpModel;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
@@ -23,6 +24,10 @@ public class CartDAO {
 	
 	public List<CartModel> showCartList(String userId){
 		return cmapper.showCartList(userId);
+	}
+	
+	public void createOrder(OrderForm orderForm) {
+		cmapper.createOrder(orderForm);
 	}
 	
 //	private String namespace = "summerpetstore.repository.mapper.CartMapper";

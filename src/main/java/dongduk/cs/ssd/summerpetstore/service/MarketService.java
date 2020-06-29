@@ -28,7 +28,9 @@ public class MarketService {
 		mdao.registerItem(im); 
 	}
 	
-	  
+	public List<ItemModel> showInfoMP(String cname) {
+		return mdao.showInfoMP(cname);
+	}
 	  
 	  @Transactional 
 	  public ItemModel showInfo(int itemId) { 

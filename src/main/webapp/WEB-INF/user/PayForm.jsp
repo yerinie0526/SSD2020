@@ -14,13 +14,17 @@
     </tr>
     <tr>
       <td>Card Type:</td>
-      <td><form:select path="cardCompany" items="${creditCardTypes}" />
-        <form:errors path=" cardcompany" /></td>
+      <td>
+      	<form:select path="cardCompany">
+			<option value="">--Card Type--</option>
+			<form:options items="${creditCardTypes}"/>
+		</form:select>
+      </td>
     </tr>
     <tr>
       <td>Card Number:</td>
-      <td><form:input path=" cardnum" /> 
-        <form:errors path=" cardnum" /></td>
+      <td><form:input path="cardNum" /> 
+        <form:errors path="cardNum" /></td>
     </tr>
     <tr>
       <td>Expiry Date (MM/YYYY):</td>
@@ -29,7 +33,11 @@
     </tr>
     <tr>
       <td>CVC Number:</td>
-      <td><form:input path="cardcvc" /></td>
+      <td><form:input path="cardCVC" /></td>
+    </tr>
+    <tr>
+      <td>Zip Code:</td>
+      <td><form:input path="zip" /></td>
     </tr>
     <tr>
       <td colspan="2">

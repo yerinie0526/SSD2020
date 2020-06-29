@@ -33,7 +33,9 @@
 	</td>
 </tr>
 <tr>
-
+	<td><input type="button"
+         value="submit"
+         onclick="location.href='<c:url value='/spetstore/user/order/PaidForm.do' />'" /></td>
 </tr>
 </table>
 <%@ include file="../../IncludeBottom.jsp"%>
