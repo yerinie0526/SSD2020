@@ -81,7 +81,6 @@ public class CartDAO {
 		}else {
 			inStock = 0;
 		}
-		System.out.println("add cart at market!   item id: " + im.getItemId());
 		cmapper.addCart(itemId, im.getName(), im.getPrice(), inStock, quantity, userId);
 	}
 //	

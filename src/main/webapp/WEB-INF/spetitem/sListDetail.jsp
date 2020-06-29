@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../IncludeTop.jsp" %>
-
+<div align="center">
 <p>${di.name}</p>
 <ul>
 	<li>Product Name : ${di.name} </li>
@@ -11,6 +11,5 @@
 	<li>Item Status : ${di.istatus}</li>
 </ul>
 
- <a href='<c:url value="/spetstore/spetitem/addCart.do">
-          <c:param name="additemId" value="${di.itemId}"/></c:url>'>
-          ADD CART</a>
+ <a href='<c:url value="/spetstore/spetitem/addCart/${di.itemId}"/>'> ADD CART</a>
+ </div>

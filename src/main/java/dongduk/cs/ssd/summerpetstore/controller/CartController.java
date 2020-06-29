@@ -47,6 +47,7 @@ public class CartController {
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		cartService.addCart(userSession.getUserId(), itemId);
 		ItemModel iData = ms.showInfo(itemId);
+		System.out.println("add cart at market  @item id" + itemId);
 		return new ModelAndView("market/mDetail", "iData", iData);
 	}//장바구니 담기
 	
@@ -56,8 +57,8 @@ public class CartController {
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		cartService.addCart(userSession.getUserId(), itemId);
 		ItemModel iData = ms.showInfo(itemId);
-		System.out.println("addcart 성공은함");
-		return new ModelAndView("market/mDetail", "iData", iData);
+		System.out.println("add cart  @item id" + itemId);
+		return new ModelAndView("spetitem/sListDetail", "di", iData);
 
 	}//장바구니 담기
 	
