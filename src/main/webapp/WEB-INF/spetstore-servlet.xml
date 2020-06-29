@@ -31,6 +31,9 @@
 	<mvc:view-controller path="/spetstore/market/mSearch.do" view-name="/market/mSearch"/>
 	<mvc:view-controller path="/spetstore/auction/aSearch.do" view-name="/auction/aSearch"/>
 	<mvc:view-controller path="/spetstore/user/signonForm.do" view-name="/user/SignonForm"/>
+	<mvc:view-controller path="/spetstore/user/editAccount.do" view-name="/user/editAccount"/>
+	
+	
 	
 	<!-- <mvc:view-controller path="/shop/signonForm.do" view-name="SignonForm"/>  -->
 

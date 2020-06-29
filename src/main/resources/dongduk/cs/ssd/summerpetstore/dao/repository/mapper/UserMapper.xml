@@ -20,7 +20,7 @@
   <select id="getUserById" resultType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     SELECT *
     FROM suser u
-    WHERE userid=#{value}
+    WHERE userid=#{value} and password = #{password}
   </select>
 
   <select id="getUsernameList" resultType="java.lang.String">

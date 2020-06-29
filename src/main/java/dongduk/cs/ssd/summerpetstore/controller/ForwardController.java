@@ -24,12 +24,12 @@ public class ForwardController {
 	//		return"user/myPage"; 
 	//}//마이페이지로 이동
 	
-	@RequestMapping("/spetstore/user/signonForm.do")
+	/*@RequestMapping("/spetstore/user/signonForm.do")
 	public String showLogin() {
 		
 			return"user/SignonForm"; 
 	}//로그인 이동
-	
+*/	
 	/*	@RequestMapping("/spetstore/user/newAccount.do")
 	public String showRegister(Model model) {
 		  model.addAttribute("user", new UserModel());
