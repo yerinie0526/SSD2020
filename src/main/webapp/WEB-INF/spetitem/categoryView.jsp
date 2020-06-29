@@ -21,7 +21,7 @@
         
           <c:out value="${item.name}" />
         </td>
-        <td><fmt:formatNumber value="${item.price}" pattern="$#,##0.00" /></td>
+        <td><fmt:formatNumber value="${item.price}" pattern="#won" /></td>
         
     </c:forEach>
  
