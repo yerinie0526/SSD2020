@@ -11,7 +11,9 @@
         <td colspan="2">Please enter your username and password. <br />&nbsp;
         </td>
       </tr>
+      <tr><c:out value="${message}" /></tr>
       <tr>
+      
         <td>Username:</td>
         <td><input type="text" name="userId" size="20" value="" /></td>
       <tr>

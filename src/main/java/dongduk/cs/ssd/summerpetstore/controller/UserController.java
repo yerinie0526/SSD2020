@@ -116,7 +116,7 @@ public class UserController {
 			@RequestParam("password") String password, Model model) {
 		UserModel usermodel = userService.getUserById(userId);
 		if (usermodel == null) {
-			return new ModelAndView("Error", "message", 
+			return new ModelAndView("/user/SignonForm", "message", 
 					"Invalid username or password.  Signon failed.");
 		}
 		else {
