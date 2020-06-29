@@ -3,6 +3,7 @@ package dongduk.cs.ssd.summerpetstore.dao.repository.mapper;
 import java.util.List;
 
 import dongduk.cs.ssd.summerpetstore.controller.OrderForm;
+import dongduk.cs.ssd.summerpetstore.controller.UpdateQuantity;
 import dongduk.cs.ssd.summerpetstore.model.CartModel;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 
@@ -18,4 +19,5 @@ public interface CartMapper {
 	void updateQuantity(String userId, int itemId, int quantity); //장바구니에서 수량을 늘릴경우 (공식물품만 허용)
 	List<CartModel> showCartList(String userId);
 	void createOrder(OrderForm orderForm);
+	void updateQuantity(UpdateQuantity newQuantity);
 }

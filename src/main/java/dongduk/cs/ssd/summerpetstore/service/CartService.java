@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import dongduk.cs.ssd.summerpetstore.controller.OrderForm;
+import dongduk.cs.ssd.summerpetstore.controller.UpdateQuantity;
 import dongduk.cs.ssd.summerpetstore.dao.CartDAO;
 import dongduk.cs.ssd.summerpetstore.model.CartModel;
 
@@ -23,6 +24,10 @@ public class CartService {
 	
 	public void createOrder(OrderForm orderForm) {
 		cartdao.createOrder(orderForm);
+	}
+	
+	public void updateQuantity(UpdateQuantity newQuantity) {
+		cartdao.updateQuantity(newQuantity);
 	}
 	
 //	@Transactional

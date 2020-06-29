@@ -174,19 +174,7 @@ public class UserController {
 	   }//주문내역으로 이동
 	  
 	  
-		@RequestMapping("/spetstore/user/myPage/cart.do") 
-		public ModelAndView showCart(HttpServletRequest request) {
-			System.out.println("#####################Cart Controller");
-			UserSession userSession = 
-					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-			if (userSession != null) {
-		        List<CartModel> cartList = cartService.showCartList(userSession.getUserId()); 
-		        return new ModelAndView("/user/myPage/Cart", "cartList", cartList);
-			}
-			else 
-				return new ModelAndView("redirect: /summerpetstore/spetstore/user/signonForm.do"); 
-			
-		}//장바구니로 이동
+		
 	  
 	  
 	/*

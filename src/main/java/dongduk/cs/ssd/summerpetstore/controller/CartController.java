@@ -36,7 +36,7 @@ public class CartController {
 	private MarketService ms;
 	
 	private Date nowTime;
-	
+		
 	
 	public void setCartService(CartService cartService) {
 		this.cartService = cartService;
@@ -55,6 +55,11 @@ public class CartController {
 	@ModelAttribute("orderForm")
 	   public OrderForm newOrderForm() {
 	      return new OrderForm();
+	   }
+	
+	@ModelAttribute("updateQuantity")
+	   public UpdateQuantity updateQuantityNum() {
+	      return new UpdateQuantity();
 	   }
 	
 	@ModelAttribute("creditCardTypes") 
@@ -81,7 +86,21 @@ public class CartController {
 		orderForm.setUserId(userSession.getUserId());
 		orderForm.setOrderDate(format.format(nowTime));
 		orderForm.setTotalPrice(totalPrice);
+		System.out.println(orderForm.getTotalPrice());
 		return "user/PayForm";
+	}
+	
+	@RequestMapping("/spetstore/user/myPage/cart/updatequantity")
+	public ModelAndView changeQuantity(@ModelAttribute("updateQuantity") UpdateQuantity uQuantity, 
+		@RequestParam("itemId") int itemId ,HttpServletRequest request) {
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		uQuantity.setItemId(itemId);
+		uQuantity.setUserId(userSession.getUserId());
+		System.out.println(uQuantity.getNewQuantity());
+		cartService.updateQuantity(uQuantity);
+		List<CartModel> cartList = cartService.showCartList(userSession.getUserId());
+		return new ModelAndView("/user/myPage/Cart", "cartList", cartList);
 	}
 	
 	@RequestMapping("/spetstore/user/order/PaidSuc.do")
@@ -114,6 +133,20 @@ public class CartController {
 		return new ModelAndView("spetitem/sListDetail", "di", iData);
 
 	}//장바구니 담기
+	
+	@RequestMapping("/spetstore/user/myPage/cart.do") 
+	public ModelAndView showCart(HttpServletRequest request) {
+		System.out.println("#####################Cart Controller");
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		if (userSession != null) {
+	        List<CartModel> cartList = cartService.showCartList(userSession.getUserId()); 
+	        return new ModelAndView("/user/myPage/Cart", "cartList", cartList);
+		}
+		else 
+			return new ModelAndView("redirect: /summerpetstore/spetstore/user/signonForm.do"); 
+		
+	}//장바구니로 이동
 	
 	//이과정을 dao에서 하는 것으로 바꿈! 그게 나을것같아서 06.29 -예린-
 /*	@RequestMapping("/spetstore/spetitem/addCart.do") 

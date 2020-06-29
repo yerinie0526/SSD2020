@@ -3,7 +3,7 @@
 <table style="border:none;border-collapse:collapse;width:100%">
 <c:set var="orderTotalPrice" value="0"/>
 <c:forEach var="ci" items="${cartList}">
-<form action='<c:url value='/spetstore/user/myPage/cart/updatequantity' />' method="post">
+<form id = "updateQuantity" action='<c:url value='/spetstore/user/myPage/cart/updatequantity?itemId=${ci.itemId}' />' method="post">
 	<tr>
 		<td><a href="<c:url value='/spetstore/market/detail?itemId=${ci.itemId}'/>">${ci.iname}</a></td>
 	</tr>
@@ -19,7 +19,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td>Quantity : <input type="number" name= "${ci.itemId}" value="${ci.quantity}"/></td>
+		<td>Quantity : <input type="number" name = "newQuantity" value="${ci.quantity}"/></td>
 		<td>
 			<input type="submit" value="update" />
 		</td>

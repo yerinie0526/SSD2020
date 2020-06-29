@@ -60,9 +60,9 @@
 	</update>
 	
 	<!--아아템 수량 수정-->
-	<update id="updateQuantity">
+	<update id="updateQuantity" parameterType="dongduk.cs.ssd.summerpetstore.controller.UpdateQuantity">
 		UPDATE cart
-		SET quantity=#{quantity}
+		SET quantity= #{newQuantity}
 		WHERE itemId = #{itemId} and userId = #{userId}
 	</update>
 	

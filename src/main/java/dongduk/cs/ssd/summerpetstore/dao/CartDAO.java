@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import dongduk.cs.ssd.summerpetstore.controller.OrderForm;
+import dongduk.cs.ssd.summerpetstore.controller.UpdateQuantity;
 import dongduk.cs.ssd.summerpetstore.dao.repository.mapper.CartMapper;
 import dongduk.cs.ssd.summerpetstore.model.GpModel;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
@@ -28,6 +29,10 @@ public class CartDAO {
 	
 	public void createOrder(OrderForm orderForm) {
 		cmapper.createOrder(orderForm);
+	}
+	
+	public void updateQuantity(UpdateQuantity newQuantity) {
+		cmapper.updateQuantity(newQuantity);
 	}
 	
 //	private String namespace = "summerpetstore.repository.mapper.CartMapper";
