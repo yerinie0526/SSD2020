@@ -16,8 +16,6 @@ public class AuctionForm {
 	public AuctionForm() {
 		
 	}
-	
-	
 
 
 	public AuctionForm(int auctionId, String name, Date deadline, int dday, String description, int minPrice,
