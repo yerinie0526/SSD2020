@@ -1,3 +1,4 @@
+
 <%@ include file="../IncludeTop.jsp" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
@@ -62,8 +63,20 @@
   </table>
   <br />
 <input type="submit" name="submit"
-      value="Save Account Information" /></form:form>
+      value="Save Account Information" />
+      <br/>
+        <br/>
+      
+       <c:if test="${!user.newAccount}">
+              <a href='<c:url value="/spetstore/delete"> 
+            <c:param name="userId" value="${user.account.userId}"/></c:url>'onclick="if(!confirm('Are you sure you want to delete this ?')){return false;}" >
+
+                          <c:out value="WITHDRAWAL" />
+                          
+ 
+            </a>
+            </c:if> 
+   </form:form>
 <p></p>
   
 </div>
-

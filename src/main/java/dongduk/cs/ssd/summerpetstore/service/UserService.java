@@ -15,8 +15,8 @@ public class UserService {
 	@Autowired
 	private UserDAO udao;
 	
-	public UserModel getUser(String username) {
-		return udao.getUser(username);
+	public UserModel getUser(String userId) {
+		return udao.getUser(userId);
 	}
 	
 	public UserModel getUserById(String userId, String password) {
@@ -39,6 +39,13 @@ public class UserService {
 		return udao.getUsernameList();
 	}
 	
+	public void deleteUser(String userId) {
+		 udao.deleteUser(userId);
+	}
+	
+	public String getUserIdtoPw(String userId) {
+		return udao.getUserIdtoPw(userId);
+	}
 	
 	
 //	UserModel getUserModel(String userId) {

@@ -15,8 +15,8 @@ public class UserDAO {
 	@Autowired
 	private UserMapper umapper;
 	
-	public UserModel getUser(String username) throws DataAccessException {
-		return umapper.getUserByUsername(username);
+	public UserModel getUser(String userId) throws DataAccessException {
+		return umapper.getUserByUsername(userId);
 	}
 
 	public UserModel getUser(String username, String password) throws DataAccessException {
@@ -36,14 +36,21 @@ public class UserDAO {
 	public void updateUser(UserModel account) throws DataAccessException {
 		umapper.updateUser(account);
 		//umapper.updateProfile(account);
-		if (account.getPassword() != null && account.getPassword().length() > 0) 
-		{
-			umapper.updateSignon(account);
-		}
+		//if (account.getPassword() != null && account.getPassword().length() > 0) 
+		//{
+		//	umapper.updateSignon(account);
+		//}
 	}
  
 	public List<String> getUsernameList() throws DataAccessException {
 		return umapper.getUsernameList();
 	}
+	
+	public void deleteUser(String userId) {
+		umapper.deleteUser(userId);
+	}
 
+	public String getUserIdtoPw(String userId) {
+		return umapper.getUserIdtoPw(userId);
+	}
 }

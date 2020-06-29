@@ -6,8 +6,8 @@
 
   <select id="getUserByUsername" resultType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     SELECT *
-    FROM suser u, signon s
-    WHERE u.userid = #{userId} and s.userid = u.userid
+    FROM suser 
+    WHERE userid = #{param1} 
     
   </select>
 
@@ -30,7 +30,7 @@
   <update id="updateUser" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     UPDATE suser SET
       EMAIL = #{email},
-      name = #{name},
+      username = #{username},
       address = #{address},
       PHONE = #{phone}
     WHERE USERID = #{userId}
@@ -41,6 +41,18 @@
     VALUES (#{userId}, #{username}, #{password}, #{email}, #{address}, #{phone})
   </insert>
 
+
+	<delete id="deleteUser" >
+		DELETE FROM suser
+		WHERE USERID = #{param1}
+		
+	</delete>
+	
+	<select id="getUserIdtoPw" resultType = "java.lang.String">
+		SELECT password
+		FROM suser
+		WHERE USERID = #{param1}
+	</select>
   <!--  
   TODO MyBatis 3 does not map booleans to integers
   <update id="updateProfile" parameterType="Account">

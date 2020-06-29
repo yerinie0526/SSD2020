@@ -3,6 +3,7 @@ package dongduk.cs.ssd.summerpetstore.service;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -17,12 +18,14 @@ import dongduk.cs.ssd.summerpetstore.model.UserModel;
  */
 @Component
 public class AccountFormValidator implements Validator {
-
-
+	@Autowired
+	UserService userService;
 	public boolean supports(Class<?> clazz) {
 		return UserModel.class.isAssignableFrom(clazz);
 	}
-
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 	public void validate(Object obj, Errors errors) {
 		AccountForm accountForm = (AccountForm)obj; 
 		UserModel account = accountForm.getAccount();
@@ -31,6 +34,8 @@ public class AccountFormValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.phone", "PHONE_REQUIRED", "Phone number is required.");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account.address", "ADDRESS_REQUIRED", "Address is required.");
 		
+		
+
 		
 		if (accountForm.isNewAccount()) {
 			//account.setStatus("OK");
@@ -42,9 +47,10 @@ public class AccountFormValidator implements Validator {
 			}
 		}
 		else if (account.getPassword() != null && account.getPassword().length() > 0) {
-			
+			if (!account.getPassword().equals(userService.getUserIdtoPw(account.getUserId()))) {
+				System.out.println("pw error"+ account.getPassword() +"]]]]]]]" + account.getPassword().length());
 				errors.reject("PASSWORD_MISMATCH", "Passwords did not match. Matching passwords are required.");
-			
+			}
 		}
 
 

@@ -55,9 +55,9 @@ public class AccountFormController {
 			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		System.out.println("여기까지는 들어옴!");
 		if (userSession != null) {	// edit an existing account
-			System.out.println("usersession not null!!!!!!!!!!!!!!!!!!!!");
+			System.out.println("usersession not null!!!!!!!!!!!!!!!!!!!!"+us.getUser(userSession.getUserModel().getUserId()));
 			return new AccountForm(
-				us.getUser(userSession.getUserModel().getUsername()));
+				us.getUser(userSession.getUserModel().getUserId()));
 		}
 		else {	// create a new account
 			return new AccountForm();
@@ -90,6 +90,7 @@ public class AccountFormController {
 			}
 			else {
 				us.updateUser(accountForm.getAccount());
+				return "user/myPage";
 			}
 		}
 		catch (DataIntegrityViolationException ex) {

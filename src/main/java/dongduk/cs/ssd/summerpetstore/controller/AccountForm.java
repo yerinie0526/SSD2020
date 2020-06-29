@@ -30,6 +30,11 @@ public class AccountForm implements Serializable {
 	public UserModel getAccount() {
 		return account;
 	}
+	
+
+	public void setAccount(UserModel account) {
+		this.account = account;
+	}
 
 	public boolean isNewAccount() {
 		return newAccount;

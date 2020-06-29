@@ -6,7 +6,7 @@ import dongduk.cs.ssd.summerpetstore.model.UserModel;
 
 public interface UserMapper {
 	
-	UserModel getUserByUsername(String username);
+	UserModel getUserByUsername(String userId);
 
 	UserModel getUserByUsernameAndPassword(String username, String password);
 	
@@ -25,5 +25,9 @@ public interface UserMapper {
 	void updateProfile(UserModel account);
 
 	void updateSignon(UserModel account);
+	
+	void deleteUser(String userId);
+	
+	String getUserIdtoPw(String userId);
 
 }
