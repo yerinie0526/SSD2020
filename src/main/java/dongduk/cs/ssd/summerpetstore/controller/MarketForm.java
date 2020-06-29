@@ -11,12 +11,14 @@ public class MarketForm implements Serializable{
 	private String description;
 	private String name;
 	private int price;
+	private String sellerInfoId;
 	
 	public MarketForm() {
 		
 	}
 
-	public MarketForm(int itemId, String cname, String itemKind, String pMethod, String description, String name, int price) {
+	public MarketForm(int itemId, String cname, String itemKind, String pMethod, String description, String name,
+			int price, String sellerInfoId) {
 		super();
 		this.itemId = itemId;
 		this.cname = cname;
@@ -25,8 +27,17 @@ public class MarketForm implements Serializable{
 		this.description = description;
 		this.name = name;
 		this.price = price;
+		this.sellerInfoId = sellerInfoId;
 	}
 
+
+	public String getSellerInfoId() {
+		return sellerInfoId;
+	}
+
+	public void setSellerInfoId(String sellerInfoId) {
+		this.sellerInfoId = sellerInfoId;
+	}
 
 	public int getItemId() {
 		return itemId;

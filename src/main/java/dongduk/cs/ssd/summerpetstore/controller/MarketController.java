@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
 import dongduk.cs.ssd.summerpetstore.controller.MarketFilter;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
@@ -24,7 +25,7 @@ import dongduk.cs.ssd.summerpetstore.service.CartService;
 import dongduk.cs.ssd.summerpetstore.service.MarketService;
 
 @Controller
-@SessionAttributes("marketForm")
+@SessionAttributes("userSession")
 public class MarketController {
    
    @Autowired
@@ -79,14 +80,17 @@ public class MarketController {
 //      return "market/mSearch"; 
 //   }
 //   
-     @RequestMapping("/spetstore/market/mSearch/mRegisterSuc.do") 
-     public String registerMarket(@ModelAttribute("marketForm") MarketForm marketForm, 
-           SessionStatus sessionStatus, Model model){
-        marketService.registerItem(marketForm); 
-        sessionStatus.setComplete();
-        System.out.println("################mregistersucc controller");
-        return "market/mRegisterSuc"; 
-     }
+// 
+   @RequestMapping("/spetstore/market/mSearch/mRegisterSuc.do") 
+   public String registerMarket(@ModelAttribute("marketForm") MarketForm marketForm, 
+         SessionStatus sessionStatus, Model model, HttpServletRequest request){
+  	 UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+  	 marketForm.setSellerInfoId(userSession.getUserId());
+      marketService.registerItem(marketForm); 
+      System.out.println("################mregistersucc controller");
+      return "market/mRegisterSuc"; 
+   }
      
      
      

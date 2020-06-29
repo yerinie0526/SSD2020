@@ -10,7 +10,7 @@
 			SELECT item_seq.nextval AS itemid FROM DUAL
 		</selectKey>
 		INSERT INTO item
-		VALUES (#{itemId}, 'in progress', #{itemKind}, #{name}, #{price}, #{description}, 0, #{userId}, #{cname}, 1)
+		VALUES (#{itemId}, 'in progress', #{itemKind}, #{name}, #{price}, #{description}, 0, #{sellerInfoId}, #{cname}, 1)
 	</insert>
 	
 	<!--장터 물품 자세히 보기-->
