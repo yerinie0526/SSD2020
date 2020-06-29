@@ -1,9 +1,10 @@
 <%@ include file="../IncludeTop.jsp" %>
 
 <div align="center">
-  <b><font size="4"><c:out value="Products for sale" /></font></b>
+  <b><font size="4"><c:out value="Products for sale at Spet Store" /></font></b>
+  
   <table class="n23">
-    <tr bgcolor="#CCCCCC">
+    <tr bgcolor="#FFCCCC">
       <td><b>Item ID</b></td>
       <td><b>Category</b></td>
       <td><b>Name</b></td>
@@ -22,8 +23,19 @@
           <c:out value="${sitem.name}" />
         </td>
         <td><fmt:formatNumber value="${sitem.price}" pattern="#won" /></td>
-        
-    </c:forEach>
+      </c:forEach>
+    </table>
+    
+    <HR>
+    <b><font size="4"><c:out value="Products for sale at Market" /></font></b>
+    <table>
+    <tr bgcolor="#FFCCFF">
+      <td><b>Item ID</b></td>
+      <td><b>Category</b></td>
+      <td><b>Name</b></td>
+      <td><b>Price</b></td>
+    </tr>    
+    
 	<c:forEach var="item" items="${mdata}">
 		<tr bgcolor="#FFFF88">
         	<td><b> 

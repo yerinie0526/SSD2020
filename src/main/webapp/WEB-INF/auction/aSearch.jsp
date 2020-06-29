@@ -53,9 +53,9 @@
       </td>
       <td>
          <table>
-            <tr><td>${ai.actionId}</td></tr>
+            <tr><td>${ai.auctionId}</td></tr>
             <tr><td>${ai.astatus}</td></tr>
-            <tr><td>${ai.minPrice}</td></tr>
+            <tr><td>${ai.minprice}</td></tr>
             <tr><td>${ai.curMaxPrice}</td></tr>
          </table>
       </td>

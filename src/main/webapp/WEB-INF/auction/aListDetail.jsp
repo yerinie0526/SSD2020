@@ -12,12 +12,12 @@
 	<li> User : ${auctionModel.firstId} </li>
 	
 	<li> Description� : ${auctionModel.description}</li>
-	<li> Minimum Price : ${auctionModel.minPrice}</li>
+	<li> Minimum Price : ${auctionModel.minprice}</li>
 	<li> Seller�� : ${auctionModel.sellerInfoId}</li>
 	<li> Status : ${auctionModel.minPrice}</li>
 	
 	
 </ul>
-<p><a href="<c:url value='/spetstore/auction/priceregister' />">가격 제시/수정하기</a></p>
+<p><a href="<c:url value='/spetstore/auction/priceregister' />">Register Price</a></p>
 </div>
 <%@ include file="../IncludeBottom.jsp" %>

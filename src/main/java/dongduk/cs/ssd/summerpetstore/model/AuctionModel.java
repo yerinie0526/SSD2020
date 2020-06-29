@@ -1,8 +1,9 @@
 package dongduk.cs.ssd.summerpetstore.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class AuctionModel {
+public class AuctionModel implements Serializable{
 	
 	int auctionId;
 	String name;

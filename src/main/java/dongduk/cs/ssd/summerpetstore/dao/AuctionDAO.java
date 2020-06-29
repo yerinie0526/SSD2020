@@ -62,14 +62,10 @@ public class AuctionDAO {
 	}
 //	
 //
-//	public AuctionModel showInfo(int auctionId) {
-//		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		try {
-//			AuctionModel result = sqlSession.selectOne(namespace + ".showInfo", auctionId);
-//			return result;
-//		}finally { sqlSession.close(); }
-//	}
-//	
+	public AuctionModel showInfo(int auctionId) {
+		return amapper.showInfo(auctionId);
+	}
+	
 //	
 //
 //	public List<AuctionJPModel> showJPList(int auctionId){

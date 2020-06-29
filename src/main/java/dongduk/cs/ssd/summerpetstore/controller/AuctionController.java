@@ -115,8 +115,8 @@ public class AuctionController {
 	
 	 @RequestMapping("/spetstore/auction/detail")
      public ModelAndView showAuctionDetail(
-           @RequestParam("itemId") int itemId) throws Exception{
-        AuctionModel am = auctionservice.showInfo(itemId);
+           @RequestParam("auctionId") int aId) throws Exception{
+        AuctionModel am = auctionservice.showInfo(aId);
         return new ModelAndView("auction/mDetail", "auctionModel", am);
      }
 }

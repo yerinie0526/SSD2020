@@ -8,10 +8,7 @@
 	<select id="searchAuction" resultType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
 		SELECT auctionId, aname as name, dday, astatus, cname, curMaxPrice 
 		FROM auction
-		WHERE lower(aname) like #{param3}
-			<if test="param1 != null">
-				AND cname = #{param1}
-			</if>
+		WHERE 1=1
 	</select>
 	
 	
@@ -62,7 +59,7 @@
 	
 	<!-- showInfo : 경매 자세히 보기-->
 	<select id="showInfo" parameterType="int" resultType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
-		SELECT auctionId, dday, astatus, minprice, curMaxPrice, firstId
+		SELECT auctionId, aname as name, deadline, dday, adescription as description, astatus, minprice, curMaxPrice, firstId, sellerInfoId, cname 
 		FROM auction
 		WHERE auctionId = #{auctionId}
 	</select>
@@ -80,8 +77,8 @@
 		<selectKey keyProperty="auctionId" resultType="int" order="BEFORE">
 			SELECT auction_seq.nextval AS auctionid FROM DUAL
 		</selectKey>
-		INSERT INTO auction
-		VALUES (#{auctionId}, #{name}, to_date(#{deadline}, 'yyyymmdd'), trunc(To_date(#{deadline}, 'yyyymmdd')-sysdate, 0), #{description}, #{minPrice}, 0, 'in progress', #{sellerInfoId}, #{cname}, #{firstId})
+		INSERT INTO auction (auctionid, aname, deadline, dday, adescription, minprice, curmaxprice, astatus, sellerinfoid, cname)
+		VALUES (#{auctionId}, #{name}, to_date(#{deadline}, 'yyyymmdd'), trunc(To_date(#{deadline}, 'yyyymmdd')-sysdate, 0), #{description}, #{minPrice}, 0, 'in progress', #{sellerInfoId}, #{cname})
 	</insert>
 	
 	<!--updateAuction : 경매 수정하기-->
