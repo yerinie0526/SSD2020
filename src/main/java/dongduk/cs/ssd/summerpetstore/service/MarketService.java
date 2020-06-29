@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import dongduk.cs.ssd.summerpetstore.controller.MarketFilter;
 import dongduk.cs.ssd.summerpetstore.controller.MarketForm;
 import dongduk.cs.ssd.summerpetstore.dao.MarketDAO;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
@@ -17,10 +18,9 @@ public class MarketService {
 	@Autowired
 	private MarketDAO mdao;
 
-//	public List<Market> getMarketList() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+	public List<ItemModel> getMarketList() {
+		return mdao.getMarketList();
+	}
 	
 	
 	@Transactional 
@@ -47,11 +47,15 @@ public class MarketService {
 //	  public void updateItemStatus(int itemId) { mdao.updateItemStatus(itemId); }
 	  
 	 
-	 public List<ItemModel> searchItem(String cname, String itemKind, String keyword) {
-		  List<ItemModel> imList; 
-		  imList = mdao.searchItem(cname, itemKind, keyword); 
-		  return imList; 
-	}
+//	 public List<ItemModel> searchItem(String cname, String itemKind, String keyword) {
+//		  List<ItemModel> imList; 
+//		  imList = mdao.searchItem(cname, itemKind, keyword); 
+//		  return imList; 
+//	}
+	  
+	  public List<ItemModel> searchItem(MarketFilter marketFilter) {
+		  return mdao.searchItem(marketFilter);
+	  }
 	  
 	  public List<ItemModel> searchMarketByUser(String userId) {
 		  List<ItemModel> imList; 

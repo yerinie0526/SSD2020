@@ -41,7 +41,7 @@
 	</update>
 	
 	<!--장터검색-->
-	<select id="searchItem" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
+<!-- 	<select id="searchItem" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
 		SELECT itemid as itemId, iname as name, price
 		FROM Item
 		WHERE lower(name) like #{param3}
@@ -51,7 +51,24 @@
 			<if test='param2 != null'>
 				and itemkind=#{param2}
 			</if>
-	</select>	
+	</select> -->	
+	
+	<select id="searchItem" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel"
+		parameterType="dongduk.cs.ssd.summerpetstore.controller.MarketFilter" >
+		<![CDATA[
+		SELECT itemid as itemId, iname as name, price
+		FROM Item
+		WHERE itemid >= 20000
+		]]>
+	</select>
+	
+	<select id="getMarketList" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
+		<![CDATA[
+		SELECT itemid as itemId, iname as name, price
+		FROM Item
+		WHERE itemid >= 20000
+		]]>
+	</select>
 	
 		<!--장터검색-->
 	<select id="searchMarketByUser" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">

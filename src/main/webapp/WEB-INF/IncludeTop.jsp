@@ -40,12 +40,6 @@
 	    
 	    <td style="text-align:left">
 	      <form action="<c:url value="/spetstore/spetitem/categoryView.do"/>" method="post">
-	      	<select name="itemKind"> <!-- itemKind 보기 생각해보기 -->
-	      		<option value="">--Select itemkind--</option>
-	      		<option value="1">bath product</option>
-	      		<option value="2">feeding Item</option>
-	      		<option value="3">care Item</option>
-	      	</select>
 	        <input type="text" name="keyword" size="14" />
 	        <input type="submit" value="search">
 	      </form>

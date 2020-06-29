@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import dongduk.cs.ssd.summerpetstore.controller.MarketFilter;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.service.CartService;
 import dongduk.cs.ssd.summerpetstore.service.MarketService;
@@ -66,6 +67,11 @@ public class MarketController {
       return new MarketForm();
    }   
    
+   @ModelAttribute("marketfilter")
+   public MarketFilter marketFilterData() {
+      return new MarketFilter();
+   } 
+   
 //   @RequestMapping("/market/main") 
 //   public String showMarketList(Model model) {
 //      List<Market> mList = marketService.getMarketList();
@@ -108,16 +114,22 @@ public class MarketController {
 //     }//×Ù•í„°ê²  ƒ‰
      
 
-     @RequestMapping(value="/spetstore/market/mSearch/mSearch.do") 
-     public ModelAndView submit(HttpServletRequest request, 
-           @RequestParam("cname") String name, 
-           @RequestParam("itemKind") String itemKind, 
-           @RequestParam("keyword") String keyword) throws Exception{
+     @RequestMapping(value="/spetstore/market/mSearch/filter.do") 
+     public ModelAndView submit(HttpServletRequest request,
+    		 @ModelAttribute("marketFilter") MarketFilter marketFilter)
+    		 throws Exception{
         System.out.println("#####################Controller");
-        List<ItemModel> imList = marketService.searchItem(name, itemKind, keyword); 
-        //System.out.println(imList.get(0).getName());
+        List<ItemModel> imList = marketService.searchItem(marketFilter); 
         return new ModelAndView("/market/mSearch", "mList", imList);
      }//×Ù•í„°ê²  ƒ‰
+     
+     @RequestMapping(value="/spetstore/market/mSearch.do") 
+     public ModelAndView goToMarketView(HttpServletRequest request)
+    		 throws Exception{
+        System.out.println("#####################Controller");
+        List<ItemModel> mList = marketService.getMarketList(); 
+        return new ModelAndView("/market/mSearch", "mList", mList);
+     }
      
      @RequestMapping("/spetstore/market/detail")
      public ModelAndView showMarketDetail(

@@ -1,6 +1,6 @@
 <%@ include file="../IncludeTop.jsp" %>
 
-<form:form modelAttribute="auctionForm" action="aRegister">
+<form:form modelAttribute="auctionForm" action="aRegisterSuc">
 <p>
 	<form:label path="name">Title : </form:label>
 	<form:input path="name" />

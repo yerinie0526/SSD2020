@@ -3,7 +3,7 @@
   <table>
     <tr>
       <td>
-        Copyright ⓒ summer. All rights reserved.
+        Copyright by Summer. All rights reserved.
       </td>
      </tr>
      <tr>

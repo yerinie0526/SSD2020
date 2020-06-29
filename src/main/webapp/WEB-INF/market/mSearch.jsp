@@ -7,7 +7,7 @@
 	</tr>
 	<tr>
 		<td>
-			<form action="<c:url value="/spetstore/market/mSearch/mSearch.do"/>">
+			<form action="<c:url value="/spetstore/market/mSearch/filter.do"/>">
 		      	<select name="cname"> 
 		      		<option value="">--Select pet kind--</option>
 		      		<option value="dog">dog</option>
