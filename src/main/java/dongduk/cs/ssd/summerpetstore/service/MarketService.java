@@ -38,9 +38,14 @@ public class MarketService {
 	  }
 	  
 	  
-//	  @Transactional public void deleteItem(int itemId) { mdao.deleteItem(itemId);
-//	  }
-//	  
+	  @Transactional 
+	  public void deleteItem(int itemId) { 
+		  mdao.deleteItem(itemId);
+	  }
+	  @Transactional 
+	  public List<ItemModel>  getCartCount(int itemId) {
+		  return mdao.getCartCount(itemId);
+	  }
 //	  
 //	  @Transactional public void updateItem(Market im) { mdao.updateItem(im); }
 //	  

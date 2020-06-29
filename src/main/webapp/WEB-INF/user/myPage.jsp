@@ -63,6 +63,8 @@
 				<tr><td>${mi.itemId}</td></tr>
 				<tr><td>${mi.istatus}</td></tr>
 				<tr><td>${mi.price}</td></tr>
+				<tr><td>${deleteerror}</td></tr>
+				<tr><td><p><a href="<c:url value='/spetstore/market/delete/${mi.itemId}' />" onclick="if(!confirm('Are you sure you want to delete this item?')){return false;}">Delete Item</a></p></td></tr>
 			</table>
 		</td>
 	</tr>

@@ -12,5 +12,9 @@
 </ul>
 
 <p><a href="<c:url value='/spetstore/market/addCart/${cList.itemId}' />">Add Cart</a></p>
+
+
+
+
 </div>
 <%@ include file="../IncludeBottom.jsp" %>

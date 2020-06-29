@@ -25,4 +25,6 @@ public interface MarketMapper {
 	List<ItemModel> getMarketList();
 	
 	List<ItemModel> showInfoMP(String cname);
+	
+	List<ItemModel> getCartCount(int itemId);
 }

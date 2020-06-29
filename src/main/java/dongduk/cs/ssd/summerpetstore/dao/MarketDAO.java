@@ -37,7 +37,13 @@ public class MarketDAO {
 		return mmapper.showInfo(itemId);	  
 	}
 		  
-//		  public void deleteItem(int itemId) throws DataAccessException;
+	public void deleteItem(int itemId) throws DataAccessException{
+			  mmapper.deleteItem(itemId);
+	}
+	
+	public List<ItemModel>  getCartCount(int itemId)throws DataAccessException {
+		return mmapper.getCartCount(itemId);
+	}
 //		  
 //		  public void updateItem(ItemModel im) throws DataAccessException;
 //		  

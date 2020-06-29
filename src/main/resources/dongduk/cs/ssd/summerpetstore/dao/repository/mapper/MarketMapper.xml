@@ -15,7 +15,7 @@
 	
 	<!--장터 물품 자세히 보기-->
 	<select id="showInfo" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
-		SELECT itemid, iname AS name, itemkind AS itemKind, price, idescription AS description, istatus, cname
+		SELECT itemid, iname AS name, itemkind AS itemKind, price, idescription AS description, istatus, cname, sellerinfoid
 		FROM item
 		WHERE itemid = #{value}
 	</select>
@@ -23,8 +23,14 @@
 	<!--장터 물품 삭제-->
 	<delete id="deleteItem">
 		DELETE FROM item
-		WHERE itemId = #{itemId}
+		WHERE itemid = #{param1}
 	</delete>
+	
+	<select id="getCartCount" resultType = "dongduk.cs.ssd.summerpetstore.model.ItemModel">
+		select i.itemid
+    	from item i, cart c
+    	where i.itemid = c.itemid and i.itemid = #{param1}
+	</select>
 	
 	<!--장터물품 수정 -->
 	<update id="updateItem" >

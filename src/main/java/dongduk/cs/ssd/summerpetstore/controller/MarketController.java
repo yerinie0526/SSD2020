@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -143,5 +144,21 @@ public class MarketController {
         System.out.println(iData.getItemKind());
         return new ModelAndView("market/mDetail", "iData", iData);
      }
+     
+     @RequestMapping("/spetstore/market/delete/{itemId}")
+     public String deleteMarket(
+    		 @PathVariable int itemId, Model model) throws Exception{
+    	 System.out.println("itemId :" + itemId);
+    	 System.out.println(marketService.getCartCount(itemId).size());
+    	 if(marketService.getCartCount(itemId).size() == 0) {
+    		 marketService.deleteItem(itemId);
+    		 System.out.println("if !!!!!!!!");
+    		 }
+    	 else {
+    		 System.out.println("else !!!!!!!!");
+    		 model.addAttribute("deleteerror", "Cannot be deleted");
+    	 }
+    	 return "redirect: /summerpetstore/spetstore/user/myPage.do";
+     }//마켓물품삭제
      
     }
