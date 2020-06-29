@@ -7,11 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 
 import dongduk.cs.ssd.summerpetstore.model.AuctionModel;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
@@ -67,10 +70,15 @@ public class AuctionController {
 	}//경매등록창으로 이동
 	
 	
-	@RequestMapping("/auction/aregister") 
-	public String registerAuction(@RequestParam("userId") String userId, @ModelAttribute("Auction")AuctionModel am) {	
-		auctionservice.registerAuction(am);
-		return "auction/aRegister"; 	
+	@RequestMapping("/spetstore/auction/aSearch/aRegisterSuc.do") 
+	public String registerAuction(@ModelAttribute("auctionForm") AuctionForm auctionForm, 
+			HttpServletRequest request, Model model) {	
+		 UserSession userSession = 
+					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+	  	 auctionForm.setSellerInfoId(userSession.getUserId());
+		 auctionservice.registerAuction(auctionForm);
+	     System.out.println("################aregistersucc controller");
+	     return "auction/aRegisterSuc"; 	
 	}//경매등록
 	
 	

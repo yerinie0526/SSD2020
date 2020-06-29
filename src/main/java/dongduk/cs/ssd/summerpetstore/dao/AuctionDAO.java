@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import dongduk.cs.ssd.summerpetstore.controller.AuctionForm;
 import dongduk.cs.ssd.summerpetstore.dao.repository.mapper.AuctionMapper;
 import dongduk.cs.ssd.summerpetstore.model.AuctionJPModel;
 import dongduk.cs.ssd.summerpetstore.model.AuctionModel;
@@ -54,6 +55,10 @@ public class AuctionDAO {
 //
 	public List<AuctionModel> searchAuction(String cname, String itemKind, String keyword) {
 		return amapper.searchAuction(cname, itemKind, keyword);
+	}
+	
+	public void registerAuction(AuctionForm af) {
+		amapper.registerAuction(af);
 	}
 //	
 //

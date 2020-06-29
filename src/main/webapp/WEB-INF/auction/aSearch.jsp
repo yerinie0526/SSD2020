@@ -16,11 +16,11 @@
                </select>
                <select name="itemKind"> <!-- itemKind ë³´ê¸° ì  ê° í ´ë³´ê¸° -->
                   <option value="">--Select item kind--</option>
-                  <option value="1">bath product</option>
-                  <option value="2">feeding Item</option>
-                  <option value="3">care Item</option>
-                  <option value="3">home Item</option>
-                  <option value="3">else</option>
+                  <option value="bath">bath product</option>
+                  <option value="feed">feeding Item</option>
+                  <option value="care">care Item</option>
+                  <option value="home">home Item</option>
+                  <option value="else">else</option>
                </select>
               <input type="text" name="keyword" size="14" />
               <input type="submit" value="search">

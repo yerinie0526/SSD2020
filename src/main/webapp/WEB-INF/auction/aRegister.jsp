@@ -1,6 +1,8 @@
 <%@ include file="../IncludeTop.jsp" %>
 
-<form:form modelAttribute="auctionForm" action="aRegisterSuc">
+<c:set var="targetUrl"><c:url value="/spetstore/auction/aSearch/aRegisterSuc.do" /></c:set>
+<div align="center">
+<form:form modelAttribute="auctionForm" action="${targetUrl}">
 <p>
 	<form:label path="name">Title : </form:label>
 	<form:input path="name" />
@@ -14,11 +16,10 @@
 	</form:select>
 	<form:errors path="cname" />
 </p>
-
 <p>
 	<form:label path="deadline">Deadline : </form:label>
 	<form:input path="deadline" type="date"/>
-	<form:errors path="dealine" />
+	<form:errors path="deadline" />
 </p>
 <p>
 	<form:label path="description">Description : </form:label>
@@ -31,7 +32,6 @@
 	<form:errors path="minPrice" />
 </p>
 <input type="submit" value="Register" />
-<input type="button" value="Register"/>
 </form:form>
-
+</div>
 <%@ include file="../IncludeBottom.jsp" %>

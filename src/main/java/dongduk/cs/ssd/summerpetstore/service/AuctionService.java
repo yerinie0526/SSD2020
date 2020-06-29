@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import dongduk.cs.ssd.summerpetstore.controller.AuctionForm;
 import dongduk.cs.ssd.summerpetstore.dao.AuctionDAO;
 import dongduk.cs.ssd.summerpetstore.dao.CartDAO;
 import dongduk.cs.ssd.summerpetstore.model.AuctionJPModel;
@@ -19,8 +20,6 @@ public class AuctionService {
 	@Autowired
 	private AuctionDAO adao;
 	
-
-	//카테코리, 종류 등으로도 검색이 가능해야하므로 모델 전체를 보내줘야할듯
 	public List<AuctionModel> searchAuction(String cname, String itemKind, String keyword) { 
 		return adao.searchAuction(cname, itemKind, keyword);
 	}
@@ -43,7 +42,7 @@ public class AuctionService {
 	}
 
 
-	public void registerAuction(AuctionModel am) { 
+	public void registerAuction(AuctionForm am) { 
 		adao.registerAuction(am);
 	}
 	

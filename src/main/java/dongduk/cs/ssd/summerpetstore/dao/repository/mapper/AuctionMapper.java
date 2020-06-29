@@ -2,6 +2,7 @@ package dongduk.cs.ssd.summerpetstore.dao.repository.mapper;
 
 import java.util.List;
 
+import dongduk.cs.ssd.summerpetstore.controller.AuctionForm;
 import dongduk.cs.ssd.summerpetstore.model.AuctionJPModel;
 import dongduk.cs.ssd.summerpetstore.model.AuctionModel;
 
@@ -12,7 +13,7 @@ public interface AuctionMapper {
 	List<AuctionModel> searchAuctionByCon(AuctionModel am);
 	AuctionModel showInfo(int auctionId);
 	List<AuctionJPModel> showJPModel(int auctionId);
-	void registerAuction(AuctionModel am);
+	void registerAuction(AuctionForm af);
 	void updaeAuction(AuctionModel am);
 	void deleteAuction(int auctionId);
 	void bid(AuctionJPModel jpm);

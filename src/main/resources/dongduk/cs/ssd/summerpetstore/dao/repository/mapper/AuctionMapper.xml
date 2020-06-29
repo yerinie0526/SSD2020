@@ -74,10 +74,14 @@
 		WHERE auctionId = #{auctionId}
 	</select>
 	
-	<!--registerAuction : 경매 등록하기-->
-	<insert id="registerAuction" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionJPModel">
-		INSERT INTO Auction
-		VALUES (#{name}, #{deadline}, #{pMethod}, #{description}, #{minPrice}, #{astatus}, #{productId}, #{sellerInfoId}, #{currentCon})
+
+	<!-- 경매 등록 -->
+	<insert id="registerAuction" parameterType="dongduk.cs.ssd.summerpetstore.controller.AuctionForm" >
+		<selectKey keyProperty="auctionId" resultType="int" order="BEFORE">
+			SELECT auction_seq.nextval AS auctionid FROM DUAL
+		</selectKey>
+		INSERT INTO auction
+		VALUES (#{auctionId}, #{name}, to_date(#{deadline}, 'yyyymmdd'), trunc(To_date(#{deadline}, 'yyyymmdd')-sysdate, 0), #{description}, #{minPrice}, 0, 'in progress', #{sellerInfoId}, #{cname})
 	</insert>
 	
 	<!--updateAuction : 경매 수정하기-->

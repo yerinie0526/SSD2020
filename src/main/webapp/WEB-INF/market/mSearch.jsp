@@ -18,8 +18,8 @@
 		      	<select name="itemKind"> <!-- itemKind ë³´ê¸° ìê°í´ë³´ê¸° -->
 		      		<option value="">--Select itemkind--</option>
 		      		<option value="bath">bath product</option>
-		      		<option value="2">feeding Item</option>
-		      		<option value="3">care Item</option>
+		      		<option value="feed">feeding Item</option>
+		      		<option value="care">care Item</option>
 		      	</select>
 		        <input type="text" name="keyword" size="14" />
 		        <input src="../../images/search.gif" type="image"/>
