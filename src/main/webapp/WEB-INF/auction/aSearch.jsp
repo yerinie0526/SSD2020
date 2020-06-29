@@ -60,7 +60,7 @@
          </table>
       </td>
       <td>
-         ${ai.deadline}
+        D-Day ${ai.dday}
       </td>
    </tr>
 </c:forEach>

@@ -38,6 +38,9 @@
 	
 	
 	<insert id="createOrder" parameterType="dongduk.cs.ssd.summerpetstore.controller.OrderForm" >
+		<selectKey keyProperty="itemId" resultType="int" order="BEFORE">
+			SELECT order_seq.nextval AS orderid FROM DUAL
+		</selectKey>
 		INSERT INTO IOrder
 		VALUES (2, #{name}, '200825', #{address}, #{zip}, 'userId', #{totalPrice})
 	</insert>

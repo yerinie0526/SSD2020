@@ -81,7 +81,7 @@
 			SELECT auction_seq.nextval AS auctionid FROM DUAL
 		</selectKey>
 		INSERT INTO auction
-		VALUES (#{auctionId}, #{name}, to_date(#{deadline}, 'yyyymmdd'), trunc(To_date(#{deadline}, 'yyyymmdd')-sysdate, 0), #{description}, #{minPrice}, 0, 'in progress', #{sellerInfoId}, #{cname})
+		VALUES (#{auctionId}, #{name}, to_date(#{deadline}, 'yyyymmdd'), trunc(To_date(#{deadline}, 'yyyymmdd')-sysdate, 0), #{description}, #{minPrice}, 0, 'in progress', #{sellerInfoId}, #{cname}, #{firstId})
 	</insert>
 	
 	<!--updateAuction : 경매 수정하기-->

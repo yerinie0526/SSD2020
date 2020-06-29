@@ -12,6 +12,7 @@ public class AuctionForm {
 	private int minPrice;
 	private String sellerInfoId;
 	private String cname;
+	private String firstId;
 
 
 	public AuctionForm() {
@@ -20,7 +21,7 @@ public class AuctionForm {
 
 
 	public AuctionForm(int auctionId, String name, String deadline, int dday, String description, int minPrice,
-			String sellerInfoId, String cname) {
+			String sellerInfoId, String cname, String firstId) {
 		super();
 		this.auctionId = auctionId;
 		this.name = name;
@@ -30,6 +31,7 @@ public class AuctionForm {
 		this.minPrice = minPrice;
 		this.sellerInfoId = sellerInfoId;
 		this.cname = cname;
+		this.firstId= firstId;
 	}
 
 
@@ -113,6 +115,18 @@ public class AuctionForm {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
+
+
+	public String getFirstId() {
+		return firstId;
+	}
+
+
+	public void setFirstId(String firstId) {
+		this.firstId = firstId;
+	}
+	
+	
 	
 	
 

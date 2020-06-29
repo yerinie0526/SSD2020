@@ -112,4 +112,11 @@ public class AuctionController {
 		
 		return "auction/aRegister"; 	
 	}//경매수정
+	
+	 @RequestMapping("/spetstore/auction/detail")
+     public ModelAndView showAuctionDetail(
+           @RequestParam("itemId") int itemId) throws Exception{
+        AuctionModel am = auctionservice.showInfo(itemId);
+        return new ModelAndView("auction/mDetail", "auctionModel", am);
+     }
 }
