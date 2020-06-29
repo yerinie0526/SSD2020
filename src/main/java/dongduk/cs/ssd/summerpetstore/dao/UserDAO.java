@@ -23,8 +23,8 @@ public class UserDAO {
 		return umapper.getUserByUsernameAndPassword(username, password);
 	}
 	
-	public UserModel getUserById(String userId) throws DataAccessException {
-		return umapper.getUserById(userId);
+	public UserModel getUserById(String userId, String password) throws DataAccessException {
+		return umapper.getUserById(userId, password);
 	}
 
 	public void insertUser(UserModel account) throws DataAccessException {

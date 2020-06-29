@@ -19,8 +19,8 @@ public class UserService {
 		return udao.getUser(username);
 	}
 	
-	public UserModel getUserById(String userId) {
-		return udao.getUserById(userId);
+	public UserModel getUserById(String userId, String password) {
+		return udao.getUserById(userId, password);
 	}
 
 	public UserModel getUser(String username, String password) {

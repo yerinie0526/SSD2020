@@ -10,7 +10,7 @@ public interface UserMapper {
 
 	UserModel getUserByUsernameAndPassword(String username, String password);
 	
-	UserModel getUserById(String userId);
+	UserModel getUserById(String userId, String password);
 	
 	List<String> getUsernameList();
 	  

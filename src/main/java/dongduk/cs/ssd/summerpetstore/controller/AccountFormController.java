@@ -27,7 +27,7 @@ import dongduk.cs.ssd.summerpetstore.service.UserService;
  * @modified by Changsup Park
  */
 @Controller
-@RequestMapping({"/shop/newAccount.do","/shop/editAccount.do"})
+@RequestMapping({"/spetstore/user/newAccount.do","/spetstore/user/editAccount.do"})
 //@SessionAttributes("user")
 public class AccountFormController { 
 
@@ -53,7 +53,9 @@ public class AccountFormController {
 			throws Exception {
 		UserSession userSession = 
 			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		System.out.println("여기까지는 들어옴!");
 		if (userSession != null) {	// edit an existing account
+			System.out.println("usersession not null!!!!!!!!!!!!!!!!!!!!");
 			return new AccountForm(
 				us.getUser(userSession.getUserModel().getUsername()));
 		}
