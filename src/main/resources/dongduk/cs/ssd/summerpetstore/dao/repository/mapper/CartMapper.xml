@@ -37,9 +37,9 @@
 	</insert>
 	
 	
-	<insert id="createOrder" >
-		INSERT INTO Order
-		VALUES (1, #{name}, #{orderDate}, #{address}, #{zip}, #{userId}, #{totalPrice})
+	<insert id="createOrder" parameterType="dongduk.cs.ssd.summerpetstore.controller.OrderForm" >
+		INSERT INTO IOrder
+		VALUES (2, #{name}, '200825', #{address}, #{zip}, 'userId', #{totalPrice})
 	</insert>
 	
 	<!--해당 아이디에 해당 아이템이 몇개인지-->

@@ -1,5 +1,7 @@
 package dongduk.cs.ssd.summerpetstore.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -67,24 +69,28 @@ public class CartController {
 	@RequestMapping("/spetstore/user/order/PaidForm.do")
 	public String makeOrder(@ModelAttribute("sessionCart") CartModel cartmodel, 
 			@ModelAttribute("newOrder") Order order, 
-			@ModelAttribute("orderForm") OrderForm orderForm, HttpServletRequest request) {
+			@ModelAttribute("orderForm") OrderForm orderForm, HttpServletRequest request,
+			@RequestParam("totalPrice") int totalPrice) {
 		nowTime = new Date();
+		DateFormat format = new SimpleDateFormat("yyMMdd");
 		UserSession userSession = 
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		orderForm.setName(userSession.getUserModel().getUsername());
 		orderForm.setAddress(userSession.getUserModel().getAddress());
 		orderForm.setPhone(userSession.getUserModel().getPhone());
-		orderForm.setOrderDate(nowTime);
-		order.setCartmodel(cartmodel);
+		orderForm.setUserId(userSession.getUserId());
+		orderForm.setOrderDate(format.format(nowTime));
+		orderForm.setTotalPrice(totalPrice);
 		return "user/PayForm";
 	}
 	
 	@RequestMapping("/spetstore/user/order/PaidSuc.do")
 	public String finishOrder(@ModelAttribute("newOrder") Order order,
-			@ModelAttribute("orderForm") OrderForm orderForm, Model model) {
-		order.setOrderForm(orderForm);
+			@ModelAttribute("orderForm") OrderForm orderForm, Model model, HttpServletRequest request) {
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		orderForm.setUserId(userSession.getUserId());
 		cartService.createOrder(orderForm);
-		model.addAttribute("oList", order);
 		return "user/PaidSuc";
 	}
 	

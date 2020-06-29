@@ -12,15 +12,17 @@ public class OrderForm {
 	private String name;
 	private String address;
 	private String phone;
-	private Date orderDate;
+	private String orderDate;
 	private String userId;
-	private String totalPrice;
+	private int totalPrice;
+	private int orderId;
 	
 	public OrderForm() {
 		
 	}
+
 	public OrderForm(String cardCompany, String cardNum, String cardMonth, String cardYear, String cardCVC, String zip,
-			String name, String address, String phone, Date orderDate, String userId, String totalPrice) {
+			String name, String address, String phone, String orderDate, String userId, int totalPrice, int orderId) {
 		super();
 		this.cardCompany = cardCompany;
 		this.cardNum = cardNum;
@@ -34,8 +36,26 @@ public class OrderForm {
 		this.orderDate = orderDate;
 		this.userId = userId;
 		this.totalPrice = totalPrice;
+		this.orderId = orderId;
 	}
 
+
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 
 	public String getZip() {
 		return zip;
@@ -55,19 +75,11 @@ public class OrderForm {
 		this.userId = userId;
 	}
 
-	public String getTotalPrice() {
-		return totalPrice;
-	}
-
-	public void setTotalPrice(String totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-
-	public Date getOrderDate() {
+	public String getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
 
