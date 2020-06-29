@@ -20,11 +20,6 @@
 	<form:input path="deadline" type="date"/>
 	<form:errors path="dealine" />
 </p>
-<!-- <p>
-	<form:label path="">거래 방식 : </form:label>
-	<form:radiobuttons items="${pMethods}" path="pMethod"/>
-	<form:errors path="pMethod" />
-</p>-->
 <p>
 	<form:label path="description">Description : </form:label>
 	<form:textarea path="description" cols="20" row="3"/>

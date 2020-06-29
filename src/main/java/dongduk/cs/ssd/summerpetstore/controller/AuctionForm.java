@@ -6,7 +6,7 @@ public class AuctionForm {
 	
 	private int auctionId;
 	private String name;
-	private Date deadline;
+	private String deadline;
 	private int dday;
 	private String description;
 	private int minPrice;
@@ -18,7 +18,7 @@ public class AuctionForm {
 	}
 
 
-	public AuctionForm(int auctionId, String name, Date deadline, int dday, String description, int minPrice,
+	public AuctionForm(int auctionId, String name, String deadline, int dday, String description, int minPrice,
 			String cname) {
 		super();
 		this.auctionId = auctionId;
@@ -53,12 +53,12 @@ public class AuctionForm {
 	}
 
 
-	public Date getDeadline() {
+	public String getDeadline() {
 		return deadline;
 	}
 
 
-	public void setDeadline(Date deadline) {
+	public void setDeadline(String deadline) {
 		this.deadline = deadline;
 	}
 

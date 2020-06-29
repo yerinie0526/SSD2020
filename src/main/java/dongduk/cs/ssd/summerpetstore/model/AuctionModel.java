@@ -6,7 +6,7 @@ public class AuctionModel {
 	
 	int auctionId;
 	String name;
-	Date deadline;
+	String deadline;
 	int dday;
 	String description;
 	int minprice;
@@ -20,7 +20,7 @@ public class AuctionModel {
 	public AuctionModel() {
 		
 	}
-	public AuctionModel(int auctionId, String name, Date deadline, int dday, String description, int minprice,
+	public AuctionModel(int auctionId, String name, String deadline, int dday, String description, int minprice,
 			String astatus, int sellerInfoId, String firstId, int currentCon, int curMaxPrice, String cname) {
 		super();
 		this.auctionId = auctionId;
@@ -48,10 +48,10 @@ public class AuctionModel {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDeadline() {
+	public String getDeadline() {
 		return deadline;
 	}
-	public void setDeadline(Date deadline) {
+	public void setDeadline(String deadline) {
 		this.deadline = deadline;
 	}
 	public int getDday() {
