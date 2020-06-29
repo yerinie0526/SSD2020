@@ -2,7 +2,7 @@
 
 <div align="center">
 Congratulations!<br>
-Welcome, ${user.username}<br>
+Welcome, ${user.account.username}<br>
 Membership success<br>
 <table>
 <tr>

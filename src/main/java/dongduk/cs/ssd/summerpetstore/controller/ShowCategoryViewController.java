@@ -25,7 +25,7 @@ public class ShowCategoryViewController {
 	public String showCateView(@PathVariable("cname") String cname, Model model) {
 		System.out.println("controller in!!!!!!!!!!!!!!");
 		List<ItemModel> cdata = sproductservice.showInfoSP(cname);
-		System.out.println("22222222222"+cname+"%%%%%%%%%%%"+cdata.get(0).getItemId());
+		//System.out.println("22222222222"+cname+"%%%%%%%%%%%"+cdata.get(0).getItemId());
 		model.addAttribute("cdata", cdata);
 		return "spetitem/categoryView";
 	}//카테고리별정보보기

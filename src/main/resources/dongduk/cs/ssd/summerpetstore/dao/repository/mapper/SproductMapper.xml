@@ -9,7 +9,7 @@
    <select id="showInfoSP"  resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
       SELECT itemid, iname AS name, price, cname
       FROM Item
-      WHERE cname = #{cname}
+      WHERE cname = #{cname} and sellerinfoid = 'summer'
    </select>
    
    <select id="showdetailInfoSP"  resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
