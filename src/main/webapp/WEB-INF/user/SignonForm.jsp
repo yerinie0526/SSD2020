@@ -1,7 +1,7 @@
 <%@ include file="../IncludeTop.jsp" %>
 
 <div align="center">
-  <form action='<c:url value="/spetstore/signon.do"/>' method="POST">
+  <form id="currentLogin" action='<c:url value="/spetstore/signon.do"/>' method="POST">
     <c:if test="${!empty signonForwardAction}">
       <input type="hidden" name="forwardAction"
         value='<c:url value="${signonForwardAction}"/>' />

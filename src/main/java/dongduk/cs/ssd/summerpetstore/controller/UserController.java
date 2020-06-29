@@ -57,7 +57,10 @@ public class UserController {
 		this.gpService = gpService;
 	}
 	
-	
+	@ModelAttribute("currentLogin")
+	public currentLogin loginData() {
+		return new currentLogin();
+	}
 	
 	/*
 	 * @RequestMapping("/spetstore/register.do") //register public String
@@ -119,10 +122,9 @@ public class UserController {
 	
 	@RequestMapping("/spetstore/signon.do")
 	public ModelAndView handleRequest(HttpServletRequest request,
-			@RequestParam("userId") String userId,
-			@RequestParam("password") String password, Model model) {
-		System.out.println("id:" + userId+ " pw: " + password);
-		UserModel usermodel = userService.getUserById(userId, password);
+			@ModelAttribute("currentLogin") currentLogin loginData , Model model) {
+		System.out.println("id:" + loginData.getUserId()+ " pw: " + loginData.getPassword());
+		UserModel usermodel = userService.getUserById(loginData.getUserId(), loginData.getPassword());
 		if (usermodel == null) {
 			System.out.println("login fail.....");
 
@@ -130,8 +132,8 @@ public class UserController {
 					"Invalid username or password.  Signon failed.");
 		}
 		else {
-			if (password.equals(usermodel.getPassword())) {
-				UserSession userSession = new UserSession(usermodel, userId);
+			if (loginData.getPassword().equals(usermodel.getPassword())) {
+				UserSession userSession = new UserSession(usermodel, loginData.getUserId());
 				model.addAttribute("userSession", userSession);
 				return new ModelAndView("index");
 			}
