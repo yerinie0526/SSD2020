@@ -110,12 +110,21 @@ public class UserController {
 //		}
 //	}
 	
+	  @RequestMapping("/spetstore/user/editAccount.do") 
+	  public String showupdateUser(Model model) {
+		//  model.addAttribute("userinfo", userService.viewUser(userSession));
+		  return "/user/editAccount"; 
+	  }//회원정보수정이동
+	  
+	
 	@RequestMapping("/spetstore/signon.do")
 	public ModelAndView handleRequest(HttpServletRequest request,
 			@RequestParam("userId") String userId,
 			@RequestParam("password") String password, Model model) {
 		UserModel usermodel = userService.getUserById(userId);
 		if (usermodel == null) {
+			System.out.println("login fail.....");
+
 			return new ModelAndView("/user/SignonForm", "message", 
 					"Invalid username or password.  Signon failed.");
 		}

@@ -27,7 +27,7 @@ import dongduk.cs.ssd.summerpetstore.service.UserService;
  * @modified by Changsup Park
  */
 @Controller
-@RequestMapping("/spetstore/user/newAccount.do")
+@RequestMapping({"/shop/newAccount.do","/shop/editAccount.do"})
 //@SessionAttributes("user")
 public class AccountFormController { 
 
