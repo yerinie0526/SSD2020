@@ -36,7 +36,7 @@
           <tr>
             <td>Email:</td>
             <td>
-              <form:input path="account.email" /> 
+              <form:input type = "email" path="account.email" /> 
               <B><form:errors path="account.email" cssClass="error" /></B></td>
           </tr>
           <tr>

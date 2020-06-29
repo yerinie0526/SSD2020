@@ -1,6 +1,8 @@
 package dongduk.cs.ssd.summerpetstore.controller;
 
 import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,13 +72,13 @@ public class AccountFormController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String onSubmit(
 			HttpServletRequest request, HttpSession session,
-			@ModelAttribute("accountForm") AccountForm accountForm,
+			 @ModelAttribute("user") AccountForm accountForm,
 			BindingResult result) throws Exception {
 
-		
 		validator.validate(accountForm, result);
 		
 		if (result.hasErrors()) { 
+			
 			System.out.println("¿¡·¯:"+result.getAllErrors());
 			return formViewName;
 		}
@@ -88,7 +91,7 @@ public class AccountFormController {
 			}
 		}
 		catch (DataIntegrityViolationException ex) {
-			result.rejectValue("account.username", "USER_ID_ALREADY_EXISTS",
+			result.rejectValue("account.userId", "USER_ID_ALREADY_EXISTS",
 					"User ID already exists: choose a different ID.");
 			return formViewName; 
 		}

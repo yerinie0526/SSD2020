@@ -1,10 +1,11 @@
 <%@ include file="../IncludeTop.jsp" %>
 
 <div align="center">
-Congratulations!<br>
-Welcome, ${user.account.username}<br>
+*Congratulations*<br>
+Welcome!<br>
 Membership success<br>
 <table>
+<br>
 <tr>
 	<td> <a href="<c:url value="/spetstore/user/signonForm.do"/>">
                 LOGIN</a></td>
