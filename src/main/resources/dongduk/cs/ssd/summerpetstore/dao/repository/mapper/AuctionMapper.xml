@@ -71,6 +71,12 @@
 		WHERE auctionId = #{auctionId}
 	</select>
 	
+	<select id="showInfoAP" resultType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
+		SELECT auctionId, aname as name, price
+		FROM auction
+		WHERE cname = #{value}
+	</select>
+	
 
 	<!-- 경매 등록 -->
 	<insert id="registerAuction" parameterType="dongduk.cs.ssd.summerpetstore.controller.AuctionForm" >

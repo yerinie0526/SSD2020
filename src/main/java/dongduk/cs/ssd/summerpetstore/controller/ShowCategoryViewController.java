@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
+import dongduk.cs.ssd.summerpetstore.service.AuctionService;
 import dongduk.cs.ssd.summerpetstore.service.MarketService;
 import dongduk.cs.ssd.summerpetstore.service.SproductService;
 
@@ -20,6 +21,9 @@ public class ShowCategoryViewController {
 	
 	@Autowired
 	private MarketService marketservice;
+	
+	@Autowired
+	private AuctionService auctionservice;
 	
 	public void setSproductService(SproductService sproductservice) {
 		this.sproductservice = sproductservice;
@@ -36,8 +40,10 @@ public class ShowCategoryViewController {
 		System.out.println("controller in!!!!!!!!!!!!!!");
 		List<ItemModel> cdata = sproductservice.showInfoSP(cname);
 		List<ItemModel> mdata = marketservice.showInfoMP(cname);
+		//List<ItemModel> adata = auctionservice.showInfoAP(cname);
 		model.addAttribute("cdata", cdata);
 		model.addAttribute("mdata", mdata);
+		//model.addAttribute("adata", adata);
 		return "spetitem/categoryView";
 	}//카테고리별정보보기
 }

@@ -50,4 +50,29 @@
         <td><fmt:formatNumber value="${item.price}" pattern="#won" /></td>
     </c:forEach>
   </table>
+  
+     <HR>
+    <b><font size="4"><c:out value="Products for Auction" /></font></b>
+    <table>
+    <tr bgcolor="#CCFF99">
+      <td><b>Auction Number</b></td>
+      <td><b>Name</b></td>
+      <td><b>D-DAY</b></td>
+      <td><b>Current Price</b></td>
+    </tr>    
+    
+	<c:forEach var="a" items="${adata}">
+		<tr bgcolor="#FFFF88">
+        	<td><b> 
+          		<a href='<c:url value="/spetstore/spetitem/detail">
+           			 <c:param name="auctionId" value="${a.auctionId}"/></c:url>'>
+              	<c:out value="${a.auctionId}" />
+          		</a></b></td>
+        	<td><c:out value="${a.name}" /></td>
+        	<td>
+          		<c:out value="${a.dday}" />
+        	</td>
+        <td><fmt:formatNumber value="${a.curMaxPrice}" pattern="#won" /></td>
+    </c:forEach>
+  </table>
 </div>
