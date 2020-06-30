@@ -14,7 +14,7 @@
 	<li> DescriptionÖ : ${auctionModel.description}</li>
 	<li> Minimum Price : ${auctionModel.minprice}</li>
 	<li> Sellerãù : ${auctionModel.sellerInfoId}</li>
-	<li> Status : ${auctionModel.minPrice}</li>
+	<li> Status : ${auctionModel.astatus}</li>
 	
 	
 </ul>

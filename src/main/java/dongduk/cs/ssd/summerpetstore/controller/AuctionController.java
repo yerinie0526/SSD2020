@@ -124,6 +124,6 @@ public class AuctionController {
      public ModelAndView showAuctionDetail(
            @RequestParam("auctionId") int aId) throws Exception{
         AuctionModel am = auctionservice.showInfo(aId);
-        return new ModelAndView("auction/mDetail", "auctionModel", am);
+        return new ModelAndView("auction/aListDetail", "auctionModel", am);
      }
 }

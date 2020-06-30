@@ -12,7 +12,7 @@ public class AuctionModel implements Serializable{
 	String description;
 	int minprice;
 	String astatus;	
-	int sellerInfoId;
+	String sellerInfoId;
 	String firstId;
 	int currentCon;
 	int curMaxPrice;
@@ -22,7 +22,7 @@ public class AuctionModel implements Serializable{
 		
 	}
 	public AuctionModel(int auctionId, String name, String deadline, int dday, String description, int minprice,
-			String astatus, int sellerInfoId, String firstId, int currentCon, int curMaxPrice, String cname) {
+			String astatus, String sellerInfoId, String firstId, int currentCon, int curMaxPrice, String cname) {
 		super();
 		this.auctionId = auctionId;
 		this.name = name;
@@ -79,10 +79,10 @@ public class AuctionModel implements Serializable{
 	public void setAstatus(String astatus) {
 		this.astatus = astatus;
 	}
-	public int getSellerInfoId() {
+	public String getSellerInfoId() {
 		return sellerInfoId;
 	}
-	public void setSellerInfoId(int sellerInfoId) {
+	public void setSellerInfoId(String sellerInfoId) {
 		this.sellerInfoId = sellerInfoId;
 	}
 	public String getFirstId() {
