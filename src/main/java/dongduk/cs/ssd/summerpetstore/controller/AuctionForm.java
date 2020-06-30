@@ -13,6 +13,7 @@ public class AuctionForm {
 	private String sellerInfoId;
 	private String cname;
 	private String firstId;
+	private int curMaxPrice;
 
 
 	public AuctionForm() {
@@ -20,8 +21,30 @@ public class AuctionForm {
 	}
 
 
+
+
+
+
+	public int getCurMaxPrice() {
+		return curMaxPrice;
+	}
+
+
+
+
+
+
+	public void setCurMaxPrice(int curMaxPrice) {
+		this.curMaxPrice = curMaxPrice;
+	}
+
+
+
+
+
+
 	public AuctionForm(int auctionId, String name, String deadline, int dday, String description, int minPrice,
-			String sellerInfoId, String cname, String firstId) {
+			String sellerInfoId, String cname, String firstId, int curMaxPrice) {
 		super();
 		this.auctionId = auctionId;
 		this.name = name;
@@ -31,8 +54,11 @@ public class AuctionForm {
 		this.minPrice = minPrice;
 		this.sellerInfoId = sellerInfoId;
 		this.cname = cname;
-		this.firstId= firstId;
+		this.firstId = firstId;
+		this.curMaxPrice = curMaxPrice;
 	}
+
+
 
 
 

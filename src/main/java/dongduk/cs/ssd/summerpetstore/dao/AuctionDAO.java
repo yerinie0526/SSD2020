@@ -69,12 +69,21 @@ public class AuctionDAO {
 	public List<AuctionModel> showAuctionList(){
 		return amapper.showAuctionList();
 	}
+	
+	public void updateinfoBID(AuctionJPModel ajp) {
+		amapper.updateinfoBID(ajp);
+	}
+	
 	public void bid(String firstId, int price, int auctionId) {
 		amapper.bid(firstId, price, auctionId);
 	}
 	
 	public List<AuctionModel> searchAuctionByUser(String userId){
 		return amapper.searchAuctionByUser(userId);
+	}
+	
+	public void registerPriceAuction(AuctionJPModel ajp) {
+		amapper.registerPriceAuction(ajp);
 	}
 
 	

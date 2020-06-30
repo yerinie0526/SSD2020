@@ -114,6 +114,12 @@
 		WHERE auctionId=#{param3}
 	</update>
 	
+	
+	<insert id="registerPriceAuction" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionJPModel">
+		INSERT INTO auctionJP
+		VALUES (#{auctionId}, #{offerPrice}, 'tato')
+	</insert>
+	
 	<!--changeFirstId : 다른사람의 입찰로인해 최고가가 바뀔경우 firstId 와 curMaxPrice 수정-->
 	<update id="changeFirstId" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
 		UPDATE auction
@@ -165,5 +171,12 @@
 		FROM Auction
 		WHERE auctionId=#{auctionId}
 	</select>
+	
+	
+	<update id="updateinfoBID" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionJPModel">
+		UPDATE auction
+		SET curmaxprice = #{offerPrice}, firstId = #{userId}
+		WHERE auctionId = #{auctionId}
+	</update>
 
 </mapper>

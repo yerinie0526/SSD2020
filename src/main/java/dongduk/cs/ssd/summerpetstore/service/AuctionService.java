@@ -35,6 +35,15 @@ public class AuctionService {
 		return adao.searchAuctionByUser(userId);
 	}
 
+	
+	public void registerPriceAuction(AuctionJPModel ajp) {
+		adao.registerPriceAuction(ajp);
+	}
+	
+	public void updateinfoBID(AuctionJPModel ajp) {
+		adao.updateinfoBID(ajp);
+	}
+
 	public AuctionModel showInfo(int auctionId) { 
 		return adao.showInfo(auctionId);
 	}
@@ -51,6 +60,8 @@ public class AuctionService {
 	public void registerAuction(AuctionForm am) { 
 		adao.registerAuction(am);
 	}
+	
+
 	
 
 //	public void updateAuction(AuctionModel am) {
