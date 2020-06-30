@@ -49,19 +49,7 @@ public class MarketService {
 	  public List<ItemModel>  getCartCount(int itemId) {
 		  return mdao.getCartCount(itemId);
 	  }
-//	  
-//	  @Transactional public void updateItem(Market im) { mdao.updateItem(im); }
-//	  
-//	  
-//	  
-//	  public void updateItemStatus(int itemId) { mdao.updateItemStatus(itemId); }
-	  
-	 
-//	 public List<ItemModel> searchItem(String cname, String itemKind, String keyword) {
-//		  List<ItemModel> imList; 
-//		  imList = mdao.searchItem(cname, itemKind, keyword); 
-//		  return imList; 
-//	}
+
 	  
 	  public List<ItemModel> searchItem(MarketFilter marketFilter) {
 		  return mdao.searchItem(marketFilter);

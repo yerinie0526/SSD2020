@@ -47,20 +47,5 @@ public class UserService {
 		return udao.getUserIdtoPw(userId);
 	}
 	
-	
-//	UserModel getUserModel(String userId) {
-//		
-//	}
 
-//	void insertUserModel(UserModel UserModel) {
-//		
-//	}
-//
-//	void updateUserModel(UserModel UserModel) {
-//		
-//	}
-//
-//	List<String> getUsernameList(){
-//		
-//	}
 }

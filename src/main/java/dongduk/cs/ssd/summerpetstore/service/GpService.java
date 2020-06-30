@@ -15,7 +15,7 @@ public class GpService {
 	@Autowired
 	private GpDAO gpRepository;
 	
-
+/*
 	@Transactional
 	public int updateGP(GpModel gp) { 
 		return gpRepository.updateGp(gp);
@@ -53,5 +53,5 @@ public class GpService {
 	@Transactional
 	public int cancelGpJPId(int itemId) {
 		return gpRepository.cancelGpJPId(itemId);
-	}
+	}*/
 }

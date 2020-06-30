@@ -10,7 +10,7 @@
 </tr>
 <c:forEach var="ai" items="${aList}">
 	<tr>
-		<td><a href="<c:url value='/spetstore/auction/detail?itemId=${ai.auctionId}'/>">${ai.name}</a></td>
+		<td><a href="<c:url value='/spetstore/auction/detail?auctionId=${ai.auctionId}'/>">${ai.name}</a></td>
 	</tr>
 	<tr>
 		<td>

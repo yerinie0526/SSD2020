@@ -29,17 +29,12 @@ public class UserDAO {
 
 	public void insertUser(UserModel account) throws DataAccessException {
 		umapper.insertUser(account);
-		//umapper.insertProfile(account);
-		//umapper.insertSignon(account);
+		
 	}
 
 	public void updateUser(UserModel account) throws DataAccessException {
 		umapper.updateUser(account);
-		//umapper.updateProfile(account);
-		//if (account.getPassword() != null && account.getPassword().length() > 0) 
-		//{
-		//	umapper.updateSignon(account);
-		//}
+	
 	}
  
 	public List<String> getUsernameList() throws DataAccessException {

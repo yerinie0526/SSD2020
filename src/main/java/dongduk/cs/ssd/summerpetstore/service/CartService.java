@@ -35,41 +35,10 @@ public class CartService {
 	public void deleteCart(String userId, int itemId) { 
 		cartdao.deleteCart(userId, itemId);
 	}
-	
-//	@Transactional
-//	public int deleteCart(String userId, int itemId) { 
-//		return cartdao.deleteCart(userId, itemId);
-//	}
-//	
-//
-//	@Transactional
-//	public int deleteCartByUser(String userId) { 
-//		return cartdao.deleteCartByUser(userId);
-//	}
-//	
-//
-//	@Transactional
-//	public int order(String userId, int orderId) {
-//		return cartdao.order(userId, orderId);
-//	}
-//	
-//
+
 	@Transactional
 	public void addCart(String userId, int itemId) { 
 		cartdao.addCart(userId, itemId);
 	}
-//	
-//
-//	@Transactional
-//	public boolean containsItemId(int itemId, String userId) {
-//		if(cartdao.getItemCount(itemId, userId) > 0) {
-//			return true;
-//		}
-//		return false;
-//	}
-//	
-//	@Transactional
-//	public void incrementQuantityByItemId(int itemId, String userId) {
-//		cartdao.incrementQuantityByItemId(itemId, userId);
-//	}
+
 }

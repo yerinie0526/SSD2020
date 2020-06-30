@@ -46,14 +46,7 @@ public class MarketDAO {
 	public List<ItemModel>  getCartCount(int itemId)throws DataAccessException {
 		return mmapper.getCartCount(itemId);
 	}
-//		  
-//		  public void updateItem(ItemModel im) throws DataAccessException;
-//		  
-//		  public void updateItemStatus(int itemId) throws DataAccessException;
-		  
-//	public List<ItemModel> searchItem(String cname, String itemKind, String keyword){
-//		return mmapper.searchItem(cname, itemKind, keyword);
-//	}
+
 	
 	public List<ItemModel> searchItem(MarketFilter marketFilter){
 		return mmapper.searchItem(marketFilter);

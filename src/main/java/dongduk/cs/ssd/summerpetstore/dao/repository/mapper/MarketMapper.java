@@ -15,11 +15,9 @@ public interface MarketMapper {
 	
 	void deleteItem(int itemId);
 	
-	//ItemModel updateItem(ItemModel im);
 	
 	ItemModel updateItemStatus(int istatus, int itemId);
 	
-	//List<ItemModel> searchItem(String cname, String itemKind, String keyword);
 	List<ItemModel> searchItem(MarketFilter marketFilter);
 	
 	List<ItemModel> searchMarketByUser(String userId);

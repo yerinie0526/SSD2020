@@ -53,37 +53,7 @@
 		FROM suser
 		WHERE USERID = #{param1}
 	</select>
-  <!--  
-  TODO MyBatis 3 does not map booleans to integers
-  <update id="updateProfile" parameterType="Account">
-    UPDATE PROFILE SET
-      LANGPREF = #{languagePreference},
-      FAVCATEGORY = #{favouriteCategoryId},
-      MYLISTOPT = #{listOption},
-      BANNEROPT = #{bannerOption}
-    WHERE USERID = #{username}
-  </update>
-  -->
 
- <!--  <update id="updateProfile" parameterType="User">
-    UPDATE PROFILE SET
-      LANGPREF = #{languagePreference},
-      FAVCATEGORY = #{favouriteCategoryId}
-    WHERE USERID = #{username}
-  </update>-->
-
-  <!--  
-  TODO MyBatis 3 does not map booleans to integers
-  <insert id="insertProfile" parameterType="Account">
-    INSERT INTO PROFILE (LANGPREF, FAVCATEGORY, MYLISTOPT, BANNEROPT, USERID)
-    VALUES (#{languagePreference}, #{favouriteCategoryId}, #{listOption}, #{bannerOption}, #{username})
-  </insert>
-  -->
-
- <!--  <insert id="insertProfile" parameterType="Account">
-    INSERT INTO PROFILE (LANGPREF, FAVCATEGORY, USERID)
-    VALUES (#{languagePreference}, #{favouriteCategoryId}, #{username})
-  </insert>-->
 
   <update id="updateSignon" parameterType="dongduk.cs.ssd.summerpetstore.model.UserModel">
     UPDATE SIGNON SET PASSWORD = #{password}
