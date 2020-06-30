@@ -20,6 +20,6 @@
 </ul>
 <input type="button"
          value="Register Price"
-         onclick="location.href='<c:url value='/spetstore/auction/priceregister' />'" />
+         onclick="location.href='<c:url value='/spetstore/auction/priceregister?curMaxPrice=${auctionModel.curMaxPrice}&firstId=${auctionModel.firstId}&auctionId=${auctionModel.auctionId}' />'" />
 </div>
 <%@ include file="../IncludeBottom.jsp" %>

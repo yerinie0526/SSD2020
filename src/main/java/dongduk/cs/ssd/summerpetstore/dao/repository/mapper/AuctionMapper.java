@@ -16,7 +16,7 @@ public interface AuctionMapper {
 	void registerAuction(AuctionForm af);
 	void updaeAuction(AuctionModel am);
 	void deleteAuction(int auctionId);
-	void bid(AuctionJPModel jpm);
+	void bid(String firstId, int curMaxPrice, int auctionId);
 	void changeFirstId(AuctionJPModel jpm); //여기서 userId와 offerPrice만 꺼내서쓰던가 아니면 그냥 그 두개를 보내주던가
 	void updateBid(AuctionJPModel jpm);
 	//void deleteBid 가격만 높여놓고 취소할 상황을 대비해 없애기로함 toss기능도 마찬가지

@@ -62,6 +62,10 @@ public class AuctionController {
 	   public AuctionForm auctionFormData() {
 	      return new AuctionForm();
 	   }   
+	   
+	   public PriceRegisterForm prFormData() {
+		   return new PriceRegisterForm();
+	   }
 	
 	
 	@RequestMapping("/spetstore/auction/aSearch.do") 
@@ -98,7 +102,23 @@ public class AuctionController {
         List<AuctionModel> aList = auctionservice.searchAuction(name, itemKind, keyword); 
         return new ModelAndView("/auction/aSearch", "aList", aList);
     }//경매 검색
-	
+    
+   
+    
+    @RequestMapping("/spetstore/auction/priceregister") 
+	public String priceRegister(@ModelAttribute("prForm") PriceRegisterForm prf, @RequestParam("curMaxPrice") int cmp, @RequestParam("firstId") String fId,
+			@RequestParam("auctionId") int aId, HttpServletRequest request, Model model) {	
+		 UserSession userSession = 
+					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+	  	 request.setAttribute("curMaxPrice", cmp);
+	  	 request.setAttribute("firstId", fId);
+	  	 request.setAttribute("auctionId", aId);
+		 return "auction/priceRegister";
+	}//입찰
+   
+    
+    
+    
 //	@RequestMapping("/auction/search") 
 //	public String select(@RequestParam("name") String name, @RequestParam("itemKind") String itemKind, @ModelAttribute("Auction")AuctionModel am) {	
 //		//auctionservice.searchAuction(am);

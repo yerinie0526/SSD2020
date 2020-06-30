@@ -3,23 +3,14 @@
 <p>${apriceregist.name}</p>
 <table>
 <tr>
+	<b><font size="4"><c:out value="Current Price: ${curMaxPrice}     by ${firstId}" /></font></b>
 	<td>
-		<table>
-		<c:set var="aNum" value="1"/>
-			<c:foreach var="jpi" items="${aJPTop5}">
-			<tr>
-				<td> <c:out value="${eNum}"/>등 : ${aJPTop5.offerPrice}</td>
-			</tr>
-			<c:set var="eNum" value="${aNum+1}"/>
-			</c:foreach>
-		</table>
-	</td>
-	<td>
-		<form:form modelAttribute="apriceregist" action="priceRegistersuc">
-			<form:label path="">나의 가격 : </form:label>
-			<form:input path="myaPrice" />
-			<form:errors path="myaPrice" />
-		<input type="submit" value="제시/수정" />
+	<c:set var="targetUrl"><c:url value="/spetstore/auction/bid/${curMaxPrice}/${auctionId}" /></c:set>
+		<form:form modelAttribute="prForm" action="${targetUrl}">
+			<form:label path="bidPrice"></form:label>
+			<form:input path="bidPrice" />
+			<form:errors path="bidPrice" />
+		<input type="submit" value="Bid" />
 		</form:form> 
 	</td>
 </tr>

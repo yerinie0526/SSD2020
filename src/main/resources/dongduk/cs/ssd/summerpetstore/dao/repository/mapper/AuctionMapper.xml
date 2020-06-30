@@ -84,7 +84,7 @@
 			SELECT auction_seq.nextval AS auctionid FROM DUAL
 		</selectKey>
 		INSERT INTO auction (auctionid, aname, deadline, dday, adescription, minprice, curmaxprice, astatus, sellerinfoid, cname)
-		VALUES (#{auctionId}, #{name}, to_date(#{deadline}, 'yyyymmdd'), trunc(To_date(#{deadline}, 'yyyymmdd')-sysdate, 0), #{description}, #{minPrice}, 0, 'in progress', #{sellerInfoId}, #{cname})
+		VALUES (#{auctionId}, #{name}, to_date(#{deadline}, 'yyyymmdd'), trunc(To_date(#{deadline}, 'yyyymmdd')-sysdate, 0), #{description}, #{minPrice}, #{minPrice}, 'in progress', #{sellerInfoId}, #{cname})
 	</insert>
 	
 	<!--updateAuction : 경매 수정하기-->
@@ -101,10 +101,11 @@
 	</delete>
 	
 	<!--bid : 입찰하기-->
-	<insert id="bid" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionJPModel">
-		INSERT INTO AuctionJP
-		VALUES (#{offerPrice}, #{auctionId}, #{userId})
-	</insert>
+	<update id="bid" >
+		UPDATE auction
+		SET firstId=#{param1}, curMaxPrice=#{param2}
+		WHERE auctionId=#{param3}
+	</update>
 	
 	<!--changeFirstId : 다른사람의 입찰로인해 최고가가 바뀔경우 firstId 와 curMaxPrice 수정-->
 	<update id="changeFirstId" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">

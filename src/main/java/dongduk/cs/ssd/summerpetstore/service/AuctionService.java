@@ -60,9 +60,9 @@ public class AuctionService {
 //		adao.deleteAuction(auctionId);
 //	}
 //	
-//	public void bid(AuctionJPModel jpm, AuctionModel am) {
-//		adao.bid(jpm, am);
-//	}
+	public void bid(String firstId, int price, int auctionId) {
+		adao.bid(firstId, price, auctionId);
+	}
 //	
 //	
 //	public void updateBid(AuctionJPModel jpm) {
