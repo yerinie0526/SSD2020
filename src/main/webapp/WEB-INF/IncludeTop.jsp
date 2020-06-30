@@ -20,7 +20,7 @@
 	<tr>
 		<td>
 	    	<a href="<c:url value="/index"/>">
-	        <img border="0" src="images/spetlogo.jpg" width = "300" height="100"style="float:right"/></a>
+	        <img border="0" src="images/spetlogo.jpg" width = "200" height="110"style="float:right"/></a>
 	    </td>
 	    <td style="text-align:right">
 	      <a href="<c:url value="/spetstore/user/myPage/cart.do"/>">
