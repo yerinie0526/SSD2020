@@ -5,10 +5,11 @@
   <cache />
   
 	<!-- deleteCart : 물건삭제-->
-	<delete id="deleteCart" >
+<!-- 	<delete id="deleteCart" >
 		DELETE FROM Cart
 		WHERE itemId = #{itemId} and userId = #{userId}
-	</delete>
+	</delete> -->
+
 	
 	<!-- deleteCartByUser : 사용자가 탈퇴할때, 혹은 모두삭제 기능-->
 	<delete id="deleteCartByUser">
@@ -38,11 +39,11 @@
 	
 	
 	<insert id="createOrder" parameterType="dongduk.cs.ssd.summerpetstore.controller.OrderForm" >
-		<selectKey keyProperty="itemId" resultType="int" order="BEFORE">
+		<selectKey keyProperty="orderId" resultType="int" order="BEFORE">
 			SELECT order_seq.nextval AS orderid FROM DUAL
 		</selectKey>
 		INSERT INTO IOrder
-		VALUES (2, #{name}, '200825', #{address}, #{zip}, 'userId', #{totalPrice})
+		VALUES (#{orderId}, #{name}, '200825', #{address}, #{zip}, 'userId', #{totalPrice})
 	</insert>
 	
 	<!--해당 아이디에 해당 아이템이 몇개인지-->

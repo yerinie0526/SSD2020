@@ -5,10 +5,10 @@
   <cache />
   
 	<!-- searchAuciton : 경매 검색-->
-	<select id="searchAuction" resultType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
+	<select id="showAuctionList" resultType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
 		SELECT auctionId, aname as name, dday, astatus, cname, curMaxPrice 
 		FROM auction
-		WHERE 1=1
+		ORDER BY dday ASC
 	</select>
 	
 	

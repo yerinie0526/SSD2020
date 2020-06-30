@@ -19,5 +19,6 @@ public interface CartMapper {
 	void updateQuantity(String userId, int itemId, int quantity); //장바구니에서 수량을 늘릴경우 (공식물품만 허용)
 	List<CartModel> showCartList(String userId);
 	void createOrder(OrderForm orderForm);
+	void deleteCartByUser(OrderForm orderForm);
 	void updateQuantity(UpdateQuantity newQuantity);
 }

@@ -10,6 +10,16 @@
 	<li>Description : ${di.description}</li> 
 	<li>Item Status : ${di.istatus}</li>
 </ul>
-
- <a href='<c:url value="/spetstore/spetitem/addCart/${di.itemId}"/>'> ADD CART</a>
+<form id = "updateQuantity" action='<c:url value='/spetstore/spetitem/addCart/${di.itemId}' />' method="post">
+<table>
+	<tr>
+		<th>
+			<input type="text" name="quantity"/>
+		</th>
+		<th>
+			 <input type="submit" value="Add Cart"/>
+		</th>
+	</tr>
+</table>
+</form>
  </div>

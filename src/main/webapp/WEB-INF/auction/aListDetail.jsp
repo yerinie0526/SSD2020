@@ -18,6 +18,8 @@
 	
 	
 </ul>
-<p><a href="<c:url value='/spetstore/auction/priceregister' />">Register Price</a></p>
+<input type="button"
+         value="Register Price"
+         onclick="location.href='<c:url value='/spetstore/auction/priceregister' />'" />
 </div>
 <%@ include file="../IncludeBottom.jsp" %>

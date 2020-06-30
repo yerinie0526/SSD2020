@@ -24,22 +24,26 @@ public class AuctionService {
 		return adao.searchAuction(cname, itemKind, keyword);
 	}
 	
-	public List<AuctionModel> searchAuctionByDday(AuctionModel am) { 
-		return adao.searchAuctionByDday(am);
-	}
-	
-	public List<AuctionModel> searchAuctionByCon(AuctionModel am) { 
-		return adao.searchAuctionByDday(am);
-	}
+//	public List<AuctionModel> searchAuctionByDday(AuctionModel am) { 
+//		return adao.searchAuctionByDday(am);
+//	}
+//	
+//	public List<AuctionModel> searchAuctionByCon(AuctionModel am) { 
+//		return adao.searchAuctionByDday(am);
+//	}
 	
 
 	public AuctionModel showInfo(int auctionId) { 
 		return adao.showInfo(auctionId);
 	}
-
-	public List<AuctionJPModel> showJPList(int auctionId) {
-		return adao.showJPList(auctionId);
+	
+	public List<AuctionModel> showAuctionList(){
+		return adao.showAuctionList();
 	}
+
+//	public List<AuctionJPModel> showJPList(int auctionId) {
+//		return adao.showJPList(auctionId);
+//	}
 
 
 	public void registerAuction(AuctionForm am) { 
@@ -47,27 +51,27 @@ public class AuctionService {
 	}
 	
 
-	public void updateAuction(AuctionModel am) {
-		adao.updateAuction(am);
-	}
-
+//	public void updateAuction(AuctionModel am) {
+//		adao.updateAuction(am);
+//	}
+//
+//	
+//	public void deleteAuction(int auctionId) {
+//		adao.deleteAuction(auctionId);
+//	}
+//	
+//	public void bid(AuctionJPModel jpm, AuctionModel am) {
+//		adao.bid(jpm, am);
+//	}
+//	
+//	
+//	public void updateBid(AuctionJPModel jpm) {
+//		adao.updateBid(jpm);
+//	}
 	
-	public void deleteAuction(int auctionId) {
-		adao.deleteAuction(auctionId);
-	}
-	
-	public void bid(AuctionJPModel jpm, AuctionModel am) {
-		adao.bid(jpm, am);
-	}
-	
-	
-	public void updateBid(AuctionJPModel jpm) {
-		adao.updateBid(jpm);
-	}
-	
-	public void sucBid(AuctionModel am) {
-		adao.sucBid(am);
-	}
+//	public void sucBid(AuctionModel am) {
+//		adao.sucBid(am);
+//	}
 	
 	public boolean isNewPrice(int price, int auctionId) {
 		if(adao.getFirstPrice(auctionId) < price) return true;

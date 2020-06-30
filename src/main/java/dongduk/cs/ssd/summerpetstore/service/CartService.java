@@ -22,8 +22,10 @@ public class CartService {
 		return cartdao.showCartList(userId);
 	}
 	
+	@Transactional 
 	public void createOrder(OrderForm orderForm) {
 		cartdao.createOrder(orderForm);
+		cartdao.deleteCartByUser(orderForm);
 	}
 	
 	public void updateQuantity(UpdateQuantity newQuantity) {

@@ -66,6 +66,10 @@ public class AuctionDAO {
 		return amapper.showInfo(auctionId);
 	}
 	
+	public List<AuctionModel> showAuctionList(){
+		return amapper.showAuctionList();
+	}
+	
 //	
 //
 //	public List<AuctionJPModel> showJPList(int auctionId){
@@ -131,15 +135,15 @@ public class AuctionDAO {
 //	}
 //생각해보니 입찰 취소가 되면 안될 것 같기도함 이유: 가격을 높여놓기만 하고 취소할수도있음	
 	
-	public int sucBid(AuctionModel am) {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		try {
-			int result = sqlSession.insert(namespace + ".sucBid", am); 
-			if(result > 0) { sqlSession.commit(); }
-			return result;
-		}finally { sqlSession.close(); }
-		//return GpMapper.searchGp(name, itemKind);
-	}
+//	public int sucBid(AuctionModel am) {
+//		SqlSession sqlSession = sqlSessionFactory.openSession();
+//		try {
+//			int result = sqlSession.insert(namespace + ".sucBid", am); 
+//			if(result > 0) { sqlSession.commit(); }
+//			return result;
+//		}finally { sqlSession.close(); }
+//		//return GpMapper.searchGp(name, itemKind);
+//	}
 	
 	public int getFirstPrice(int auctionId) {
 		return amapper.getFirstPrice(auctionId);

@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import dongduk.cs.ssd.summerpetstore.controller.OrderForm;
 import dongduk.cs.ssd.summerpetstore.controller.UpdateQuantity;
@@ -29,6 +30,9 @@ public class CartDAO {
 	
 	public void createOrder(OrderForm orderForm) {
 		cmapper.createOrder(orderForm);
+	}
+	public void deleteCartByUser(OrderForm orderForm) {
+		cmapper.deleteCartByUser(orderForm);
 	}
 	
 	public void updateQuantity(UpdateQuantity newQuantity) {
