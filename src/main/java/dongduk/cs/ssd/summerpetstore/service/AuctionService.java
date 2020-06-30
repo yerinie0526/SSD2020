@@ -51,6 +51,10 @@ public class AuctionService {
 	public List<AuctionModel> showAuctionList(){
 		return adao.showAuctionList();
 	}
+	
+	public List<AuctionModel> showInfoAP(String cname){
+		return adao.showInfoAP(cname);
+	}
 
 //	public List<AuctionJPModel> showJPList(int auctionId) {
 //		return adao.showJPList(auctionId);

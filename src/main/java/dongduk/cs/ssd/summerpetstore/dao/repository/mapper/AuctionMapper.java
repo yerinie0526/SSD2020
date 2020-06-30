@@ -26,4 +26,5 @@ public interface AuctionMapper {
 	List<AuctionModel> searchAuctionByUser(String userId);
 	void registerPriceAuction(AuctionJPModel ajp);
 	public void updateinfoBID(AuctionJPModel ajp);
+	public List<AuctionModel> showInfoAP(String cname);
 }

@@ -79,7 +79,7 @@
 	</select>
 	
 	<select id="showInfoAP" resultType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
-		SELECT auctionId, aname as name, price
+		SELECT auctionId, aname as name, deadline, dday, adescription as description, astatus, minprice, curMaxPrice, firstId, sellerInfoId, cname 
 		FROM auction
 		WHERE cname = #{value}
 	</select>
@@ -175,7 +175,7 @@
 	
 	<update id="updateinfoBID" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionJPModel">
 		UPDATE auction
-		SET curmaxprice = #{offerPrice}, firstId = #{userId}
+		SET curmaxprice = 8000, firstId = #{userId}
 		WHERE auctionId = #{auctionId}
 	</update>
 

@@ -70,6 +70,10 @@ public class AuctionDAO {
 		return amapper.showAuctionList();
 	}
 	
+	public List<AuctionModel> showInfoAP(String cname){
+		return amapper.showInfoAP(cname);
+	}
+	
 	public void updateinfoBID(AuctionJPModel ajp) {
 		amapper.updateinfoBID(ajp);
 	}

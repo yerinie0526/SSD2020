@@ -74,6 +74,11 @@ public class AuctionController {
 	   public AuctionJPModel newJPData() {
 		   return new AuctionJPModel();
 	   }
+      
+      @ModelAttribute("auctionModel")
+	   public AuctionModel newData() {
+		   return new AuctionModel();
+	   }
    
    
    @RequestMapping("/spetstore/auction/aSearch.do") 
@@ -131,13 +136,14 @@ public class AuctionController {
 			@ModelAttribute("auctionJPModel") AuctionJPModel ajp, HttpServletRequest request) {	
     	UserSession userSession = 
                 (UserSession) WebUtils.getSessionAttribute(request, "userSession");
-    	ajp.setCurMaxPrice(am.getCurMaxPrice());
+    	ajp.setCurMaxPrice(100);
     	ajp.setAuctionId(am.getAuctionId());
     	ajp.setFirstId(am.getFirstId());
     	ajp.setUserId(userSession.getUserId());
     	System.out.print(ajp.getAuctionId());
     	System.out.print(ajp.getUserId());
     	System.out.print(ajp.getOfferPrice());
+    	System.out.print("max" + ajp.getCurMaxPrice());
     	if (ajp.getOfferPrice() > ajp.getCurMaxPrice())
     		auctionservice.updateinfoBID(ajp);
 	     return "auction/priceRegisterSuc"; 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import dongduk.cs.ssd.summerpetstore.model.AuctionModel;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.service.AuctionService;
 import dongduk.cs.ssd.summerpetstore.service.MarketService;
@@ -40,9 +41,11 @@ public class ShowCategoryViewController {
 		System.out.println("controller in!!!!!!!!!!!!!!");
 		List<ItemModel> cdata = sproductservice.showInfoSP(cname);
 		List<ItemModel> mdata = marketservice.showInfoMP(cname);
+		List<AuctionModel> adata = auctionservice.showInfoAP(cname);
 		//List<ItemModel> adata = auctionservice.showInfoAP(cname);
 		model.addAttribute("cdata", cdata);
 		model.addAttribute("mdata", mdata);
+		model.addAttribute("adata", adata);
 		//model.addAttribute("adata", adata);
 		return "spetitem/categoryView";
 	}//카테고리별정보보기
