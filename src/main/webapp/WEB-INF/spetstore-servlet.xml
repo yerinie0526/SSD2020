@@ -38,13 +38,10 @@
 	<!-- <mvc:view-controller path="/shop/signonForm.do" view-name="SignonForm"/>  -->
 
 	
-	<!-- <mvc:interceptors>
+	<mvc:interceptors>
 		<mvc:interceptor>
-    	    <mvc:mapping path="/shop/editAccount.do"/>
-        	<mvc:mapping path="/shop/listOrders.do"/>
-        	<mvc:mapping path="/shop/viewOrder.do"/>
-        	<mvc:mapping path="/shop/newOrder.do"/>
-        	<bean class="com.example.jpetstore.controller.SignonInterceptor" />
+    	    <mvc:mapping path="/spetstore/user/myPage/cart.do"/>
+        	<bean class="dongduk.cs.ssd.summerpetstore.controller.SignonInterceptor" />
     	</mvc:interceptor>
-	</mvc:interceptors>-->
+	</mvc:interceptors>
 </beans>
