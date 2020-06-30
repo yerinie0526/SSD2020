@@ -90,7 +90,8 @@ public class AccountFormController {
 			}
 			else {
 				us.updateUser(accountForm.getAccount());
-				return "user/myPage";
+				return "redirect: myPage.do"; 
+				//return "user/myPage";
 			}
 		}
 		catch (DataIntegrityViolationException ex) {
