@@ -14,9 +14,6 @@
 <table>
 	<tr>
 		<th>
-			<input type="text" name="quantity"/>
-		</th>
-		<th>
 			 <input type="submit" value="Add Cart"/>
 		</th>
 	</tr>

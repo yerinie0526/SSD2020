@@ -87,6 +87,7 @@ public class CartDAO {
 //
 	public void addCart(String userId, int itemId) {
 		if(cmapper.countItemId(userId, itemId) > 0) {
+			System.out.println(cmapper.countItemId(userId, itemId));
 			int q = cmapper.getQuantity(itemId, userId);
 			ItemModel im = cmapper.findItembyitemId(itemId);
 			if(im.getStock() < q) {

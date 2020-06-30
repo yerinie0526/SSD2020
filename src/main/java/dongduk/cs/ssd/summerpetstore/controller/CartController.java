@@ -136,7 +136,7 @@ public class CartController {
 		else {
 		cartService.addCart(userSession.getUserId(), itemId);
 		ItemModel iData = ms.showInfo(itemId);
-		System.out.println("add cart  @item id" + itemId);
+		System.out.println("add cart  @item id " + itemId);
 		return new ModelAndView("spetitem/sListDetail", "di", iData);
 		}
 	}//장바구니 담기

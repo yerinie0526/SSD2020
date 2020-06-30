@@ -59,9 +59,9 @@
 	
 	<!--해당 아이디에 해당 아이템이 몇개인지-->
 	<select id="countItemId" resultType="int" >
-		SELECT COUNT(#{param2}) 
+		SELECT COUNT(itemId) 
 		FROM Cart
-		WHERE userId = #{param1}
+		WHERE userId = #{param1} and itemId=#{param2}
 	</select>
 
 	<!--아이템 수량 + 1-->
