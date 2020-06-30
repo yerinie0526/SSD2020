@@ -12,6 +12,13 @@
 	</select>
 	
 	
+	<select id="searchAuctionByUser" resultType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
+		SELECT auctionId, aname as name, dday, astatus, cname, curMaxPrice 
+		FROM auction
+		WHERE sellerInfoId = #{value}
+		ORDER BY dday ASC
+	</select>
+	
 	<!-- searchAuciton : 경매 검색 남은 날짜 촉박한순-->
 	<select id="searchAuctionByDday" parameterType="dongduk.cs.ssd.summerpetstore.model.AuctionModel">
 		SELECT auctionId, dday, astatus, minprice, p.pname, c.cname

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
+import dongduk.cs.ssd.summerpetstore.model.AuctionModel;
 import dongduk.cs.ssd.summerpetstore.model.CartModel;
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.model.UserModel;
@@ -159,12 +160,14 @@ public class UserController {
 	  
 	  
 	  @RequestMapping("/spetstore/user/myPage.do") 
-	  public ModelAndView myPage(HttpServletRequest request) {
+	  public String myPage(HttpServletRequest request, Model model) {
 		  UserSession userSession = 
 					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-		  	List<ItemModel> imList = marketService.searchMarketByUser(userSession.getUserId()); 
-		  	System.out.println("###################" + userSession.getUserId());
-	        return new ModelAndView("/user/myPage", "mList", imList);
+		  	List<ItemModel> mList = marketService.searchMarketByUser(userSession.getUserId()); 
+		  	List<AuctionModel> aList = auctionService.searchAuctionByUser(userSession.getUserId());
+		  	model.addAttribute("mList", mList);
+		  	model.addAttribute("aList", aList);
+	        return"/user/myPage";
 	   }//마이페이지로 이동
 	  
 	  @RequestMapping("/spetstore/listOrders.do") 

@@ -23,4 +23,5 @@ public interface AuctionMapper {
 	void sucBid(AuctionModel am);
 	int getFirstPrice(int auctionId); //현재 최고가 반환: 주로 입찰수정이나 입찰할때 입찰가가 최고가보다 가격이 커야하므로 비교할때 사용
 	List<AuctionModel> showAuctionList();
+	List<AuctionModel> searchAuctionByUser(String userId);
 }

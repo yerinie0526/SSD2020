@@ -28,7 +28,7 @@
          </table>
       </td>
       <td>
-        D-Day ${ai.dday}
+        D-${ai.dday}
       </td>
    </tr>
 </c:forEach>

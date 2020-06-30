@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
@@ -21,6 +22,7 @@ import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.service.AuctionService;
 
 @Controller
+@SessionAttributes("userSession")
 public class AuctionController {
 	private AuctionService auctionservice;
 	
@@ -76,8 +78,14 @@ public class AuctionController {
 	}//경매등록창으로 이동
 	   
 	@RequestMapping("/spetstore/auction/aregister") 
-	public String moveToAuctionRegister(@ModelAttribute("auctionForm") AuctionForm auctionForm) {	
-		return "auction/aRegister"; 	
+	public String moveToAuctionRegister(@ModelAttribute("auctionForm") AuctionForm auctionForm,
+			HttpServletRequest request) {	
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		if (userSession != null)
+			return "auction/aRegister"; 
+		else
+			return "user/SignonForm";
 	}//경매등록창으로 이동
 	
 	
