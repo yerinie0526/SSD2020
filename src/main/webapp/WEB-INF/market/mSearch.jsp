@@ -12,18 +12,16 @@
 </table>
 <table style="border:none;border-collapse:collapse;width:100%">
 <c:forEach var="mi" items="${mList}">
-	<tr>
-		<td><a href="<c:url value='/spetstore/market/detail?itemId=${mi.itemId}'/>">${mi.name}</a></td>
-	</tr>
-	<tr>
+	<tr style="border:1px solid black;">
 		<td>
 			[item pic]
 		</td>
 		<td>
 			<table>
-				<tr><td>${mi.itemId}</td></tr>
-				<tr><td>${mi.istatus}</td></tr>
-				<tr><td>${mi.price}</td></tr>
+			<tr><td><a href="<c:url value='/spetstore/market/detail?itemId=${mi.itemId}'/>">${mi.name}</a></td></tr>
+				<tr><td>Item Number: ${mi.itemId}</td></tr>
+				<tr><td>Status: ${mi.istatus}</td></tr>
+				<tr><td>Price: ${mi.price}</td></tr>
 			</table>
 		</td>
 	</tr>

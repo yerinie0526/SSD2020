@@ -12,13 +12,13 @@
 </table>
 <table style="border:none;border-collapse:collapse;width:100%">
 <c:forEach var="ai" items="${aList}">
-   <tr>
+   <tr style="border:1px solid black;border-radius:10px;">
       <td>
          [item pic]
       </td>
       <td>
          <table>
-         <tr><td><td>Auction Name: &nbsp;&nbsp;<a href="<c:url value='/spetstore/auction/detail?auctionId=${ai.auctionId}'/>">${ai.name}</a></td></tr>
+         <tr><td><td>Auction Name: <a href="<c:url value='/spetstore/auction/detail?auctionId=${ai.auctionId}'/>">${ai.name}</a></td></tr>
             <tr><td>Auction Number:&nbsp;&nbsp;&nbsp;&nbsp;${ai.auctionId}</td></tr>
             <tr><td>Status:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${ai.astatus}</td></tr>
             <tr><td>Minimum Price:&nbsp;&nbsp;&nbsp;&nbsp;${ai.minprice}</td></tr>
