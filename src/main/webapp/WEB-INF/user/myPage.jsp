@@ -8,7 +8,7 @@
 <tr>
 	<td>My Auction</td>
 </tr>
-<%-- <c:foreach var="ai" items="${aList}">
+<c:forEach var="ai" items="${aList}">
 	<tr>
 		<td><a href="<c:url value='/spetstore/auction/detail?itemId=${ai.auctionId}'/>">${ai.name}</a></td>
 	</tr>
@@ -18,14 +18,14 @@
 		</td>
 		<td>
 			<table>
-				<tr><td>${ai.actionId}</td></tr>
+				<tr><td>${ai.auctionId}</td></tr>
 				<tr><td>${ai.astatus}</td></tr>
-				<tr><td>${ai.minPrice}</td></tr>
+				<tr><td>${ai.minprice}</td></tr>
 				<tr><td>${ai.curMaxPrice}</td></tr>
 			</table>
 		</td>
 	</tr>
-</c:foreach> --%>
+</c:forEach>
 <tr>
 	<td>My Group Purchases</td>
 </tr>

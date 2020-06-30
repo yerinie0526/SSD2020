@@ -31,7 +31,9 @@ public class AuctionService {
 //	public List<AuctionModel> searchAuctionByCon(AuctionModel am) { 
 //		return adao.searchAuctionByDday(am);
 //	}
-	
+	public List<AuctionModel> searchAuctionByUser(String userId){
+		return adao.searchAuctionByUser(userId);
+	}
 
 	public AuctionModel showInfo(int auctionId) { 
 		return adao.showInfo(auctionId);
