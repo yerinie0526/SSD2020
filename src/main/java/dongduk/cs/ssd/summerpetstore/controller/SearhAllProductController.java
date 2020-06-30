@@ -17,16 +17,4 @@ public class SearhAllProductController {
 		this.sproductService = sproductService;
 	}
 	
-	@RequestMapping("/spetitem/search") 
-	public String select(@RequestParam("name") String name) {
-		sproductService.searchName(name);
-		sproductService.filterCategory();
-		sproductService.filterDate();
-		sproductService.filterPopular();
-		sproductService.filterProgress();
-		sproductService.filterCategory();
-		sproductService.filterProduct();	//filter역할은 무엇인가요??		
-		return "spetitem/categoryView"; 
-		
-	}//물품검색
 }

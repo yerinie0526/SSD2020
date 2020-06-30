@@ -50,11 +50,4 @@ public class ShowDetailController {
 	}//경매자세히보기
 	
 
-//	@RequestMapping("/gp/detail")	
-//	public String showMarketItem(@RequestParam("itemId") int itemId) {
-//		if(market물품)
-//			return "market/mListDetail";
-//		return "spetitem/gListDetail";
-//	}//공동구매자세히보기
-
 }

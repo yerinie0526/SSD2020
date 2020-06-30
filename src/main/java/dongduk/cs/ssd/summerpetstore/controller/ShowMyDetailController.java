@@ -31,22 +31,6 @@ public class ShowMyDetailController {
 		this.sproductservice = sproductservice;
 	}
 	
-	@RequestMapping("/gspetitem/detail") 
-	public String showMyGp(@RequestParam("itemId") int itemId, @RequestParam("userId") String userId) {
-		sproductservice.showInfo(itemId);
-		return "gspetitem/gListDetail"; 
-	}//참여한 공동구매 보기
-	
-//	@RequestMapping("/auction/detail") 
-//	public String showMyAuction(@RequestParam("auctionListId") int auctionListId, @RequestParam("userId") String userId) {
-//		auctionservice.showInfo(auctionListId, userId);
-//		return "auction/aListDetail"; 
-//	}//참여한 경매 보기
-	
-	@RequestMapping("/market/detail/{itemId}") 
-		public String showMyMarket(@PathVariable("itemId") int itemId, @RequestParam("userId") String userId) {
-		marketservice.showInfo(itemId, userId);
-		return "market/gListDetail"; 
-	}//내놓은 물건 보기(장터)
+
 	
 }

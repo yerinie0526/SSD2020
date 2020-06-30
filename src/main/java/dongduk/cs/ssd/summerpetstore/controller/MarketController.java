@@ -75,15 +75,7 @@ public class MarketController {
    public MarketFilter marketFilterData() {
       return new MarketFilter();
    } 
-   
-//   @RequestMapping("/market/main") 
-//   public String showMarketList(Model model) {
-//      List<Market> mList = marketService.getMarketList();
-//      model.addAttribute("mList", mList);
-//      return "market/mSearch"; 
-//   }
-//   
-// 
+
    @RequestMapping("/spetstore/market/mSearch/mRegisterSuc.do") 
    public String registerMarket(@ModelAttribute("marketForm") MarketForm marketForm, 
          SessionStatus sessionStatus, Model model, HttpServletRequest request){
@@ -94,32 +86,6 @@ public class MarketController {
       System.out.println("################mregistersucc controller");
       return "market/mRegisterSuc"; 
    }
-     
-     
-     
-     
-     // ž¥ „°ë¬¼í’ˆ “±ë¡ 
-//     
-//     @RequestMapping("/market/delete") 
-//     public String deleteMarket(@RequestParam("marketId") int marketId)
-//     {
-//        marketService.deleteItem(marketId); 
-//        return "market/mSearach";
-//     }// ž¥ „°ë¬¼í’ˆ ‚­  œ
-//     
-//     @RequestMapping("/market/mitemView") 
-//     public String updateMarket(@RequestParam("userId") String userId) {
-//        marketService.updateItem(userId); 
-//          return "market/mListDetail";
-//     }// ž¥ „°ë¬¼í’ˆ ˆ˜  •
-     
-//     @RequestMapping("/market/search") 
-//     public String select(@RequestParam("name")String name, @RequestParam("itemKind")String itemKind, @RequestParam("keyword")String keyword) {
-//        System.out.println("/market/search");
-//        marketService.searchItem(name, itemKind, keyword); 
-//        return "market/mListDetail";
-//     
-//     }//×Ù•í„°ê²  ƒ‰
      
 
      @RequestMapping(value="/spetstore/market/mSearch/filter.do") 

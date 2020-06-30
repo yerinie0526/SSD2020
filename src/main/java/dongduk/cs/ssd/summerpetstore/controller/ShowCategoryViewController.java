@@ -42,11 +42,9 @@ public class ShowCategoryViewController {
 		List<ItemModel> cdata = sproductservice.showInfoSP(cname);
 		List<ItemModel> mdata = marketservice.showInfoMP(cname);
 		List<AuctionModel> adata = auctionservice.showInfoAP(cname);
-		//List<ItemModel> adata = auctionservice.showInfoAP(cname);
 		model.addAttribute("cdata", cdata);
 		model.addAttribute("mdata", mdata);
 		model.addAttribute("adata", adata);
-		//model.addAttribute("adata", adata);
 		return "spetitem/categoryView";
 	}//카테고리별정보보기
 }

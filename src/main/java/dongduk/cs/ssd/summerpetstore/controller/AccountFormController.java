@@ -53,7 +53,6 @@ public class AccountFormController {
 			throws Exception {
 		UserSession userSession = 
 			(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-		System.out.println("여기까지는 들어옴!");
 		if (userSession != null) {	// edit an existing account
 			System.out.println("usersession not null!!!!!!!!!!!!!!!!!!!!"+us.getUser(userSession.getUserModel().getUserId()));
 			return new AccountForm(
@@ -67,7 +66,6 @@ public class AccountFormController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm() {
-		System.out.println("get!!!!!!!!!!!!!!!!!");
 		return formViewName;
 	}
 	

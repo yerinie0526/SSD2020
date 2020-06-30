@@ -53,11 +53,5 @@ public class UserSession implements Serializable {
 		return usermodel;
 	}
 
-//	public void setMyList(PagedListHolder<Product> myList) {
-//		this.myList = myList;
-//	}
-//
-//	public PagedListHolder<Product> getMyList() {
-//		return myList;
-//	}
+
 }

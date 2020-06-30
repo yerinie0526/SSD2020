@@ -62,57 +62,7 @@ public class UserController {
 	public currentLogin loginData() {
 		return new currentLogin();
 	}
-	
-	/*
-	 * @RequestMapping("/spetstore/register.do") //register public String
-	 * registerUser(@RequestParam("userId") String userId, Model model) { String
-	 * name = userService.registerUser(userId); model.addAttribute("username",name);
-	 * return "user/sucRegist"; }//�쉶�썝媛��엯
-	 */	  
-	 /* @RequestMapping("/main") public String deleteUser(@RequestParam("userId")
-	 * String userId, Model model) { if(auctionService.is_auction_exist()){
-	 * auctionService.cancelSBId(userId); }else if(marketService.is_market_exist())
-	 * { marketService.deleteMarket(userId); }else if(gpService.is_gp_exist()){
-	 * gpService.deleteGP(userId); }
-	 * 
-	 * return "main"; }//�쉶�썝�깉�눜
-	 */	
-	
-	 
-	/*
-	 * @RequestMapping("/spetstore/logincheck") public ModelAndView
-	 * logincheck(@ModelAttribute UserModel um, HttpSession session) { boolean
-	 * result = userService.logincheck(um, session); ModelAndView mav = new
-	 * ModelAndView(); if(result == true) { mav.setViewName("main");
-	 * mav.addObject("msg", "success"); }//濡쒓렇�씤�꽦怨� else {
-	 * mav.setViewName("user/login"); mav.addObject("msg", "fail"); }//濡쒓렇�씤�떎�뙣 return
-	 * mav; }//濡쒓렇�씤泥섎━
-	 */	
-	
-	//login
-//	@RequestMapping("/spetstore/signon.do")
-//	public ModelAndView handleRequest(HttpServletRequest request,
-//			@RequestParam("userId") String userId,
-//			@RequestParam("password") String password,
-//			@RequestParam(value="forwardAction", required=false) String forwardAction,
-//			Model model) {
-//		UserModel usermodel = userService.getUser(userId, password);
-//		if (usermodel == null) {
-//			return new ModelAndView("Error", "message", 
-//					"Invalid username or password.  Signon failed.");
-//		}
-//		else {
-//			UserSession userSession = new UserSession(usermodel);
-//			//PagedListHolder<Product> myList = new PagedListHolder<Product>(this.petStore.getProductListByCategory(account.getFavouriteCategoryId()));
-//			//myList.setPageSize(4);
-//			//userSession.setMyList(myList);
-//			model.addAttribute("userSession", userSession);
-//			if (forwardAction != null) 
-//				return new ModelAndView("redirect:" + forwardAction);
-//			else 
-//				return new ModelAndView("index");
-//		}
-//	}
+
 	
 	  @RequestMapping("/spetstore/delete") 
 	  public String deleteUser(@RequestParam("userId") String userId, HttpSession session, SessionStatus sessionStatus) {
@@ -121,7 +71,7 @@ public class UserController {
 		  session.invalidate();
 		  sessionStatus.setComplete();
 		  return "redirect: /summerpetstore/index"; 
-	  }//회원탈퇴	  
+	  }//�쉶�썝�깉�눜	  
 	
 	@RequestMapping("/spetstore/signon.do")
 	public ModelAndView handleRequest(HttpServletRequest request,
@@ -138,7 +88,7 @@ public class UserController {
 			if (loginData.getPassword().equals(usermodel.getPassword())) {
 				UserSession userSession = new UserSession(usermodel, loginData.getUserId());
 				model.addAttribute("userSession", userSession);
-				System.out.println("여기요!");
+				System.out.println("�뿬湲곗슂!");
 				//return new ModelAndView("index");
 				return new ModelAndView("redirect: /summerpetstore/index"); 
 			}
@@ -155,7 +105,7 @@ public class UserController {
 		  sessionStatus.setComplete();
 		  System.out.println("########logout");
 		  return "redirect: /summerpetstore/index"; 
-	  }//로그아웃
+	  }
 	  
 	  
 	  
@@ -168,7 +118,7 @@ public class UserController {
 		  	model.addAttribute("mList", mList);
 		  	model.addAttribute("aList", aList);
 	        return"/user/myPage";
-	   }//마이페이지로 이동
+	   }
 	  
 	  @RequestMapping("/spetstore/listOrders.do") 
 	  public ModelAndView myOrders(HttpServletRequest request) {
@@ -176,16 +126,9 @@ public class UserController {
 					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 		  	List<ItemModel> imList = marketService.searchMarketByUser(userSession.getUserId()); 
 	        return new ModelAndView("/user/myPage", "mList", imList);
-	   }//주문내역으로 이동
+	   }
 	  
 	  
 		
-	  
-	  
-	/*
-	 * @RequestMapping("/mypage/update") public String
-	 * updateUser(@RequestParam("userId") String userId) {
-	 * userService.updateMyPage(userId); return "user/myPage"; }//�쉶�썝�젙蹂댁닔�젙
-	 */	 
-	
+
 }

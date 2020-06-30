@@ -49,15 +49,7 @@ public class BidController {
 		}	
 	}//입찰
 	
-	@RequestMapping("/auction/priceupdate") 
-	public String updateBid(@RequestParam("myPrice") int myPrice, @RequestParam("userId") String userId, 
-			@RequestParam("auctionId") int auctionId, @ModelAttribute("AuctionJP")AuctionJPModel jpm) {	
-		auctionservice.showJPList(auctionId);
-		auctionservice.isNewPrice(myPrice, auctionId); //최고가 이면 true를 반환하게 함 최고가로 수정한게 아니면 등록을 못하게 해야함
-		auctionservice.updateBid(jpm);	
-		return "auction/aPriceRegister"; 
-		
-	}//입찰수정
+
 	
 	
 }

@@ -160,33 +160,7 @@ public class CartController {
         return new ModelAndView("/user/myPage/Cart", "cartList", cartList);
 	}//장바구니 물품 삭제
 	
-	//이과정을 dao에서 하는 것으로 바꿈! 그게 나을것같아서 06.29 -예린-
-/*	@RequestMapping("/spetstore/spetitem/addCart.do") 
-	public String addCart(@RequestParam("itemId") int itemId,@RequestParam("userId") String userId, @RequestParam("price") int price, 
-			@RequestParam("name") String name, @RequestParam("inStock") boolean inStock, @RequestParam("quantity") int quantity) {
-		CartModel cart;	
-		
-		if(cartService.containsItemId(itemId, userId))
-			cartService.incrementQuantityByItemId(userId, itemId); 	//장바구니에 존재하는 물품이면 수량만 증가시켜줌
-		else
-			cartService.addCart(itemId, name, price, inStock, quantity, userId);
-			
-		//model.addAttribute("cart", cart);
-		return "spetitem/sListDetail"; 	
-	}//장바구니 담기*/ 
-	
-//	@RequestMapping("/mypage/cart/delete") 
-//	public String deleteItem(@RequestParam("userId") String userId, @RequestParam("itemId") int itemId) {
-//		cartService.deleteCart(userId, itemId);
-//		return "user/myPage/cart"; 
-//	}//장바구니 물품 삭제
-//	
-//	@RequestMapping("/mypage/cart/pay") 
-//	public String pay(@RequestParam("userId") String userId, @RequestParam("orderId") int orderId) {
-//		cartService.order(userId, orderId);
-//		return "user/myPage/sucPay"; 
-//	}//장바구니 물품 결제
-//	
+
 
 }
 

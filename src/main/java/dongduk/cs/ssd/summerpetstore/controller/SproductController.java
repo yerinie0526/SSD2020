@@ -21,12 +21,6 @@ public class SproductController {
 		this.sproductService = sproductService;
 	}
 
-	@RequestMapping("/spetitem/register") 
-	public String registeritem(Model model, @ModelAttribute("item")ItemModel item) {
-		sp = sproductService.registerSP(item);
-		model.addAttribute("sp", sp);
-		return "spetitem/categoryView"; 
-	}//물품등록
 	
 	@RequestMapping("/spetitem/delete") 
 	public String deleteitem(@RequestParam("itemId") int itemId) {
@@ -34,9 +28,5 @@ public class SproductController {
 		return "spetitem/categoryView"; 
 	}//물품삭제
 	
-	@RequestMapping("/spetitem/update") 
-	public String updateitem(@ModelAttribute("item")ItemModel item) {
-		sproductService.updateSP(item);
-		return "spetitem/sListDetail";
-	}//물품수정
+
 }
