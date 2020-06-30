@@ -117,21 +117,28 @@ public class CartController {
 	public ModelAndView addCartMarket(@PathVariable int itemId, HttpServletRequest request) {
 		UserSession userSession = 
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
-		cartService.addCart(userSession.getUserId(), itemId);
-		ItemModel iData = ms.showInfo(itemId);
-		System.out.println("add cart at market  @item id" + itemId);
-		return new ModelAndView("market/mDetail", "iData", iData);
+		if(userSession == null) {
+			return new ModelAndView("user/SignonForm");}
+		else {
+			cartService.addCart(userSession.getUserId(), itemId);
+			ItemModel iData = ms.showInfo(itemId);
+			System.out.println("add cart at market  @item id" + itemId);
+			return new ModelAndView("market/mDetail", "iData", iData);
+		}
 	}//장바구니 담기
 	
 	@RequestMapping("/spetstore/spetitem/addCart/{itemId}") 
 	public ModelAndView addCartSpetitem(@PathVariable int itemId, HttpServletRequest request) {
 		UserSession userSession = 
 				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		if(userSession == null) {
+			return new ModelAndView("user/SignonForm");} 
+		else {
 		cartService.addCart(userSession.getUserId(), itemId);
 		ItemModel iData = ms.showInfo(itemId);
 		System.out.println("add cart  @item id" + itemId);
 		return new ModelAndView("spetitem/sListDetail", "di", iData);
-
+		}
 	}//장바구니 담기
 	
 	@RequestMapping("/spetstore/user/myPage/cart.do") 
