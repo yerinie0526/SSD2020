@@ -156,7 +156,7 @@ public class MarketController {
     		 }
     	 else {
     		 System.out.println("else !!!!!!!!");
-    		 model.addAttribute("deleteerror", "Cannot be deleted");
+    		 model.addAttribute("error", "Cannot be deleted");
     	 }
     	 return "redirect: /summerpetstore/spetstore/user/myPage.do";
      }//마켓물품삭제

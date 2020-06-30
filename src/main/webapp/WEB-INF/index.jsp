@@ -1,5 +1,5 @@
 <%@ include file="IncludeTop.jsp" %> 
-<table style="border:none;border-collapse:collapse;width:100%">
+<table class ="main"style="border:none;border-collapse:collapse;width:100%">
   <tr>
     <td style="text-align:left;vertical-align:top;width:100%">
       <table style="border:none;border-collapse:collapse;width:80%">
@@ -38,13 +38,13 @@
                     CAT</a>
                 </td>
               </tr>
-              
-            </table>
+              </table>
+        
           </td>
           <td style="text-align:center;background-color:white;height:300;width:100%">
-            MAIN IMAGE
-            <p>main contents</p>
+            <td id = "spet"> <img border="0" src="images/mainpic.PNG" width = "800" height="800"style="float:right"/></td>
           </td>
+         
         </tr>
       </table>
     </td>

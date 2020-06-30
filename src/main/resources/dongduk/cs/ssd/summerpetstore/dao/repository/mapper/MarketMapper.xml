@@ -62,7 +62,7 @@
 	<select id="searchItem" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel"
 		parameterType="dongduk.cs.ssd.summerpetstore.controller.MarketFilter" >
 		<![CDATA[
-		SELECT itemid as itemId, iname as name, price
+		SELECT itemid as itemId, iname as name, price, istatus
 		FROM Item
 		WHERE sellerinfoid != 'summer'
 		]]>
@@ -77,14 +77,14 @@
 	</select>
 	
 	<select id="showInfoMP" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
-		SELECT itemid as itemId, iname as name, price
+		SELECT itemid as itemId, iname as name, price, cname
 		FROM Item
 		WHERE sellerinfoid != 'summer' and cname = #{value}
 	</select>
 	
 		<!--장터검색-->
 	<select id="searchMarketByUser" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
-		SELECT itemid as itemId, iname as name, price
+		SELECT itemid as itemId, iname as name, price, istatus
 		FROM Item
 		where sellerinfoid=#{param1}
 	</select>

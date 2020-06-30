@@ -54,8 +54,9 @@ table.top {
     border-collapse: collapse;
 }
 table.top tr td {
-    padding: 5px;
+    padding: 13px;
 }
+
 table.t1 {
     width: 100%;
     border: none;

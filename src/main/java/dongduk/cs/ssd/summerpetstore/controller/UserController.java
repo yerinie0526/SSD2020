@@ -137,11 +137,13 @@ public class UserController {
 			if (loginData.getPassword().equals(usermodel.getPassword())) {
 				UserSession userSession = new UserSession(usermodel, loginData.getUserId());
 				model.addAttribute("userSession", userSession);
-				return new ModelAndView("index");
+				System.out.println("여기요!");
+				//return new ModelAndView("index");
+				return new ModelAndView("redirect: /summerpetstore/index"); 
 			}
 			else
 				return new ModelAndView("redirect:" + "/spetstore/signon.do");
-				
+			
 		}
 	}
 	
