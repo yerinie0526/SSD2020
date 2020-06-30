@@ -66,6 +66,7 @@ public class AuctionController {
          return new AuctionForm();
       }   
       
+      @ModelAttribute("prForm")
       public PriceRegisterForm prFormData() {
          return new PriceRegisterForm();
       }
@@ -125,13 +126,16 @@ public class AuctionController {
    
     
     @RequestMapping("/spetstore/auction/priceregister") 
-   public String priceRegister(@ModelAttribute("auctionModel") AuctionModel am,
-		   @ModelAttribute("auctionJPModel") AuctionJPModel ajp) {  
-    	System.out.print(ajp.getAuctionId());
+   public String priceRegister(@ModelAttribute("prForm") PriceRegisterForm prForm,
+		@RequestParam("curMaxPrice") int cmp, @RequestParam("firstId") String fId, @RequestParam("auctionId") int auctionId, Model model) {  
+    	model.addAttribute("curMaxPrice", cmp);
+    	model.addAttribute("firstId", fId);
+    	model.addAttribute("auctionId", auctionId);
+    	model.addAttribute("prForm", prForm);
        return "auction/priceRegister";
    }//ÀÔÂû
    
-    @RequestMapping("/spetstore/auction/aSearch/aPriceRegisterSuc.do") 
+    /*@RequestMapping("/spetstore/auction/aSearch/aPriceRegisterSuc.do") 
 	public String registerAuction(@ModelAttribute("auctionModel") AuctionModel am, 
 			@ModelAttribute("auctionJPModel") AuctionJPModel ajp, HttpServletRequest request) {	
     	UserSession userSession = 
@@ -148,7 +152,7 @@ public class AuctionController {
     		auctionservice.updateinfoBID(ajp);
 	     return "auction/priceRegisterSuc"; 
     }
-    
+    */
     
     
 //   @RequestMapping("/auction/search") 

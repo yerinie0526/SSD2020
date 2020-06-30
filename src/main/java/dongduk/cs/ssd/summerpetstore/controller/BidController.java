@@ -28,11 +28,16 @@ public class BidController {
 		this.auctionservice = auctionservice;
 	}
 	
+	 @ModelAttribute("prForm")
+     public PriceRegisterForm prFormData() {
+        return new PriceRegisterForm();
+     }
+	 
+	 
 	@RequestMapping("/spetstore/auction/bid/{curMaxPrice}/{auctionId}") 
 	public String bid(@RequestParam("bidPrice") int myPrice, 
 			@PathVariable int curMaxPrice, @PathVariable int auctionId,
 			HttpServletRequest request) {	
-		//auctionservice.showJPList(auctionId);
 		if(myPrice <= curMaxPrice) {
 			return "auction/priceRegister";
 		}

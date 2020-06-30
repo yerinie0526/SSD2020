@@ -19,7 +19,7 @@
 </p>
 <p>
 	<form:label path="deadline">Deadline : </form:label>
-	<form:input path="deadline" type="date" hint="yyyymmdd ex) 20200630"/>
+	<form:input path="deadline" placeholder="yyyymmdd ex) 20200630"/>
 	<form:errors path="deadline" cssClass="error"/>
 </p>
 <p>
