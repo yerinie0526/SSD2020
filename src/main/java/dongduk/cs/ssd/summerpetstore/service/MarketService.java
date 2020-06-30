@@ -27,7 +27,10 @@ public class MarketService {
 	public void registerItem(MarketForm im) { 
 		mdao.registerItem(im); 
 	}
-	
+	@Transactional 
+	public void updateItem(MarketForm im) { 
+		mdao.updateItem(im); 
+	}
 	public List<ItemModel> showInfoMP(String cname) {
 		return mdao.showInfoMP(cname);
 	}

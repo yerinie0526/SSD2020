@@ -26,7 +26,7 @@ import dongduk.cs.ssd.summerpetstore.service.CartService;
 import dongduk.cs.ssd.summerpetstore.service.MarketService;
 
 @Controller
-@SessionAttributes("userSession")
+@SessionAttributes("itemSession")
 public class MarketController {
    
    @Autowired
@@ -65,10 +65,12 @@ public class MarketController {
    }
    
    @ModelAttribute("marketForm")
-   public MarketForm marketFormData() {
-      return new MarketForm();
+   public MarketForm marketFormData(HttpServletRequest request)throws Exception {
+	
+			return new MarketForm();		
    }   
    
+	
    @ModelAttribute("marketfilter")
    public MarketFilter marketFilterData() {
       return new MarketFilter();
@@ -92,6 +94,7 @@ public class MarketController {
       System.out.println("################mregistersucc controller");
       return "market/mRegisterSuc"; 
    }
+     
      
      
      

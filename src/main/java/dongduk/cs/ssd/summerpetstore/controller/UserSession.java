@@ -2,12 +2,14 @@ package dongduk.cs.ssd.summerpetstore.controller;
 
 import java.io.Serializable;
 
+import dongduk.cs.ssd.summerpetstore.model.ItemModel;
 import dongduk.cs.ssd.summerpetstore.model.UserModel;
 
 @SuppressWarnings("serial")
 public class UserSession implements Serializable {
 
 	private UserModel usermodel;
+	private ItemModel itemmodel;
 	private String userId;
 
 //	private PagedListHolder<Product> myList;
@@ -19,6 +21,20 @@ public class UserSession implements Serializable {
 	public UserSession(UserModel usermodel, String userId) {
 		this.usermodel = usermodel;
 		this.userId = userId;
+	}
+	
+	public UserSession(ItemModel itemmodel) {
+		this.itemmodel = itemmodel;
+	}
+	
+	
+
+	public ItemModel getItemmodel() {
+		return itemmodel;
+	}
+
+	public void setItemmodel(ItemModel itemmodel) {
+		this.itemmodel = itemmodel;
 	}
 
 	public String getUserId() {

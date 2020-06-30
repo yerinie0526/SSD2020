@@ -101,10 +101,7 @@ public class AccountFormController {
 		
 		UserSession userSession = new UserSession(
 			us.getUser(accountForm.getAccount().getUsername()));
-	/*	PagedListHolder<Product> myList = new PagedListHolder<Product>(
-			petStore.getProductListByCategory(accountForm.getAccount().getFavouriteCategoryId()));
-		myList.setPageSize(4);
-		userSession.setMyList(myList);*/
+	
 		session.setAttribute("userSession", userSession);
 		return successViewName;  
 	}

@@ -13,11 +13,22 @@
 		VALUES (#{itemId}, 'in progress', #{itemKind}, #{name}, #{price}, #{description}, 0, #{sellerInfoId}, #{cname}, 1)
 	</insert>
 	
+	
+  <update id="updateItem" parameterType="dongduk.cs.ssd.summerpetstore.controller.MarketForm">
+    UPDATE item SET
+      iname = #{name},
+      cname = #{cname},
+      itemkind = #{itemkind},
+      price = #{price}
+      idescription = #{description}
+    WHERE itemid = #{itemid}
+  </update>
+	
 	<!--장터 물품 자세히 보기-->
 	<select id="showInfo" resultType="dongduk.cs.ssd.summerpetstore.model.ItemModel">
 		SELECT itemid, iname AS name, itemkind AS itemKind, price, idescription AS description, istatus, cname, sellerinfoid
 		FROM item
-		WHERE itemid = #{value}
+		WHERE itemid = #{param1}
 	</select>
 	
 	<!--장터 물품 삭제-->
@@ -32,12 +43,12 @@
     	where i.itemid = c.itemid and i.itemid = #{param1}
 	</select>
 	
-	<!--장터물품 수정 -->
+	<!--장터물품 수정 
 	<update id="updateItem" >
 		UPDATE Item
 		SET itemKind=#{itemKind}, iname=#{iname}, price=#{price}, description=#{description}, productId=#{productId}
 		WHERE itemId=#{itemId}
-	</update>
+	</update>-->
 	
 	<!--장터상태 수정-->
 	<update id="updateItemStatus" >

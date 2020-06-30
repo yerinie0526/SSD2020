@@ -28,7 +28,9 @@ public class MarketDAO {
 	public void registerItem(MarketForm im) throws DataAccessException{
 		mmapper.registerItem(im);
 	}
-	
+	public void updateItem(MarketForm im) throws DataAccessException{
+		mmapper.updateItem(im);
+	}
 	public List<ItemModel> showInfoMP(String cname){
 		return mmapper.showInfoMP(cname);
 	}

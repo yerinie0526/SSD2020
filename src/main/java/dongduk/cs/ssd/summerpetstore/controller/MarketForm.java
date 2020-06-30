@@ -2,6 +2,8 @@ package dongduk.cs.ssd.summerpetstore.controller;
 
 import java.io.Serializable;
 
+import dongduk.cs.ssd.summerpetstore.model.ItemModel;
+
 @SuppressWarnings("serial")
 public class MarketForm implements Serializable{
 	private int itemId;
@@ -12,9 +14,12 @@ public class MarketForm implements Serializable{
 	private String name;
 	private int price;
 	private String sellerInfoId;
-	
+	private ItemModel itemModel;
+	private boolean newAccount;
+
 	public MarketForm() {
-		
+		this.itemModel  = itemModel;
+		this.newAccount = true;
 	}
 
 	public MarketForm(int itemId, String cname, String itemKind, String pMethod, String description, String name,
@@ -29,7 +34,30 @@ public class MarketForm implements Serializable{
 		this.price = price;
 		this.sellerInfoId = sellerInfoId;
 	}
+	
+	public MarketForm(ItemModel itemModel) {
+		this.itemModel  = itemModel;
+		this.newAccount = false;
+	}
 
+
+
+
+	public boolean isNewAccount() {
+		return newAccount;
+	}
+
+	public void setNewAccount(boolean newAccount) {
+		this.newAccount = newAccount;
+	}
+
+	public ItemModel getItemModel() {
+		return itemModel;
+	}
+
+	public void setItemModel(ItemModel itemModel) {
+		this.itemModel = itemModel;
+	}
 
 	public String getSellerInfoId() {
 		return sellerInfoId;

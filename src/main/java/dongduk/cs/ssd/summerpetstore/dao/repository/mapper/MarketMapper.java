@@ -9,11 +9,13 @@ import dongduk.cs.ssd.summerpetstore.controller.MarketForm;
 public interface MarketMapper {
 	void registerItem(MarketForm im);
 	
+	void updateItem(MarketForm im);
+	
 	ItemModel showInfo(int itemId);
 	
 	void deleteItem(int itemId);
 	
-	ItemModel updateItem(ItemModel im);
+	//ItemModel updateItem(ItemModel im);
 	
 	ItemModel updateItemStatus(int istatus, int itemId);
 	
