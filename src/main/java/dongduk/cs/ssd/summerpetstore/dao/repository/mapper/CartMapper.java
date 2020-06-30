@@ -21,4 +21,6 @@ public interface CartMapper {
 	void createOrder(OrderForm orderForm);
 	void deleteCartByUser(OrderForm orderForm);
 	void updateQuantity(UpdateQuantity newQuantity);
+	int getQuantity(int itemId, String userId);
+	void updateInStock(int inStock, int itemId, String userId);
 }

@@ -86,16 +86,25 @@ public class CartDAO {
 //	
 //
 	public void addCart(String userId, int itemId) {
-		ItemModel im = cmapper.findItembyitemId(itemId);
-		int inStock;
-		int quantity;
-		quantity = cmapper.countItemId(userId, itemId);
-		if(im.getStock() >= quantity + 1) {
-			inStock = 1;
-		}else {
-			inStock = 0;
+		if(cmapper.countItemId(userId, itemId) > 0) {
+			int q = cmapper.getQuantity(itemId, userId);
+			ItemModel im = cmapper.findItembyitemId(itemId);
+			if(im.getStock() < q) {
+				cmapper.updateInStock(0, itemId, userId);
+			}
+			cmapper.incrementQuantity(userId, itemId);
 		}
-		cmapper.addCart(itemId, im.getName(), im.getPrice(), inStock, quantity, userId);
+		else {
+			ItemModel im = cmapper.findItembyitemId(itemId);
+			int inStock;
+			int quantity = 1;
+			if(im.getStock() >= quantity) {
+				inStock = 1;
+			}else {
+				inStock = 0;
+			}
+			cmapper.addCart(itemId, im.getName(), im.getPrice(), inStock, quantity, userId);
+		}
 	}
 	
 	public void deleteCart(String userId, int itemId) {

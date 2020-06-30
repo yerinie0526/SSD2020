@@ -41,9 +41,7 @@ public class BidController {
 					(UserSession) WebUtils.getSessionAttribute(request, "userSession");
 			auctionservice.bid(userSession.getUserId(), myPrice, auctionId); 
 			return "auction/aRegisterSuc"; 	
-		}
-		 
-		
+		}	
 	}//ÀÔÂû
 	
 	@RequestMapping("/auction/priceupdate") 

@@ -24,6 +24,17 @@
 		WHERE itemid=#{param1}
 	</select>
 	
+	<select id="getQuantity" resultType="int">
+		SELECT quantity
+		FROM cart
+		WHERE itemid=#{param1} and userId=#{param2}
+	</select>
+	
+	<update id="updateInStock">
+		UPDATE cart
+		SET InStock=#{param1}
+		WHERE itemid=#{param2} and userId=#{param3}
+	</update>
 	
 	<!--addCart : 카트에 추가-->
 	<insert id="addCart">
@@ -57,7 +68,7 @@
 	<update id="incrementQuantity">
 		UPDATE cart
 		SET quantity = quantity + 1
-		WHERE itemId = #{itemId} and userId = #{userId}
+		WHERE itemId = #{param2} and userId = #{param1}
 	</update>
 	
 	<!--아아템 수량 수정-->
