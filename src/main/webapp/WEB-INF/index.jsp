@@ -2,7 +2,7 @@
 <table class ="main"style="border:none;border-collapse:collapse;width:100%">
   <tr>
     <td style="text-align:left;vertical-align:top;width:100%">
-      <table style="border:none;border-collapse:collapse;width:80%">
+      <table style="border:none;border-collapse:collapse;width:80%;">
         <tr>
           <td valign="top">                    
             <!-- SIDEBAR -->
@@ -10,32 +10,34 @@
               <tr>
                 <td>
                 <c:if test="${!empty userSession.userId}">
-			       <b><i><font size="4" color="RED">Welcome!</font></i></b>
+                <b><i><font size="3" color="GREEN">Welcome!</font> <font size="4" color="RED">${userSession.userId}</font></i></b>
                 </c:if>&nbsp;
                 </td>
               </tr>
-              <tr>
+              <tr><td>&nbsp;</td>
+              </tr>
+              <tr style="background-color: #bbdefb">
                 <td>
-                  <a href="<c:url value="/spetstore/category/fish"/>">
-                     FISH</a>
+                  <a href="<c:url value="/spetstore/category/fish"/>" style="font-family:cursive;">
+                     <font size="4" color="BROWN">FISH</font></a>
                 </td>
               </tr>
-              <tr>
+              <tr style="background-color: #bbdefb">
                 <td>
-                  <a href="<c:url value="/spetstore/category/dog"/>">
-                    DOG</a>
+                  <a href="<c:url value="/spetstore/category/dog"/>" style="font-family:cursive;">
+                    <font size="4" color="BROWN">DOG</font></a>
                 </td>
               </tr>
-              <tr>
+              <tr style="background-color: #bbdefb">
                 <td>
-                  <a href="<c:url value="/spetstore/category/rabbit"/>">
-                   RABBIT</a>
+                  <a href="<c:url value="/spetstore/category/rabbit"/>" style="font-family:cursive;">
+                   <font size="4" color="BROWN">RABBIT</font></a>
                 </td>
               </tr>
-              <tr>
+              <tr style="background-color: #bbdefb">
                 <td>
-                  <a href="<c:url value="/spetstore/category/cat"/>">
-                    CAT</a>
+                  <a href="<c:url value="/spetstore/category/cat"/>" style="font-family:cursive;">
+                    <font size="4" color="BROWN">CAT</font></a>
                 </td>
               </tr>
               </table>

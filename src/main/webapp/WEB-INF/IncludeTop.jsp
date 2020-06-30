@@ -16,35 +16,36 @@
 </head>
 
 <body bgcolor="white">
-<table class="top">
-	<tr>
-		<td>
-	    	<a href="<c:url value="/index"/>">
-	        (go to home)</a>
-	    </td>
-	    
-	    <td style="text-align:right">
-	      <a href="<c:url value="/spetstore/user/myPage/cart.do"/>">
-	        (cart)</a>
-	      <c:if test="${empty userSession.userId}" >
-	        <a href="<c:url value="/spetstore/user/signonForm.do"/>">
-	          (login)</a>
-	      </c:if>
-	      <c:if test="${!empty userSession.userId}" >
-	        <a href="<c:url value="/spetstore/user/signoff.do"/>">	<!-- controller에서 로그아웃 처리하기 -->
-	          (logout)</a>
-	        <a href="<c:url value="/spetstore/user/myPage.do"/>">
-	         (myPage)</a>
-	      </c:if>
-	    </td>
-	    
-	    <td style="text-align:left">
-	      <form action="<c:url value="/spetstore/spetitem/categoryView.do"/>" method="post">
-	        <input type="text" name="keyword" size="14" />
-	        <input type="submit" value="search">
-	      </form>
-	    </td>
-	</tr>
+<table class="top" style="background-color: #cbbbfb;text-align:left;vertical-align:top;width:100%;height:10%;padding: 13px;">
+   <tr>
+      <td>
+          <a href="<c:url value="/index"/>" style="font-family:cursive; font-weight:bold">
+           <font size="5">SUMMER PET STORE</font></a>
+       </td>
+       
+       <td style="text-align:right">
+         <a href="<c:url value="/spetstore/user/myPage/cart.do"/>" style="font-family:cursive;">
+           [CART]</a>
+         <c:if test="${empty userSession.userId}" >
+           <a href="<c:url value="/spetstore/user/signonForm.do"/>" style="font-family:cursive;">
+             [LOGIN]</a>
+         </c:if>
+         <c:if test="${!empty userSession.userId}" >
+           <a href="<c:url value="/spetstore/user/signoff.do"/>" style="font-family:cursive;">   <!-- controller에서 로그아웃 처리하기 -->
+             [LOGOUT]</a>
+           <a href="<c:url value="/spetstore/user/myPage.do"/>" style="font-family:cursive;">
+            [MY PAGE]</a>
+         </c:if>
+       </td>
+       
+       <td style="text-align:left">
+         <form action="<c:url value="/spetstore/spetitem/categoryView.do"/>" method="post">
+           <input type="text" name="keyword" size="14" />
+           <input type="submit" value="search">
+         </form>
+       </td>
+   </tr>
 </table>
-
+<div style="background-color: #fafbbb;text-align:left;vertical-align:top;width:100%; padding: 2px;font-family:cursive;">
 <%@ include file="IncludeQuickHeader.jsp" %>
+</div>

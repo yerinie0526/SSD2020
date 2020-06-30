@@ -3,7 +3,7 @@
 <div align="center">
   <b><font size="4"><c:out value="Products for sale at Spet Store" /></font></b>
   
-  <table class="n23">
+  <table class="n23" style="text-align: center;">
     <tr bgcolor="#FFCCCC">
       <td><b>Item ID</b></td>
       <td><b>Category</b></td>
@@ -28,7 +28,7 @@
     
     <HR>
     <b><font size="4"><c:out value="Products for sale at Market" /></font></b>
-    <table>
+    <table style="text-align: center;">
     <tr bgcolor="#FFCCFF">
       <td><b>Item ID</b></td>
       <td><b>Category</b></td>
@@ -36,24 +36,24 @@
       <td><b>Price</b></td>
     </tr>    
     
-	<c:forEach var="item" items="${mdata}">
-		<tr bgcolor="#FFFF88">
-        	<td><b> 
-          		<a href='<c:url value="/spetstore/spetitem/detail">
-           			 <c:param name="itemId" value="${item.itemId}"/></c:url>'>
-              	<c:out value="${item.itemId}" />
-          		</a></b></td>
-        	<td><c:out value="${item.cname}" /></td>
-        	<td>
-          		<c:out value="${item.name}" />
-        	</td>
+   <c:forEach var="item" items="${mdata}">
+      <tr bgcolor="#FFFF88">
+           <td><b> 
+                <a href='<c:url value="/spetstore/spetitem/detail">
+                     <c:param name="itemId" value="${item.itemId}"/></c:url>'>
+                 <c:out value="${item.itemId}" />
+                </a></b></td>
+           <td><c:out value="${item.cname}" /></td>
+           <td>
+                <c:out value="${item.name}" />
+           </td>
         <td><fmt:formatNumber value="${item.price}" pattern="#won" /></td>
     </c:forEach>
   </table>
   
      <HR>
     <b><font size="4"><c:out value="Products for Auction" /></font></b>
-    <table>
+    <table style="text-align: center;">
     <tr bgcolor="#CCFF99">
       <td><b>Auction Number</b></td>
       <td><b>Name</b></td>
@@ -61,17 +61,17 @@
       <td><b>Current Price</b></td>
     </tr>    
     
-	<c:forEach var="a" items="${adata}">
-		<tr bgcolor="#FFFF88">
-        	<td><b> 
-          		<a href='<c:url value="/spetstore/spetitem/detail">
-           			 <c:param name="auctionId" value="${a.auctionId}"/></c:url>'>
-              	<c:out value="${a.auctionId}" />
-          		</a></b></td>
-        	<td><c:out value="${a.name}" /></td>
-        	<td>
-          		<c:out value="${a.dday}" />
-        	</td>
+   <c:forEach var="a" items="${adata}">
+      <tr bgcolor="#FFFF88">
+           <td><b> 
+                <a href='<c:url value="/spetstore/spetitem/detail">
+                     <c:param name="auctionId" value="${a.auctionId}"/></c:url>'>
+                 <c:out value="${a.auctionId}" />
+                </a></b></td>
+           <td><c:out value="${a.name}" /></td>
+           <td>
+                <c:out value="${a.dday}" />
+           </td>
         <td><fmt:formatNumber value="${a.curMaxPrice}" pattern="#won" /></td>
     </c:forEach>
   </table>
