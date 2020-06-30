@@ -21,7 +21,17 @@
 	<tr>
 		<td>Quantity : <input type="number" name = "newQuantity" value="${ci.quantity}"/></td>
 		<td>
-			<input type="submit" value="update" />
+			<table>
+				<tr>
+					<td><input type="submit" value="update" /></td>
+				</tr>
+				<tr>
+					<td><input type="button"
+				         value="Remove"
+				         onclick="location.href='<c:url value='/spetstore/user/myPage/cart/remove?itemId=${ci.itemId}' />'" />
+         			</td>
+				</tr>
+			</table>
 		</td>
 		<c:set var="orderTotalPrice" value="${orderTotalPrice + ci.quantity * ci.price}"/>
 	</tr>

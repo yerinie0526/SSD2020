@@ -32,6 +32,10 @@ public class CartService {
 		cartdao.updateQuantity(newQuantity);
 	}
 	
+	public void deleteCart(String userId, int itemId) { 
+		cartdao.deleteCart(userId, itemId);
+	}
+	
 //	@Transactional
 //	public int deleteCart(String userId, int itemId) { 
 //		return cartdao.deleteCart(userId, itemId);

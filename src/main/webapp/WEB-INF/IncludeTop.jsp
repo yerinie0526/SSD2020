@@ -20,14 +20,15 @@
 	<tr>
 		<td>
 	    	<a href="<c:url value="/index"/>">
-	        <img border="0" src="images/spetlogo.jpg" width = "200" height="110"style="float:right"/></a>
+	        (go to home)</a>
 	    </td>
+	    
 	    <td style="text-align:right">
 	      <a href="<c:url value="/spetstore/user/myPage/cart.do"/>">
-	        <img border="0" src="images/cart.png" width = "30" height="30"/></a>
+	        (cart)</a>
 	      <c:if test="${empty userSession.userId}" >
 	        <a href="<c:url value="/spetstore/user/signonForm.do"/>">
-	          <img border="0" src="images/login.png" width = "30" height="30"/></a>
+	          (login)</a>
 	      </c:if>
 	      <c:if test="${!empty userSession.userId}" >
 	        <a href="<c:url value="/spetstore/user/signoff.do"/>">	<!-- controller에서 로그아웃 처리하기 -->

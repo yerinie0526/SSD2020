@@ -148,6 +148,15 @@ public class CartController {
 		
 	}//장바구니로 이동
 	
+	@RequestMapping("/spetstore/user/myPage/cart/remove") 
+	public ModelAndView deleteItem(@RequestParam("itemId") int itemId, HttpServletRequest request) {
+		UserSession userSession = 
+				(UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		cartService.deleteCart(userSession.getUserId(), itemId);
+		List<CartModel> cartList = cartService.showCartList(userSession.getUserId()); 
+        return new ModelAndView("/user/myPage/Cart", "cartList", cartList);
+	}//장바구니 물품 삭제
+	
 	//이과정을 dao에서 하는 것으로 바꿈! 그게 나을것같아서 06.29 -예린-
 /*	@RequestMapping("/spetstore/spetitem/addCart.do") 
 	public String addCart(@RequestParam("itemId") int itemId,@RequestParam("userId") String userId, @RequestParam("price") int price, 

@@ -97,6 +97,10 @@ public class CartDAO {
 		}
 		cmapper.addCart(itemId, im.getName(), im.getPrice(), inStock, quantity, userId);
 	}
+	
+	public void deleteCart(String userId, int itemId) {
+		cmapper.deleteCart(userId, itemId);
+	}
 //	
 //	
 //

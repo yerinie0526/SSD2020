@@ -5,10 +5,10 @@
   <cache />
   
 	<!-- deleteCart : 물건삭제-->
-<!-- 	<delete id="deleteCart" >
+	<delete id="deleteCart" >
 		DELETE FROM Cart
-		WHERE itemId = #{itemId} and userId = #{userId}
-	</delete> -->
+		WHERE itemId = #{param2} and userId = #{param1}
+	</delete>
 
 	
 	<!-- deleteCartByUser : 사용자가 탈퇴할때, 혹은 모두삭제 기능-->
