@@ -13,18 +13,16 @@
 <table style="border:none;border-collapse:collapse;width:100%">
 <c:forEach var="ai" items="${aList}">
    <tr>
-      <td><a href="<c:url value='/spetstore/auction/detail?auctionId=${ai.auctionId}'/>">${ai.name}</a></td>
-   </tr>
-   <tr>
       <td>
          [item pic]
       </td>
       <td>
          <table>
-            <tr><td>${ai.auctionId}</td></tr>
-            <tr><td>${ai.astatus}</td></tr>
-            <tr><td>${ai.minprice}</td></tr>
-            <tr><td>${ai.curMaxPrice}</td></tr>
+         <tr><td><td>Auction Name: &nbsp;&nbsp;<a href="<c:url value='/spetstore/auction/detail?auctionId=${ai.auctionId}'/>">${ai.name}</a></td></tr>
+            <tr><td>Auction Number:&nbsp;&nbsp;&nbsp;&nbsp;${ai.auctionId}</td></tr>
+            <tr><td>Status:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${ai.astatus}</td></tr>
+            <tr><td>Minimum Price:&nbsp;&nbsp;&nbsp;&nbsp;${ai.minprice}</td></tr>
+            <tr><td>Current Price:&nbsp;&nbsp;&nbsp;&nbsp;${ai.curMaxPrice}</td></tr>
          </table>
       </td>
       <td>
