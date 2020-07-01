@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
-import dongduk.cs.ssd.summerpetstore.service.SProductService;
 import dongduk.cs.ssd.summerpetstore.service.SproductService;
 
 @Controller

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dongduk.cs.ssd.summerpetstore.model.ItemModel;
-import dongduk.cs.ssd.summerpetstore.service.SProductService;
 import dongduk.cs.ssd.summerpetstore.service.SproductService;
 
 @Controller
@@ -36,7 +35,7 @@ public class ShowDetailController {
 
 	@RequestMapping("/market/detail")	
 	public String showMarketItem(@RequestParam("itemId") int itemId, Model model) {
-		item = sproductService.showInfo(itemId);
+		//item = sproductService.showInfo(itemId);
 		model.addAttribute("item", item);
 		return "market/mListDetail"; 
 	}//장터물품자세히보기
@@ -44,7 +43,7 @@ public class ShowDetailController {
 	
 	@RequestMapping("/auction/detail")	
 	public String showAuction(@RequestParam("auctionId") int auctionId, Model model) {
-		item = sproductService.showInfo(auctionId);
+	//	item = sproductService.showInfo(auctionId);
 		model.addAttribute("item", item);
 		return "auction/aListDetail"; 
 	}//경매자세히보기
